@@ -100,12 +100,12 @@
 				C90BEF7E220CD093007F24A6 /* ViewController */,
 				C90BEF69220CCC33007F24A6 /* AppDelegate.swift */,
 				C90BEF6D220CCC33007F24A6 /* Main.storyboard */,
-				C9CE2C82220DC78700D94B8C /* README.md */,
 				C90BEF73220CCC38007F24A6 /* Assets.xcassets */,
 				C90BEF75220CCC38007F24A6 /* LaunchScreen.storyboard */,
 				C90BEF78220CCC38007F24A6 /* Info.plist */,
 				C90BEF70220CCC33007F24A6 /* simulation.xcdatamodeld */,
 				C9CE2C7D220DC26800D94B8C /* R.generated.swift */,
+				C9CE2C82220DC78700D94B8C /* README.md */,
 			);
 			path = Simulation;
 			sourceTree = "<group>";
