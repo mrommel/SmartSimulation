@@ -20,17 +20,32 @@ struct SimulationItemModel {
 class SimulationListViewModel: ViewModelType {
     
     internal var delegate: ViewModelDelegate?
+    var itemCount = 0
     
     func bootstrap() {
-        // add logic here
+        self.loadData()
+    }
+    
+    private func loadData() {
+        delegate?.willLoadData()
+        
+        Delay.delayed(by: 5) {
+            DispatchQueue.main.async {
+
+                print("abc * 5")
+                self.itemCount = 5
+                
+                self.delegate?.didLoadData()
+            }
+        }
     }
     
     func addSimulation() {
-        
+        self.delegate?.performSegue(named: "")
     }
     
     func simulationCount() -> Int {
-        return 2
+        return self.itemCount
     }
     
     func simulation(at index: Int) -> SimulationItemModel? {

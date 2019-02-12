@@ -55,6 +55,10 @@ extension SimulationListViewController: ViewModelDelegate {
         tableView.reloadData()
         activityIndicator?.stopAnimating()
     }
+    
+    func performSegue(named segue: String) {
+        self.performSegue(withIdentifier: segue, sender: self)
+    }
 }
 
 extension SimulationListViewController: UITableViewDelegate, UITableViewDataSource {

@@ -11,4 +11,5 @@ import Foundation
 protocol ViewModelDelegate: class {
     func willLoadData()
     func didLoadData()
+    func performSegue(named segue: String)
 }

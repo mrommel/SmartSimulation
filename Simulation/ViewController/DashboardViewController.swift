@@ -15,7 +15,7 @@ class DashboardViewController: UIViewController {
         
         // Do any additional setup after loading the view, typically from a nib.
         self.title = "Dashboard"
-        self.view.backgroundColor = .blue
+        self.view.backgroundColor = .white
     }
 }
 

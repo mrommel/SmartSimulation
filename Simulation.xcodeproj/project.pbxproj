@@ -21,6 +21,8 @@
 		C9CE2C7E220DC26800D94B8C /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE2C7D220DC26800D94B8C /* R.generated.swift */; };
 		C9CE2C81220DC40E00D94B8C /* Simulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE2C80220DC40E00D94B8C /* Simulation.swift */; };
 		C9CE2C83220DC78700D94B8C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C9CE2C82220DC78700D94B8C /* README.md */; };
+		C9CE2C85220DD26D00D94B8C /* SimulationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE2C84220DD26D00D94B8C /* SimulationDetailViewController.swift */; };
+		C9CE2C87220DD38A00D94B8C /* Delay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE2C86220DD38A00D94B8C /* Delay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		C9CE2C7D220DC26800D94B8C /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		C9CE2C80220DC40E00D94B8C /* Simulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simulation.swift; sourceTree = "<group>"; };
 		C9CE2C82220DC78700D94B8C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		C9CE2C84220DD26D00D94B8C /* SimulationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulationDetailViewController.swift; sourceTree = "<group>"; };
+		C9CE2C86220DD38A00D94B8C /* Delay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delay.swift; sourceTree = "<group>"; };
 		E0B1FE2964BEBBC2BD95EE28 /* Pods_Simulation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Simulation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -115,6 +119,7 @@
 			children = (
 				C90BEF6B220CCC33007F24A6 /* DashboardViewController.swift */,
 				C90BEF7F220CD123007F24A6 /* SimulationListViewController.swift */,
+				C9CE2C84220DD26D00D94B8C /* SimulationDetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -132,6 +137,7 @@
 			children = (
 				C9CE2C76220DB1DD00D94B8C /* ViewModelDelegate.swift */,
 				C9CE2C78220DB1F000D94B8C /* ViewModelType.swift */,
+				C9CE2C86220DD38A00D94B8C /* Delay.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -285,8 +291,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9CE2C87220DD38A00D94B8C /* Delay.swift in Sources */,
 				C90BEF72220CCC33007F24A6 /* simulation.xcdatamodeld in Sources */,
 				C90BEF80220CD123007F24A6 /* SimulationListViewController.swift in Sources */,
+				C9CE2C85220DD26D00D94B8C /* SimulationDetailViewController.swift in Sources */,
 				C9CE2C7B220DB21600D94B8C /* SimulationListViewModel.swift in Sources */,
 				C9CE2C7E220DC26800D94B8C /* R.generated.swift in Sources */,
 				C9CE2C79220DB1F000D94B8C /* ViewModelType.swift in Sources */,
