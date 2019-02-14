@@ -50,12 +50,22 @@ class SimulationListViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = addSimulationButton
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
         self.viewModel?.loadData()
     }
     
     @objc func addSimulation() {
         self.viewModel?.addSimulation()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destinationViewController = segue.destination as? SimulationDetailViewController {
+            destinationViewController.simulationItemModel = self.viewModel?.selectedSimulationItemModel
+        }
     }
 }
 
@@ -94,6 +104,11 @@ extension SimulationListViewController: UITableViewDelegate, UITableViewDataSour
         let cell = tableView.dequeueReusableCell(withIdentifier: SimulationListViewController.reuseableIdentifier, for: indexPath)
         let simulation = self.viewModel?.simulation(at: indexPath.row)
         cell.textLabel?.text = simulation?.name
+        cell.detailTextLabel?.text = simulation?.value
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.viewModel?.selectSimulation(at: indexPath.row)
     }
 }

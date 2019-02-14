@@ -21,6 +21,10 @@ class DashboardViewController: UIViewController {
         self.view.backgroundColor = .white
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     @IBAction func turnAction(sender: UIView?) {
         print("turn")
         GlobalSimulationManager.shared.iterate()

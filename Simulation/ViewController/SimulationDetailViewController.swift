@@ -10,5 +10,18 @@ import UIKit
 
 class SimulationDetailViewController: UIViewController {
     
+    var simulationItemModel: SimulationItemModel?
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
+        self.title = self.simulationItemModel?.name
+        self.view.backgroundColor = .white
+        self.navigationController?.navigationBar.tintColor = .white
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }

@@ -27,6 +27,8 @@ class SimulationListViewModel: ViewModelType {
     internal var delegate: ViewModelDelegate?
     var simulationItemModels: [SimulationItemModel] = []
     
+    internal var selectedSimulationItemModel: SimulationItemModel?
+    
     func bootstrap() {
         self.loadData()
     }
@@ -51,7 +53,7 @@ class SimulationListViewModel: ViewModelType {
     }
     
     func addSimulation() {
-        self.delegate?.performSegue(named: SimulationListViewModel.simulationDetailSegue.identifier)
+        // self.delegate?.performSegue(named: SimulationListViewModel.simulationDetailSegue.identifier)
     }
     
     func simulationCount() -> Int {
@@ -60,5 +62,11 @@ class SimulationListViewModel: ViewModelType {
     
     func simulation(at index: Int) -> SimulationItemModel? {
         return self.simulationItemModels[index]
+    }
+    
+    func selectSimulation(at index: Int) {
+        print("selectSimulation \(index)")
+        self.selectedSimulationItemModel = self.simulationItemModels[index]
+        self.delegate?.performSegue(named: SimulationListViewModel.simulationDetailSegue.identifier)
     }
 }
