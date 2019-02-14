@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Simulations {
+public class Simulations {
 
 	var population: Population
 	var birthRate: BirthRate
@@ -81,7 +81,7 @@ class Simulations {
 
 extension Simulations: Sequence {
 
-	struct SimulationsIterator: IteratorProtocol {
+	public struct SimulationsIterator: IteratorProtocol {
 
 		private var index = 0
 		private let simulations: [Simulation]
@@ -90,14 +90,14 @@ extension Simulations: Sequence {
 			self.simulations = simulations
 		}
 
-		mutating func next() -> Simulation? {
+        mutating public func next() -> Simulation? {
 			let simulation = self.simulations[safe: index]
 			index += 1
 			return simulation
 		}
 	}
 
-	func makeIterator() -> SimulationsIterator {
+    public func makeIterator() -> SimulationsIterator {
 		return SimulationsIterator(simulations: self.sims)
 	}
 }

@@ -19,7 +19,6 @@
 		C9CE2C79220DB1F000D94B8C /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE2C78220DB1F000D94B8C /* ViewModelType.swift */; };
 		C9CE2C7B220DB21600D94B8C /* SimulationListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE2C7A220DB21600D94B8C /* SimulationListViewModel.swift */; };
 		C9CE2C7E220DC26800D94B8C /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE2C7D220DC26800D94B8C /* R.generated.swift */; };
-		C9CE2C81220DC40E00D94B8C /* Simulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE2C80220DC40E00D94B8C /* Simulation.swift */; };
 		C9CE2C83220DC78700D94B8C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C9CE2C82220DC78700D94B8C /* README.md */; };
 		C9CE2C85220DD26D00D94B8C /* SimulationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE2C84220DD26D00D94B8C /* SimulationDetailViewController.swift */; };
 		C9CE2C87220DD38A00D94B8C /* Delay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE2C86220DD38A00D94B8C /* Delay.swift */; };
@@ -45,7 +44,6 @@
 		C9CE2C78220DB1F000D94B8C /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		C9CE2C7A220DB21600D94B8C /* SimulationListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulationListViewModel.swift; sourceTree = "<group>"; };
 		C9CE2C7D220DC26800D94B8C /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
-		C9CE2C80220DC40E00D94B8C /* Simulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simulation.swift; sourceTree = "<group>"; };
 		C9CE2C82220DC78700D94B8C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		C9CE2C84220DD26D00D94B8C /* SimulationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulationDetailViewController.swift; sourceTree = "<group>"; };
 		C9CE2C86220DD38A00D94B8C /* Delay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delay.swift; sourceTree = "<group>"; };
@@ -154,7 +152,6 @@
 		C9CE2C7F220DC40000D94B8C /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				C9CE2C80220DC40E00D94B8C /* Simulation.swift */,
 				C9CE2D2D2215E03A00D94B8C /* GlobalSimulationManager.swift */,
 			);
 			path = Data;
@@ -332,7 +329,6 @@
 				C9CE2C79220DB1F000D94B8C /* ViewModelType.swift in Sources */,
 				C90BEF6C220CCC33007F24A6 /* DashboardViewController.swift in Sources */,
 				C9CE2C77220DB1DD00D94B8C /* ViewModelDelegate.swift in Sources */,
-				C9CE2C81220DC40E00D94B8C /* Simulation.swift in Sources */,
 				C90BEF6A220CCC33007F24A6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

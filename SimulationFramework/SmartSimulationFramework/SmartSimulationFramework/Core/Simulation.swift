@@ -10,7 +10,7 @@ import Foundation
 
 public class Simulation {
 
-	let name: String
+	public let name: String
 	let summary: String
 	let category: Category
 	var values: [Double] = []
@@ -78,7 +78,7 @@ public class Simulation {
 		self.values.insert(value, at: 0)
 	}
 
-	func valueText() -> String {
+	public func valueText() -> String {
 		return "\(self.value().format(with: ".2"))"
 	}
 

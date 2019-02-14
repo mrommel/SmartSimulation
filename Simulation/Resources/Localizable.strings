@@ -6,5 +6,7 @@
   Copyright © 2019 Michael Rommel. All rights reserved.
 */
 
+"DashboardViewController.Title" = "Dashboard";
+
 "SimulationListViewController.Title" = "Simulations";
 "SimulationListViewController.RefreshControl.Text" = "Fetching Simulation Data ...";

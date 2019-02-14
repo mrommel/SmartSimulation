@@ -94,9 +94,9 @@ public protocol GlobalSimulationDelegate: class {
 
 public class GlobalSimulation {
 
-    let tileInfo: TileInfo
+    public let tileInfo: TileInfo
 
-    var simulations: Simulations
+    public var simulations: Simulations
     var policies: Policies
     var events: Events
     var groups: Groups

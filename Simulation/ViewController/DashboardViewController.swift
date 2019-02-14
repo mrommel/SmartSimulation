@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Rswift
 
 class DashboardViewController: UIViewController {
 
@@ -16,12 +17,13 @@ class DashboardViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view, typically from a nib.
-        self.title = "Dashboard"
+        self.title = R.string.localizable.dashboardViewControllerTitle()
         self.view.backgroundColor = .white
     }
     
     @IBAction func turnAction(sender: UIView?) {
         print("turn")
+        GlobalSimulationManager.shared.iterate()
     }
 }
 

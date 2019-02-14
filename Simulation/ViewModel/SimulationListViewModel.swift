@@ -12,18 +12,20 @@ import SmartSimulationFramework
 struct SimulationItemModel {
     
     var name: String
+    var value: String
     
     init(simulation: Simulation?) {
-        name = simulation?.name ?? ""
+        self.name = simulation?.name ?? "-"
+        self.value = simulation?.valueText() ?? "-"
     }
 }
 
 class SimulationListViewModel: ViewModelType {
     
-    static let simulationDetailSegue = "showSimulation"
+    static let simulationDetailSegue = R.segue.simulationListViewController.showSimulation
 
     internal var delegate: ViewModelDelegate?
-    var itemCount = 0
+    var simulationItemModels: [SimulationItemModel] = []
     
     func bootstrap() {
         self.loadData()
@@ -32,27 +34,31 @@ class SimulationListViewModel: ViewModelType {
     func loadData() {
         delegate?.willLoadData()
         
-        Delay.delayed(by: 5) {
+        Delay.delayed(by: 1) {
+            
+            self.simulationItemModels = []
+            
+            if let simulations = GlobalSimulationManager.shared.simulations() {
+                for simulation in simulations {
+                    self.simulationItemModels.append(SimulationItemModel(simulation: simulation))
+                }
+            }
+            
             DispatchQueue.main.async {
-
-                print("abc * 5")
-                self.itemCount = 5
-                
                 self.delegate?.didLoadData()
             }
         }
     }
     
     func addSimulation() {
-        self.delegate?.performSegue(named: SimulationListViewModel.simulationDetailSegue)
+        self.delegate?.performSegue(named: SimulationListViewModel.simulationDetailSegue.identifier)
     }
     
     func simulationCount() -> Int {
-        return self.itemCount
+        return self.simulationItemModels.count
     }
     
     func simulation(at index: Int) -> SimulationItemModel? {
-        
-        return SimulationItemModel(simulation: Simulation(name: "abc"))
+        return self.simulationItemModels[index]
     }
 }

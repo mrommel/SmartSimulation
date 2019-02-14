@@ -26,6 +26,10 @@ class GlobalSimulationManager {
     func setup() {
         self.globalSimulation?.delegate = self
     }
+    
+    func simulations() -> Simulations? {
+        return self.globalSimulation?.simulations
+    }
 }
 
 extension GlobalSimulationManager: GlobalSimulationDelegate {
