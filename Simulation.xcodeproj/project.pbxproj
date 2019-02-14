@@ -88,7 +88,6 @@
 		C90BEF5D220CCC33007F24A6 = {
 			isa = PBXGroup;
 			children = (
-				C9CE2C8C2214519F00D94B8C /* Default-568h@2x.png */,
 				C90BEF68220CCC33007F24A6 /* Simulation */,
 				C90BEF67220CCC33007F24A6 /* Products */,
 				0C4B134E0096A4687D51D671 /* Pods */,
@@ -170,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				C90BEF73220CCC38007F24A6 /* Assets.xcassets */,
+				C9CE2C8C2214519F00D94B8C /* Default-568h@2x.png */,
 				C90BEF70220CCC33007F24A6 /* simulation.xcdatamodeld */,
 				C9CE2C8A2214514800D94B8C /* Localizable.strings */,
 			);
