@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:SimulationFramework/SmartSimulationFramework/SmartSimulationFramework.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Simulation.xcodeproj">
    </FileRef>
    <FileRef

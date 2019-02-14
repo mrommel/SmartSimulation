@@ -23,6 +23,10 @@
 		C9CE2C83220DC78700D94B8C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C9CE2C82220DC78700D94B8C /* README.md */; };
 		C9CE2C85220DD26D00D94B8C /* SimulationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE2C84220DD26D00D94B8C /* SimulationDetailViewController.swift */; };
 		C9CE2C87220DD38A00D94B8C /* Delay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE2C86220DD38A00D94B8C /* Delay.swift */; };
+		C9CE2C8B2214514800D94B8C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C9CE2C8A2214514800D94B8C /* Localizable.strings */; };
+		C9CE2C8D2214519F00D94B8C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9CE2C8C2214519F00D94B8C /* Default-568h@2x.png */; };
+		C9CE2CC32215D10800D94B8C /* SmartSimulationFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9CE2CC22215D10800D94B8C /* SmartSimulationFramework.framework */; };
+		C9CE2D2E2215E03A00D94B8C /* GlobalSimulationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE2D2D2215E03A00D94B8C /* GlobalSimulationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +49,10 @@
 		C9CE2C82220DC78700D94B8C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		C9CE2C84220DD26D00D94B8C /* SimulationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulationDetailViewController.swift; sourceTree = "<group>"; };
 		C9CE2C86220DD38A00D94B8C /* Delay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delay.swift; sourceTree = "<group>"; };
+		C9CE2C8A2214514800D94B8C /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		C9CE2C8C2214519F00D94B8C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		C9CE2CC22215D10800D94B8C /* SmartSimulationFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SmartSimulationFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9CE2D2D2215E03A00D94B8C /* GlobalSimulationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalSimulationManager.swift; sourceTree = "<group>"; };
 		E0B1FE2964BEBBC2BD95EE28 /* Pods_Simulation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Simulation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -53,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9CE2CC32215D10800D94B8C /* SmartSimulationFramework.framework in Frameworks */,
 				76D8A008675F451A6A1782F1 /* Pods_Simulation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -72,6 +81,7 @@
 		61AA0FB658D6936A4F879413 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C9CE2CC22215D10800D94B8C /* SmartSimulationFramework.framework */,
 				E0B1FE2964BEBBC2BD95EE28 /* Pods_Simulation.framework */,
 			);
 			name = Frameworks;
@@ -80,6 +90,7 @@
 		C90BEF5D220CCC33007F24A6 = {
 			isa = PBXGroup;
 			children = (
+				C9CE2C8C2214519F00D94B8C /* Default-568h@2x.png */,
 				C90BEF68220CCC33007F24A6 /* Simulation */,
 				C90BEF67220CCC33007F24A6 /* Products */,
 				0C4B134E0096A4687D51D671 /* Pods */,
@@ -102,12 +113,10 @@
 				C9CE2C75220DB1CD00D94B8C /* Util */,
 				C9CE2C74220DB09500D94B8C /* ViewModel */,
 				C90BEF7E220CD093007F24A6 /* ViewController */,
-				C90BEF69220CCC33007F24A6 /* AppDelegate.swift */,
-				C90BEF6D220CCC33007F24A6 /* Main.storyboard */,
-				C90BEF73220CCC38007F24A6 /* Assets.xcassets */,
-				C90BEF75220CCC38007F24A6 /* LaunchScreen.storyboard */,
+				C9CE2C882214510B00D94B8C /* Storyboards */,
+				C9CE2C892214511D00D94B8C /* Resources */,
 				C90BEF78220CCC38007F24A6 /* Info.plist */,
-				C90BEF70220CCC33007F24A6 /* simulation.xcdatamodeld */,
+				C90BEF69220CCC33007F24A6 /* AppDelegate.swift */,
 				C9CE2C7D220DC26800D94B8C /* R.generated.swift */,
 				C9CE2C82220DC78700D94B8C /* README.md */,
 			);
@@ -146,8 +155,28 @@
 			isa = PBXGroup;
 			children = (
 				C9CE2C80220DC40E00D94B8C /* Simulation.swift */,
+				C9CE2D2D2215E03A00D94B8C /* GlobalSimulationManager.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		C9CE2C882214510B00D94B8C /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C90BEF6D220CCC33007F24A6 /* Main.storyboard */,
+				C90BEF75220CCC38007F24A6 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		C9CE2C892214511D00D94B8C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C90BEF73220CCC38007F24A6 /* Assets.xcassets */,
+				C90BEF70220CCC33007F24A6 /* simulation.xcdatamodeld */,
+				C9CE2C8A2214514800D94B8C /* Localizable.strings */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,10 +240,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9CE2C8B2214514800D94B8C /* Localizable.strings in Resources */,
 				C90BEF77220CCC38007F24A6 /* LaunchScreen.storyboard in Resources */,
 				C90BEF74220CCC38007F24A6 /* Assets.xcassets in Resources */,
 				C9CE2C83220DC78700D94B8C /* README.md in Resources */,
 				C90BEF6F220CCC33007F24A6 /* Main.storyboard in Resources */,
+				C9CE2C8D2214519F00D94B8C /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9CE2C87220DD38A00D94B8C /* Delay.swift in Sources */,
+				C9CE2D2E2215E03A00D94B8C /* GlobalSimulationManager.swift in Sources */,
 				C90BEF72220CCC33007F24A6 /* simulation.xcdatamodeld in Sources */,
 				C90BEF80220CD123007F24A6 /* SimulationListViewController.swift in Sources */,
 				C9CE2C85220DD26D00D94B8C /* SimulationDetailViewController.swift in Sources */,

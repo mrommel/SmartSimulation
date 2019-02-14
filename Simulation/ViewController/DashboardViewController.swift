@@ -10,12 +10,18 @@ import UIKit
 
 class DashboardViewController: UIViewController {
 
+    @IBOutlet weak var turnButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view, typically from a nib.
         self.title = "Dashboard"
         self.view.backgroundColor = .white
+    }
+    
+    @IBAction func turnAction(sender: UIView?) {
+        print("turn")
     }
 }
 

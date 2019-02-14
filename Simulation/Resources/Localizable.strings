@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  Simulation
+
+  Created by Michael Rommel on 13.02.19.
+  Copyright © 2019 Michael Rommel. All rights reserved.
+*/
+
+"SimulationListViewController.Title" = "Simulations";
+"SimulationListViewController.RefreshControl.Text" = "Fetching Simulation Data ...";

@@ -12,8 +12,19 @@ import Rswift
 class SimulationListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     private static let reuseableIdentifier = "SimulationCell"
+    
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(SimulationListViewController.handleRefresh(_:)), for: .valueChanged)
+        refreshControl.tintColor = UIColor.red
+        
+        var attributes: [NSAttributedString.Key : Any] = [:]
+        attributes[.foregroundColor] = UIColor.red
+        refreshControl.attributedTitle = NSAttributedString(string: R.string.localizable.simulationListViewControllerRefreshControlText(), attributes: attributes)
+        
+        return refreshControl
+    }()
     
     var viewModel: SimulationListViewModel?
     
@@ -26,16 +37,21 @@ class SimulationListViewController: UIViewController {
         self.viewModel?.bootstrap()
         
         // Do any additional setup after loading the view.
-        self.title = "Simulation"
+        self.title = R.string.localizable.simulationListViewControllerTitle()
         self.view.backgroundColor = .white
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.tableFooterView = UIView()
+        self.tableView.addSubview(self.refreshControl)
         
         let addSimulationButton = UIBarButtonItem(image: R.image.plus(), style: .plain, target: self, action: #selector(SimulationListViewController.addSimulation))
         addSimulationButton.tintColor = .white
         self.navigationItem.rightBarButtonItem = addSimulationButton
+    }
+    
+    @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
+        self.viewModel?.loadData()
     }
     
     @objc func addSimulation() {
@@ -47,13 +63,12 @@ class SimulationListViewController: UIViewController {
 extension SimulationListViewController: ViewModelDelegate {
     
     func willLoadData() {
-        activityIndicator?.startAnimating()
+        
     }
     
     func didLoadData() {
-        // reloads tableView data from model.taskNames
-        tableView.reloadData()
-        activityIndicator?.stopAnimating()
+        self.tableView.reloadData()
+        self.refreshControl.endRefreshing()
     }
     
     func performSegue(named segue: String) {
@@ -72,7 +87,7 @@ extension SimulationListViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Simulations"
+        return R.string.localizable.simulationListViewControllerTitle()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

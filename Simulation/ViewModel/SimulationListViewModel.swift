@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SmartSimulationFramework
 
 struct SimulationItemModel {
     
@@ -19,6 +20,8 @@ struct SimulationItemModel {
 
 class SimulationListViewModel: ViewModelType {
     
+    static let simulationDetailSegue = "showSimulation"
+
     internal var delegate: ViewModelDelegate?
     var itemCount = 0
     
@@ -26,7 +29,7 @@ class SimulationListViewModel: ViewModelType {
         self.loadData()
     }
     
-    private func loadData() {
+    func loadData() {
         delegate?.willLoadData()
         
         Delay.delayed(by: 5) {
@@ -41,7 +44,7 @@ class SimulationListViewModel: ViewModelType {
     }
     
     func addSimulation() {
-        self.delegate?.performSegue(named: "")
+        self.delegate?.performSegue(named: SimulationListViewModel.simulationDetailSegue)
     }
     
     func simulationCount() -> Int {

@@ -17,6 +17,20 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ik-pb-MLF">
+                                <rect key="frame" x="124" y="82" width="127" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Turn" image="compass">
+                                    <color key="titleColor" red="0.50196078430000002" green="0.61176470589999998" blue="0.074509803920000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="turnActionWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CV3-sD-chr"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -57,9 +71,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="6II-Mz-JEB">
-                                <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -67,20 +78,33 @@
                             <constraint firstItem="ReS-UH-xaT" firstAttribute="leading" secondItem="hW5-Et-8o2" secondAttribute="leading" id="5OD-e4-yRS"/>
                             <constraint firstAttribute="trailing" secondItem="ReS-UH-xaT" secondAttribute="trailing" id="EQL-Hc-4Gu"/>
                             <constraint firstAttribute="bottom" secondItem="ReS-UH-xaT" secondAttribute="bottom" id="bYR-Ns-XSN"/>
-                            <constraint firstItem="6II-Mz-JEB" firstAttribute="centerY" secondItem="hW5-Et-8o2" secondAttribute="centerY" id="stT-FA-krm"/>
-                            <constraint firstItem="6II-Mz-JEB" firstAttribute="centerX" secondItem="hW5-Et-8o2" secondAttribute="centerX" id="u3q-1P-PlF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Emj-J4-MxT"/>
                     </view>
                     <navigationItem key="navigationItem" id="ohJ-ZT-brm"/>
                     <connections>
-                        <outlet property="activityIndicator" destination="6II-Mz-JEB" id="LU0-CB-f4g"/>
                         <outlet property="tableView" destination="ReS-UH-xaT" id="M3l-kM-3eh"/>
+                        <segue destination="Ndl-aN-l9h" kind="show" identifier="showSimulation" id="n2a-8s-8Vr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TT2-sE-HRK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2015" y="874"/>
+        </scene>
+        <!--Simulation Detail View Controller-->
+        <scene sceneID="n5W-xc-4Ai">
+            <objects>
+                <viewController id="Ndl-aN-l9h" customClass="SimulationDetailViewController" customModule="Simulation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="be2-2u-pfy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="yBU-b7-F4F"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UFo-sF-ZZP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2833" y="874"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="f6k-SO-g5K">
@@ -90,10 +114,8 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1lI-To-Aoo">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.50196078430000002" green="0.61176470589999998" blue="0.074509803920000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" red="0.50196078430000002" green="0.61176470589999998" blue="0.074509803920000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.50196078430000002" green="0.61176470589999998" blue="0.074509803920000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" cocoaTouchSystemColor="darkTextColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="rqq-uT-dnW" kind="relationship" relationship="viewControllers" id="yFp-DH-jzT"/>
@@ -152,6 +174,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="compass" width="14.399999618530273" height="14.159999847412109"/>
         <image name="dashboard" width="14.399999618530273" height="14.399999618530273"/>
         <image name="statitics" width="14.399999618530273" height="14.399999618530273"/>
     </resources>
