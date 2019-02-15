@@ -17,24 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        // Override point for customization after application launch.
-        let colorNormal : UIColor = UIColor.darkGray
-        let colorSelected : UIColor = UIColor.black
-        //let titleFontAll : UIFont = UIFont(name: "American Typewriter", size: 13.0)!
-        
-        let attributesNormal = [
-            NSAttributedString.Key.foregroundColor: colorNormal,
-            //NSAttributedString.Key.font: titleFontAll
-        ]
-        
-        let attributesSelected = [
-            NSAttributedString.Key.foregroundColor: colorSelected,
-            //NSAttributedString.Key.font: titleFontAll
-        ]
-        
-        UITabBarItem.appearance().setTitleTextAttributes(attributesNormal, for: .normal)
-        UITabBarItem.appearance().setTitleTextAttributes(attributesSelected, for: .selected)
-        
+        App.init().setup()
         self.setupGlobalSimulation()
 
         return true

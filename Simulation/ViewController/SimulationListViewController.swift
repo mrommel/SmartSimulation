@@ -17,10 +17,10 @@ class SimulationListViewController: UIViewController {
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(SimulationListViewController.handleRefresh(_:)), for: .valueChanged)
-        refreshControl.tintColor = UIColor.red
+        refreshControl.tintColor = App.Color.refreshControlColor
         
         var attributes: [NSAttributedString.Key : Any] = [:]
-        attributes[.foregroundColor] = UIColor.red
+        attributes[.foregroundColor] = App.Color.refreshControlColor
         refreshControl.attributedTitle = NSAttributedString(string: R.string.localizable.simulationListViewControllerRefreshControlText(), attributes: attributes)
         
         return refreshControl
@@ -38,16 +38,12 @@ class SimulationListViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         self.title = R.string.localizable.simulationListViewControllerTitle()
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = Color.lightBackground.value
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.tableFooterView = UIView()
         self.tableView.addSubview(self.refreshControl)
-        
-        let addSimulationButton = UIBarButtonItem(image: R.image.plus(), style: .plain, target: self, action: #selector(SimulationListViewController.addSimulation))
-        addSimulationButton.tintColor = .white
-        self.navigationItem.rightBarButtonItem = addSimulationButton
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -56,10 +52,6 @@ class SimulationListViewController: UIViewController {
     
     @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
         self.viewModel?.loadData()
-    }
-    
-    @objc func addSimulation() {
-        self.viewModel?.addSimulation()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

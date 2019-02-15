@@ -17,8 +17,7 @@ class SimulationDetailViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         self.title = self.simulationItemModel?.name
-        self.view.backgroundColor = .white
-        self.navigationController?.navigationBar.tintColor = .white
+        self.view.backgroundColor = Color.lightBackground.value
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
