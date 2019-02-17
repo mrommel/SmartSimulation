@@ -30,6 +30,8 @@ class SimulationDetailViewController: UIViewController {
 
         self.tableView.register(TableViewNameCell.self)
         self.tableView.register(TableViewDescriptionCell.self)
+        self.tableView.register(TableViewCategoryCell.self)
+        self.tableView.register(TableViewValueCell.self)
         
         self.tableView.tableFooterView = UIView()
     }
@@ -51,6 +53,10 @@ extension SimulationDetailViewController: UITableViewDelegate, UITableViewDataSo
             return 60
         case 1:
             return 140
+        case 2:
+            return 60
+        case 3:
+            return 60
         default:
             return 60
         }
@@ -65,6 +71,14 @@ extension SimulationDetailViewController: UITableViewDelegate, UITableViewDataSo
             return cell
         case 1:
             let cell: TableViewDescriptionCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+            cell.setup(with: self.simulationItemModel)
+            return cell
+        case 2:
+            let cell: TableViewCategoryCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+            cell.setup(with: self.simulationItemModel)
+            return cell
+        case 3:
+            let cell: TableViewValueCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
             cell.setup(with: self.simulationItemModel)
             return cell
         default:

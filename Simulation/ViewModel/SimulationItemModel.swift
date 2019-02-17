@@ -37,3 +37,17 @@ extension SimulationItemModel: DescriptionProviderProtocol {
         return self.summary
     }
 }
+
+extension SimulationItemModel: CategoryProviderProtocol {
+    
+    func getCategoryText() -> String {
+        return self.category
+    }
+}
+
+extension SimulationItemModel: ValueProviderProtocol {
+    
+    func getValue() -> String {
+        return self.value
+    }
+}
