@@ -18,15 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         App.init().setup()
-        self.setupGlobalSimulation()
+        GlobalSimulationManager.shared.setup()
 
         return true
-    }
-    
-    func setupGlobalSimulation() {
-        
-        GlobalSimulationManager.shared.setup()
-        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

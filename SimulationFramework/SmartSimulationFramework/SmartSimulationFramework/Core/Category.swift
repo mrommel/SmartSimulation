@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Category {
+public enum Category {
 	case core
 
 	case economy
@@ -21,4 +21,29 @@ enum Category {
 	case groups
 
 	case `static`
+    
+    public var text: String {
+    
+        switch self {
+        
+        case .core:
+            return "core"
+        case .economy:
+            return "economy"
+        case .welfare:
+            return "welfare"
+        case .foreign:
+            return "foreign"
+        case .lawOrder:
+            return "lawOrder"
+        case .publicServices:
+            return "publicServices"
+        case .effects:
+            return "effects"
+        case .groups:
+            return "groups"
+        case .static:
+            return "static"
+        }
+    }
 }

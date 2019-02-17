@@ -9,17 +9,6 @@
 import Foundation
 import SmartSimulationFramework
 
-struct SimulationItemModel {
-    
-    var name: String
-    var value: String
-    
-    init(simulation: Simulation?) {
-        self.name = simulation?.name ?? "-"
-        self.value = simulation?.valueText() ?? "-"
-    }
-}
-
 class SimulationListViewModel: ViewModelType {
     
     static let simulationDetailSegue = R.segue.simulationListViewController.showSimulation

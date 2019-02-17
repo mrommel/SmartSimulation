@@ -105,14 +105,29 @@
                     <view key="view" contentMode="scaleToFill" id="be2-2u-pfy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5DI-fr-XQF">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5DI-fr-XQF" firstAttribute="trailing" secondItem="yBU-b7-F4F" secondAttribute="trailing" id="8Sk-d6-KtD"/>
+                            <constraint firstItem="5DI-fr-XQF" firstAttribute="top" secondItem="yBU-b7-F4F" secondAttribute="top" id="BxA-KH-2Tf"/>
+                            <constraint firstItem="5DI-fr-XQF" firstAttribute="leading" secondItem="yBU-b7-F4F" secondAttribute="leading" id="Xfg-zJ-bCw"/>
+                            <constraint firstItem="5DI-fr-XQF" firstAttribute="bottom" secondItem="yBU-b7-F4F" secondAttribute="bottom" id="m7i-GZ-wzg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="yBU-b7-F4F"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="5DI-fr-XQF" id="pLH-eu-Mtq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UFo-sF-ZZP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2983" y="874"/>
+            <point key="canvasLocation" x="2981.5999999999999" y="873.91304347826099"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="f6k-SO-g5K">
@@ -157,11 +172,11 @@
             </objects>
             <point key="canvasLocation" x="1076" y="132.68365817091455"/>
         </scene>
-        <!--Statitics-->
+        <!--Simulations-->
         <scene sceneID="X5D-FY-Zfo">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7Ql-4R-T88" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Statitics" image="statitics" id="YFG-mw-riO"/>
+                    <tabBarItem key="tabBarItem" title="Simulations" image="simulation" id="YFG-mw-riO"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xmY-gH-RBZ">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -184,6 +199,6 @@
     <resources>
         <image name="compass" width="14.399999618530273" height="14.159999847412109"/>
         <image name="dashboard" width="14.399999618530273" height="14.399999618530273"/>
-        <image name="statitics" width="14.399999618530273" height="14.399999618530273"/>
+        <image name="simulation" width="512" height="512"/>
     </resources>
 </document>

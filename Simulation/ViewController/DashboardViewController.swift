@@ -18,7 +18,7 @@ class DashboardViewController: UIViewController {
         
         // Do any additional setup after loading the view, typically from a nib.
         self.title = R.string.localizable.dashboardViewControllerTitle()
-        self.view.backgroundColor = Color.lightBackground.value
+        self.view.backgroundColor = App.Color.viewBackgroundColor
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

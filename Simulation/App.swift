@@ -17,6 +17,8 @@ class App {
         static var tabBarItemNormal: UIColor { return .darkGray }
         static var tabBarItemSelected: UIColor { return .black }
         
+        static var viewBackgroundColor: UIColor { return .white }
+        
         static var refreshControlColor: UIColor { return UIColor(hex: "#809C13") }
     }
     

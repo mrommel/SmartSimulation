@@ -11,8 +11,8 @@ import Foundation
 public class Simulation {
 
 	public let name: String
-	let summary: String
-	let category: Category
+	public let summary: String
+	public let category: Category
 	var values: [Double] = []
 	var inputs: [SimulationRelation] = []
 	var techs: [TechnicRelation] = []

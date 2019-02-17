@@ -38,7 +38,7 @@ class SimulationListViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         self.title = R.string.localizable.simulationListViewControllerTitle()
-        self.view.backgroundColor = Color.lightBackground.value
+        self.view.backgroundColor = App.Color.viewBackgroundColor
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
