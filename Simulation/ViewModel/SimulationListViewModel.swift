@@ -14,9 +14,9 @@ class SimulationListViewModel: ViewModelType {
     static let simulationDetailSegue = R.segue.simulationListViewController.showSimulation
 
     internal var delegate: ViewModelDelegate?
-    var simulationItemModels: [SimulationItemModel] = []
+    var simulationDetailViewModels: [SimulationDetailViewModel] = []
     
-    internal var selectedSimulationItemModel: SimulationItemModel?
+    internal var selectedSimulationDetailViewModel: SimulationDetailViewModel?
     
     func bootstrap() {
         self.loadData()
@@ -27,11 +27,11 @@ class SimulationListViewModel: ViewModelType {
         
         Delay.delayed(by: 1) {
             
-            self.simulationItemModels = []
+            self.simulationDetailViewModels = []
             
             if let simulations = GlobalSimulationManager.shared.simulations() {
                 for simulation in simulations {
-                    self.simulationItemModels.append(SimulationItemModel(simulation: simulation))
+                    self.simulationDetailViewModels.append(SimulationDetailViewModel(simulation: simulation))
                 }
             }
             
@@ -46,16 +46,16 @@ class SimulationListViewModel: ViewModelType {
     }
     
     func simulationCount() -> Int {
-        return self.simulationItemModels.count
+        return self.simulationDetailViewModels.count
     }
     
-    func simulation(at index: Int) -> SimulationItemModel? {
-        return self.simulationItemModels[index]
+    func simulation(at index: Int) -> SimulationDetailViewModel? {
+        return self.simulationDetailViewModels[index]
     }
     
     func selectSimulation(at index: Int) {
         print("selectSimulation \(index)")
-        self.selectedSimulationItemModel = self.simulationItemModels[index]
+        self.selectedSimulationDetailViewModel = self.simulationDetailViewModels[index]
         self.delegate?.performSegue(named: SimulationListViewModel.simulationDetailSegue.identifier)
     }
 }

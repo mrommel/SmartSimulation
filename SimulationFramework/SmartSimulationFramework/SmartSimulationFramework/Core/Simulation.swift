@@ -14,7 +14,8 @@ public class Simulation {
 	public let summary: String
 	public let category: Category
 	var values: [Double] = []
-	var inputs: [SimulationRelation] = []
+	public var inputs: [SimulationRelation] = []
+    public var outputs: [SimulationRelation] = []
 	var techs: [TechnicRelation] = []
 
 	var stashedValue: Double = 0.0
@@ -36,6 +37,7 @@ public class Simulation {
 
 	func add(simulationRelation: SimulationRelation) {
 		self.inputs.append(simulationRelation)
+        simulationRelation.simulation.outputs.append(SimulationRelation(simulation: self, formula: simulationRelation.formula, delay: simulationRelation.delay))
 	}
 
 	func add(technic: Technic, formula: String = "x", delay: Int = 0) {

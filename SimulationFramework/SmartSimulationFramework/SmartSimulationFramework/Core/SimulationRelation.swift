@@ -8,11 +8,11 @@
 
 import Foundation
 
-class SimulationRelation {
+public class SimulationRelation {
 
-	let simulation: Simulation
-	let formula: String
-	let delay: Int
+	public let simulation: Simulation
+	public let formula: String
+	public let delay: Int
 
 	init(simulation: Simulation, formula: String, delay: Int = 0) {
 		self.simulation = simulation
