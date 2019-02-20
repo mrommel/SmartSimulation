@@ -25,7 +25,7 @@ class SimulationListViewModel: ViewModelType {
     func loadData() {
         delegate?.willLoadData()
         
-        Delay.delayed(by: 1) {
+        Delay.delayed(by: 0.1) {
             
             self.simulationDetailViewModels = []
             

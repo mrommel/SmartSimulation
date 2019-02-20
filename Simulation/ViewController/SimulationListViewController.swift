@@ -52,6 +52,7 @@ class SimulationListViewController: UIViewController {
     
     @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
         self.viewModel?.loadData()
+        AppAnalytics.logEvent(event: .refreshSimulations)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -102,5 +103,6 @@ extension SimulationListViewController: UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.viewModel?.selectSimulation(at: indexPath.row)
+        AppAnalytics.logNavigation(navigation: .navigateSimulationsToSimulation)
     }
 }

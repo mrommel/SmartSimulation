@@ -6,5 +6,7 @@ target 'Simulation' do
 
   # Pods for Simulation
   pod 'R.swift'
+  pod 'Firebase/Core'
+  
 
 end

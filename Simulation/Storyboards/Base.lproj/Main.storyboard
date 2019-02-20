@@ -18,23 +18,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ik-pb-MLF">
-                                <rect key="frame" x="124" y="120" width="127" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Turn" image="compass">
-                                    <color key="titleColor" red="0.50196078430000002" green="0.61176470589999998" blue="0.074509803920000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="turnActionWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CV3-sD-chr"/>
-                                </connections>
-                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="P27-9u-sTD">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DashboardCell" textLabel="VUF-2z-hJd" detailTextLabel="7Th-li-9bz" style="IBUITableViewCellStyleSubtitle" id="LGW-uC-Ok6">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LGW-uC-Ok6" id="gcq-i6-scm">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VUF-2z-hJd">
+                                                    <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7Th-li-9bz">
+                                                    <rect key="frame" x="15" y="25.5" width="33" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="P27-9u-sTD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="SeA-y8-4Yr"/>
+                            <constraint firstItem="P27-9u-sTD" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Wmy-e0-1gG"/>
+                            <constraint firstItem="P27-9u-sTD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fMA-70-F0z"/>
+                            <constraint firstItem="P27-9u-sTD" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="mkK-c1-2VL"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="QSe-SU-UjV"/>
+                    <connections>
+                        <outlet property="tableView" destination="P27-9u-sTD" id="K11-7g-8cD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -129,10 +156,10 @@
             </objects>
             <point key="canvasLocation" x="2981.5999999999999" y="873.91304347826099"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Application Tab Bar Controller-->
         <scene sceneID="f6k-SO-g5K">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="QX0-9M-Gdo" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="QX0-9M-Gdo" customClass="ApplicationTabBarController" customModule="Simulation" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1lI-To-Aoo">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -197,8 +224,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="compass" width="14.399999618530273" height="14.159999847412109"/>
         <image name="dashboard" width="14.399999618530273" height="14.399999618530273"/>
-        <image name="simulation" width="512" height="512"/>
+        <image name="simulation" width="14.399999618530273" height="14.399999618530273"/>
     </resources>
 </document>

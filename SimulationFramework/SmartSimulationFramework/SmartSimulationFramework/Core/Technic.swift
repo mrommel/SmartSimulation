@@ -14,11 +14,11 @@ public protocol TechnicDelegate: class {
 
 public class Technic {
 
-	var name: String
-	var era: Era
-	var propability: Double // 0..1 - 0.1 means 10%
+	public var name: String
+	public var era: Era
+	public var propability: Double // 0..1 - 0.1 means 10%
 	fileprivate var requirements: [Technic] = []
-	var invented: Bool
+	public var invented: Bool
 
 	weak var delegate: TechnicDelegate?
 

@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Era {
+public enum Era {
 
 	case ancient
 	case classical
