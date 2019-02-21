@@ -11,6 +11,7 @@ import SmartSimulationFramework
 
 struct GlobalSimulationEvent {
     
+    let image: UIImage?
     let title: String
     let summary: String
 }
@@ -28,8 +29,8 @@ class GlobalSimulationEventLog {
         self.events = []
     }
     
-    func addEvent(with title: String, and summary: String) {
-        self.events.prepend(GlobalSimulationEvent(title: title, summary: summary))
+    func addEvent(with image: UIImage?, title: String, and summary: String) {
+        self.events.prepend(GlobalSimulationEvent(image: image, title: title, summary: summary))
         delegate?.didAddEvent()
     }
 }
@@ -63,34 +64,34 @@ extension GlobalSimulationManager: GlobalSimulationDelegate {
     
     func iterationComplete() {
         print("iterationComplete")
-        eventLog?.addEvent(with: "New Iteration", and: "We have now ####")
+        eventLog?.addEvent(with: R.image.turn(), title: "New Iteration", and: "We have now ####")
     }
     
     func triggered(event: Event?) {
         if let event = event {
             print("triggered: \(event)")
-            eventLog?.addEvent(with: "New Event", and: "\(event.name)")
+            eventLog?.addEvent(with: R.image.event(), title: "New Event", and: "\(event.name)")
         }
     }
     
     func invented(technic: Technic?) {
         if let technic = technic {
             print("invented: \(technic)")
-            eventLog?.addEvent(with: "New Technic", and: "\(technic.name)")
+            eventLog?.addEvent(with: R.image.innovation(), title: "New Technic", and: "\(technic.name) invented")
         }
     }
     
     func started(situation: Situation?) {
         if let situation = situation {
             print("started: \(situation)")
-            eventLog?.addEvent(with: "New Situation started", and: "\(situation.name)")
+            eventLog?.addEvent(with: R.image.bell(), title: "New Situation started", and: "\(situation.name)")
         }
     }
     
     func ended(situation: Situation?) {
         if let situation = situation {
             print("ended: \(situation)")
-            eventLog?.addEvent(with: "Situation ended", and: "\(situation.name)")
+            eventLog?.addEvent(with: R.image.bell(), title: "Situation ended", and: "\(situation.name)")
         }
     }
 }

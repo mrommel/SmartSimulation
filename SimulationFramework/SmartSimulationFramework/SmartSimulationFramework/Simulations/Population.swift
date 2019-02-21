@@ -8,10 +8,16 @@
 
 import Foundation
 
+// https://en.wikipedia.org/wiki/Population
 class Population: Simulation {
 
     init() {
-        super.init(name: "Population", summary: "", category: .core, value: 1000.0)
+        super.init(
+            image: UIImage(named: "population"),
+            name: "Population",
+            summary: "Population refers to a collection of humans. Demography is a social science which entails the statistical study of human populations. Population in simpler terms is the number of people in a city or town, region, country or world; population is usually determined by a process called census (a process of collecting, analyzing, compiling and publishing data)",
+            category: .core,
+            value: 1000.0)
     }
 
     override func setup(with global: GlobalSimulation) {

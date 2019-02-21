@@ -16,7 +16,7 @@ class Effect: Simulation {
 
 		self.decay = decay
 
-		super.init(name: name, summary: "", category: .effects, value: value)
+		super.init(image: nil, name: name, summary: "", category: .effects, value: value)
 	}
 
 	override func calculate() {

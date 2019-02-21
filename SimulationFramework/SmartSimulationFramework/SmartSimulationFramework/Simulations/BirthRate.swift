@@ -25,7 +25,12 @@ import Foundation
 class BirthRate: Simulation {
 
     init() {
-        super.init(name: "BirthRate", summary: "BirthRate desc", category: .core, value: 0.6) // 0..<10
+        super.init(
+            image: nil,
+            name: "BirthRate",
+            summary: "BirthRate desc",
+            category: .core,
+            value: 0.6) // 0..<10
     }
 
     override func setup(with global: GlobalSimulation) {

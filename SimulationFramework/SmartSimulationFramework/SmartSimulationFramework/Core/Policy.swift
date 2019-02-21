@@ -40,7 +40,12 @@ class Policy: Simulation {
 
 		self.selectionIndex = selectedIndex
 
-		super.init(name: name, summary: summary, category: category, value: initialSelection.value)
+		super.init(
+            image: nil,
+            name: name,
+            summary: summary,
+            category: category,
+            value: initialSelection.value)
 	}
 
 	override func add(simulation: Simulation, formula: String = "x", delay: Int = 0) {

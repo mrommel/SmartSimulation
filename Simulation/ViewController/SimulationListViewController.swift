@@ -96,6 +96,7 @@ extension SimulationListViewController: UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SimulationListViewController.reuseableIdentifier, for: indexPath)
         let simulation = self.viewModel?.simulation(at: indexPath.row)
+        cell.imageView?.image = simulation?.image
         cell.textLabel?.text = simulation?.name
         cell.detailTextLabel?.text = simulation?.value
         return cell

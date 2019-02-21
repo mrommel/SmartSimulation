@@ -12,7 +12,12 @@ import Foundation
 class Religiosity: Simulation {
 
     init() {
-        super.init(name: "Religiosity", summary: "Religiosity desc", category: .core, value: 0.8)
+        super.init(
+            image: nil,
+            name: "Religiosity",
+            summary: "Religiosity desc",
+            category: .core,
+            value: 0.8)
     }
 
     override func setup(with global: GlobalSimulation) {

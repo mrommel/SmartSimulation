@@ -14,14 +14,35 @@ import SmartSimulationFramework
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var applicationLaunch: ApplicationLaunch?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        self.applicationLaunch = ApplicationLaunch()
+        self.applicationLaunch?.delegate = self
+        self.applicationLaunch?.evaluate()
         
         App.init().setup()
         AppAnalytics.setup()
         GlobalSimulationManager.shared.setup()
-
+        
         return true
+    }
+    
+    func startOnboarding() {
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let onboardingViewController = OnboardingViewController.storyboardViewController(withIdentifier: "OnboardingViewController")
+        self.window?.rootViewController = onboardingViewController
+        self.window?.makeKeyAndVisible()
+    }
+    
+    func startDashboard() {
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let applicationTabBarController = ApplicationTabBarController.storyboardViewController(withIdentifier: "ApplicationTabBarController")
+        self.window?.rootViewController = applicationTabBarController
+        self.window?.makeKeyAndVisible()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -92,6 +113,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
 }
 
+extension AppDelegate: ApplicationLaunchDelegate {
+    
+    func applicationFirstLaunch() {
+        print("first lanuch detected")
+        self.startOnboarding()
+    }
+    
+    func applicationDidUpgrade(from: String, to: String) {
+        print("upgrade detected")
+        // should be upgrade tour
+        self.startDashboard()
+    }
+    
+    func applicationNormalLaunch() {
+        print("normal launch")
+        self.startDashboard()
+    }
+}

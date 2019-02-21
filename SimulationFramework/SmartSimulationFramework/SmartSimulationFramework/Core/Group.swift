@@ -6,23 +6,25 @@
 //  Copyright © 2018 Michael Rommel. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-class Group {
+public class Group {
 
-	var name: String
-	var summary: String
+    let image: UIImage?
+	let name: String
+	let summary: String
 
 	var mood: Simulation
 	var frequency: Simulation
 
-	init(name: String, summary: String, moodValue: Double, frequencyValue: Double) {
+	init(image: UIImage?, name: String, summary: String, moodValue: Double, frequencyValue: Double) {
 
+        self.image = image
 		self.name = name
 		self.summary = summary
 
-		self.mood = Simulation(name: "\(self.name) mood", summary: "", category: .groups, value: moodValue)
-		self.frequency = Simulation(name: "\(self.name) freq", summary: "", category: .groups, value: frequencyValue)
+		self.mood = Simulation(image: image, name: "\(self.name) mood", summary: "", category: .groups, value: moodValue)
+		self.frequency = Simulation(image: image, name: "\(self.name) freq", summary: "", category: .groups, value: frequencyValue)
 	}
 
 	func calculate() {

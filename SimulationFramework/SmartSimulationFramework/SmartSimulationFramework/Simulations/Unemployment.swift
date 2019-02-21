@@ -12,7 +12,9 @@ class Unemployment: Simulation {
 
     init() {
 
-        super.init(name: "Unemployment",
+        super.init(
+            image: nil, 
+            name: "Unemployment",
             summary: "This is a count of the percentage of your population who recently sought employment. This statistic generally omits the long-term unemployed, such as those whose benefits ran out, or gave up finding work entirely. Unemployment tends to hardest hit the poor, young, rural residents, and other marginalized members of society.",
             category: .economy,
             value: 0.4)

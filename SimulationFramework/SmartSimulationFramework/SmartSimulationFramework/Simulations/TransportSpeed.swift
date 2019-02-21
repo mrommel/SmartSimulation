@@ -19,7 +19,9 @@ class TransportSpeed: Simulation {
 
     init() {
 
-        super.init(name: "Transport Speed",
+        super.init(
+            image: nil, 
+            name: "Transport Speed",
             summary: "Speed that it takes to get from point A to B. Includes good and people travelles",
             category: .economy,
             value: 0.1)

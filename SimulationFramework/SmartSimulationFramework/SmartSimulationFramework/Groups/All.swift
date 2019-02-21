@@ -12,10 +12,12 @@ class All: Group {
 
 	init() {
 
-		super.init(name: "All",
-				   summary: "A general group representing the interests of society as a whole, with opinions not related to a particular age group, gender or occupation.",
-				   moodValue: 0.0,
-				   frequencyValue: 1.0)
+		super.init(
+            image: nil,
+            name: "All",
+            summary: "A general group representing the interests of society as a whole, with opinions not related to a particular age group, gender or occupation.",
+            moodValue: 0.0,
+            frequencyValue: 1.0)
 	}
 
 	override func setup(with global: GlobalSimulation) {

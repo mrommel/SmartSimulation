@@ -11,7 +11,9 @@ import Foundation
 class Health: Simulation {
 
     init() {
-        super.init(name: "Health",
+        super.init(
+            image: nil, 
+            name: "Health",
             summary: "A general indicator for the health of your citizens that measures not just raw lifespan, but also fitness and the general wellbeing of people.",
             category: .core,
             value: 0.7)

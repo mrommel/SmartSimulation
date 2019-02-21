@@ -6,13 +6,14 @@
 //  Copyright © 2018 Michael Rommel. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public class Simulation {
 
+    public let image: UIImage?
 	public let name: String
 	public let summary: String
-	public let category: Category
+    public let category: Category
 	var values: [Double] = []
 	public var inputs: [SimulationRelation] = []
     public var outputs: [SimulationRelation] = []
@@ -20,8 +21,9 @@ public class Simulation {
 
 	var stashedValue: Double = 0.0
 
-	init(name: String, summary: String, category: Category, value: Double) {
-		self.name = name
+	init(image: UIImage?, name: String, summary: String, category: Category, value: Double) {
+		self.image = image
+        self.name = name
 		self.summary = summary
 		self.category = category
 		self.values.append(value)

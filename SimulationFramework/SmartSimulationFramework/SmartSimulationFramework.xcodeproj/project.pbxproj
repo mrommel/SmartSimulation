@@ -71,6 +71,7 @@
 		C9CE2D2A2215D32B00D94B8C /* Agriculture.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE2D1D2215D32B00D94B8C /* Agriculture.swift */; };
 		C9CE2D2B2215D32B00D94B8C /* BronzeWorking.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE2D1E2215D32B00D94B8C /* BronzeWorking.swift */; };
 		C9CE2D2C2215D32B00D94B8C /* Trapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE2D1F2215D32B00D94B8C /* Trapping.swift */; };
+		C9CE2D5C221E90E100D94B8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9CE2D5B221E90E100D94B8C /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -140,6 +141,7 @@
 		C9CE2D1D2215D32B00D94B8C /* Agriculture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Agriculture.swift; sourceTree = "<group>"; };
 		C9CE2D1E2215D32B00D94B8C /* BronzeWorking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BronzeWorking.swift; sourceTree = "<group>"; };
 		C9CE2D1F2215D32B00D94B8C /* Trapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trapping.swift; sourceTree = "<group>"; };
+		C9CE2D5B221E90E100D94B8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 				C9CE2CC42215D13B00D94B8C /* Effects */,
 				C9CE2CC02215D0B900D94B8C /* GlobalSimulation.swift */,
 				C9CE2CA32215D05F00D94B8C /* Core */,
+				C9CE2D5A221E90C000D94B8C /* Resources */,
 				C9CE2C9B2215D00F00D94B8C /* SmartSimulationFramework.h */,
 				C9CE2C9C2215D00F00D94B8C /* Info.plist */,
 				C9CE2CCE2215D1AA00D94B8C /* Util */,
@@ -313,6 +316,14 @@
 			path = Technics;
 			sourceTree = "<group>";
 		};
+		C9CE2D5A221E90C000D94B8C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C9CE2D5B221E90E100D94B8C /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -382,6 +393,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9CE2D5C221E90E100D94B8C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

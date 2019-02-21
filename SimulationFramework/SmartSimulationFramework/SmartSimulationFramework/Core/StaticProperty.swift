@@ -11,6 +11,11 @@ import Foundation
 class StaticProperty: Simulation {
 
 	init(value: Double) {
-		super.init(name: "static", summary: "", category: .static, value: value)
+		super.init(
+            image: nil,
+            name: "static",
+            summary: "",
+            category: .static,
+            value: value)
 	}
 }

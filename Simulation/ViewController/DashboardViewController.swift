@@ -61,7 +61,7 @@ class DashboardViewController: UIViewController {
     }
     
     @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
-        //self.viewModel?.loadData()
+        self.viewModel?.loadData()
         AppAnalytics.logEvent(event: .refreshDashboard)
     }
 }
@@ -94,9 +94,13 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
         
         let event = self.viewModel?.event(at: indexPath.row)
         
+        cell.imageView?.image = event?.image
         cell.textLabel?.text = event?.title
         cell.detailTextLabel?.text = event?.summary
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tableView.deselectRow(at: indexPath, animated: true)
+    }
 }

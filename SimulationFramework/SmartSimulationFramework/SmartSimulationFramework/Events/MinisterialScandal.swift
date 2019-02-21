@@ -11,7 +11,9 @@ import Foundation
 class MinisterialScandal: Event {
 
     init() {
-        super.init(name: "MinisterialScandal",
+        super.init(
+            image: nil,
+            name: "MinisterialScandal",
             summary: "It might not be anything to do with your policies or your personal conduct, but the actions of your staff are going to reflect on you. One of your junior ministers has been found to have an 'improper' relationship with his secretary. Our more conservative citizens are bound to disapprove and this could make for a noticeable drop in our popularity.",
             category: .core)
     }

@@ -12,7 +12,9 @@ class Education: Simulation {
 
     init() {
 
-        super.init(name: "Education",
+        super.init(
+            image: nil,
+            name: "Education",
             summary: "A measurement of the education level of the average citizen. Not only literacy, but numeracy and general understanding of everything from history to IT and science.",
             category: .publicServices,
             value: 0.18)

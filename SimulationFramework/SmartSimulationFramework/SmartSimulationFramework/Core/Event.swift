@@ -10,9 +10,14 @@ import Foundation
 
 public class Event: Simulation {
 
-	init(name: String, summary: String, category: Category) {
+    init(image: UIImage?, name: String, summary: String, category: Category) {
 
-		super.init(name: name, summary: summary, category: category, value: 0.0)
+		super.init(
+            image: image,
+            name: name,
+            summary: summary,
+            category: category,
+            value: 0.0)
 	}
 
 	func effects(for global: GlobalSimulation?) -> [Effect] {

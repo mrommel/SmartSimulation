@@ -11,7 +11,12 @@ import Foundation
 class Happiness: Simulation {
 
     init() {
-        super.init(name: "Happiness", summary: "Happiness desc", category: .core, value: 0.8) // in percent
+        super.init(
+            image: nil,
+            name: "Happiness",
+            summary: "Happiness desc",
+            category: .core,
+            value: 0.8) // in percent
     }
 
     override func setup(with global: GlobalSimulation) {

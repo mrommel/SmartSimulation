@@ -11,7 +11,9 @@ import Foundation
 class GrossDomesticProduct: Simulation {
 
     init() {
-        super.init(name: "Gross Domestic Product",
+        super.init(
+            image: nil, 
+            name: "Gross Domestic Product",
             summary: "The Gross Domestic product of your country. This is defined as The total market value of all the goods and services produced within the nation in a year. This is a good general-purpose measure of the strength of your economy, and the nations overall wealth. One of the contributing factors is the global economic cycle, which tends to be cyclical, and is beyond your control.",
             category: .economy,
             value: 0.001)

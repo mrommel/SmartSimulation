@@ -32,7 +32,12 @@ public class Situation: Simulation {
 		self.endMessage = endMessage
 		self.endTrigger = endTrigger
 
-		super.init(name: name, summary: summary, category: category, value: 0)
+		super.init(
+            image: nil,
+            name: name,
+            summary: summary,
+            category: category,
+            value: 0)
 	}
 
 	override func setup(with global: GlobalSimulation) {

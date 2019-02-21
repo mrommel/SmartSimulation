@@ -15,6 +15,11 @@
 		C90BEF74220CCC38007F24A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C90BEF73220CCC38007F24A6 /* Assets.xcassets */; };
 		C90BEF77220CCC38007F24A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C90BEF75220CCC38007F24A6 /* LaunchScreen.storyboard */; };
 		C90BEF80220CD123007F24A6 /* SimulationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90BEF7F220CD123007F24A6 /* SimulationListViewController.swift */; };
+		C982EC8C221F0137007AB8B2 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982EC8B221F0137007AB8B2 /* OnboardingViewController.swift */; };
+		C982EC8E221F02B2007AB8B2 /* ApplicationLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982EC8D221F02B2007AB8B2 /* ApplicationLaunch.swift */; };
+		C982EC90221F05C2007AB8B2 /* Storyboardable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982EC8F221F05C2007AB8B2 /* Storyboardable.swift */; };
+		C982EC92221F28BB007AB8B2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982EC91221F28BB007AB8B2 /* SettingsViewController.swift */; };
+		C982EC94221F295E007AB8B2 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982EC93221F295E007AB8B2 /* SettingsViewModel.swift */; };
 		C9CE2C77220DB1DD00D94B8C /* ViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE2C76220DB1DD00D94B8C /* ViewModelDelegate.swift */; };
 		C9CE2C79220DB1F000D94B8C /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE2C78220DB1F000D94B8C /* ViewModelType.swift */; };
 		C9CE2C7B220DB21600D94B8C /* SimulationListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE2C7A220DB21600D94B8C /* SimulationListViewModel.swift */; };
@@ -60,6 +65,11 @@
 		C90BEF76220CCC38007F24A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C90BEF78220CCC38007F24A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C90BEF7F220CD123007F24A6 /* SimulationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulationListViewController.swift; sourceTree = "<group>"; };
+		C982EC8B221F0137007AB8B2 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		C982EC8D221F02B2007AB8B2 /* ApplicationLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationLaunch.swift; sourceTree = "<group>"; };
+		C982EC8F221F05C2007AB8B2 /* Storyboardable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboardable.swift; sourceTree = "<group>"; };
+		C982EC91221F28BB007AB8B2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		C982EC93221F295E007AB8B2 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		C9CE2C76220DB1DD00D94B8C /* ViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelDelegate.swift; sourceTree = "<group>"; };
 		C9CE2C78220DB1F000D94B8C /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		C9CE2C7A220DB21600D94B8C /* SimulationListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulationListViewModel.swift; sourceTree = "<group>"; };
@@ -166,11 +176,13 @@
 		C90BEF7E220CD093007F24A6 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				C982EC8B221F0137007AB8B2 /* OnboardingViewController.swift */,
 				C9CE2D58221D469D00D94B8C /* ApplicationTabBarController.swift */,
 				C90BEF6B220CCC33007F24A6 /* DashboardViewController.swift */,
 				C90BEF7F220CD123007F24A6 /* SimulationListViewController.swift */,
 				C9CE2C84220DD26D00D94B8C /* SimulationDetailViewController.swift */,
 				C9CE2D56221D3EBD00D94B8C /* TurnEventViewController.swift */,
+				C982EC91221F28BB007AB8B2 /* SettingsViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -181,6 +193,7 @@
 				C9CE2D52221C95A900D94B8C /* DashboardViewModel.swift */,
 				C9CE2C7A220DB21600D94B8C /* SimulationListViewModel.swift */,
 				C9CE2D3C2219E63B00D94B8C /* SimulationDetailViewModel.swift */,
+				C982EC93221F295E007AB8B2 /* SettingsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -193,6 +206,8 @@
 				C9CE2C86220DD38A00D94B8C /* Delay.swift */,
 				C9CE2D2F22160D4F00D94B8C /* ColorExtension.swift */,
 				C9CE2D54221C9EC900D94B8C /* ArrayExtension.swift */,
+				C982EC8D221F02B2007AB8B2 /* ApplicationLaunch.swift */,
+				C982EC8F221F05C2007AB8B2 /* Storyboardable.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -402,7 +417,9 @@
 				C9CE2D59221D469D00D94B8C /* ApplicationTabBarController.swift in Sources */,
 				C9CE2D2E2215E03A00D94B8C /* GlobalSimulationManager.swift in Sources */,
 				C90BEF72220CCC33007F24A6 /* simulation.xcdatamodeld in Sources */,
+				C982EC94221F295E007AB8B2 /* SettingsViewModel.swift in Sources */,
 				C9CE2D51221C23C200D94B8C /* AppAnalytics.swift in Sources */,
+				C982EC8E221F02B2007AB8B2 /* ApplicationLaunch.swift in Sources */,
 				C9CE2D3022160D4F00D94B8C /* ColorExtension.swift in Sources */,
 				C90BEF80220CD123007F24A6 /* SimulationListViewController.swift in Sources */,
 				C9CE2C85220DD26D00D94B8C /* SimulationDetailViewController.swift in Sources */,
@@ -410,13 +427,16 @@
 				C9CE2C7B220DB21600D94B8C /* SimulationListViewModel.swift in Sources */,
 				C9CE2D57221D3EBD00D94B8C /* TurnEventViewController.swift in Sources */,
 				C9CE2D55221C9EC900D94B8C /* ArrayExtension.swift in Sources */,
+				C982EC8C221F0137007AB8B2 /* OnboardingViewController.swift in Sources */,
 				C9CE2C7E220DC26800D94B8C /* R.generated.swift in Sources */,
+				C982EC90221F05C2007AB8B2 /* Storyboardable.swift in Sources */,
 				C9CE2D3D2219E63B00D94B8C /* SimulationDetailViewModel.swift in Sources */,
 				C9CE2D4B221B491D00D94B8C /* TableViewRelationCell.swift in Sources */,
 				C9CE2C79220DB1F000D94B8C /* ViewModelType.swift in Sources */,
 				C90BEF6C220CCC33007F24A6 /* DashboardViewController.swift in Sources */,
 				C9CE2D53221C95A900D94B8C /* DashboardViewModel.swift in Sources */,
 				C9CE2D392218B0EA00D94B8C /* TableViewNameCell.swift in Sources */,
+				C982EC92221F28BB007AB8B2 /* SettingsViewController.swift in Sources */,
 				C9CE2D43221A01A100D94B8C /* TableViewValueCell.swift in Sources */,
 				C9CE2C77220DB1DD00D94B8C /* ViewModelDelegate.swift in Sources */,
 				C9CE2D3F2219F31C00D94B8C /* TableViewDescriptionCell.swift in Sources */,

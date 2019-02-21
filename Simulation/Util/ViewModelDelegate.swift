@@ -11,5 +11,14 @@ import Foundation
 protocol ViewModelDelegate: class {
     func willLoadData()
     func didLoadData()
+    
     func performSegue(named segue: String)
+    func showAlertText(title: String, text: String)
+}
+
+extension ViewModelDelegate {
+    
+    // make some methods optional
+    func performSegue(named segue: String) { }
+    func showAlertText(title: String, text: String) { }
 }

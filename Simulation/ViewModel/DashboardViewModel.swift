@@ -16,6 +16,11 @@ class DashboardViewModel: ViewModelType {
         
         GlobalSimulationManager.shared.eventLog?.delegate = self
         
+        self.loadData()
+    }
+    
+    func loadData() {
+        
         delegate?.willLoadData()
         
         DispatchQueue.main.async {
@@ -38,8 +43,6 @@ extension DashboardViewModel {
 extension DashboardViewModel: GlobalSimulationEventLogDelegate {
     
     func didAddEvent() {
-        DispatchQueue.main.async {
-            self.delegate?.didLoadData()
-        }
+        self.loadData()
     }
 }

@@ -33,8 +33,35 @@ extension SimulationInputRelationViewModel: RelationProviderProtocol {
     }
 }
 
+extension SmartSimulationFramework.Category {
+    
+    var image: UIImage? {
+        switch self {
+        case .core:
+            return UIImage()
+        case .economy:
+            return UIImage()
+        case .welfare:
+            return UIImage()
+        case .foreign:
+            return UIImage()
+        case .lawOrder:
+            return UIImage()
+        case .publicServices:
+            return UIImage()
+        case .effects:
+            return UIImage()
+        case .groups:
+            return UIImage()
+        case .static:
+            return UIImage()
+        }
+    }
+}
+
 class SimulationDetailViewModel {
     
+    let image: UIImage?
     let name: String
     let summary: String
     let category: String
@@ -43,6 +70,7 @@ class SimulationDetailViewModel {
     var outputs: [SimulationInputRelationViewModel]
     
     init(simulation: Simulation?) {
+        self.image = simulation?.image
         self.name = simulation?.name ?? "-"
         self.summary = simulation?.summary ?? "-"
         self.category = simulation?.category.text ?? "-"

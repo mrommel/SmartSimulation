@@ -12,7 +12,8 @@ class Conservatives: Group {
 
 	init() {
 
-		super.init(name: "Conservatives",
+		super.init(image: nil,
+                   name: "Conservatives",
 				   summary: "Conservatives are believers in traditional family values, no sex before marriage, strong policies on law and order and are against the legalization of drugs. They are generally in favor of strong policies on law and order.",
 				   moodValue: 0.6,
 				   frequencyValue: 0.25)

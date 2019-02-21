@@ -11,7 +11,9 @@ import Foundation
 class Earthquake: Event {
 
     init() {
-        super.init(name: "Earthquake",
+        super.init(
+            image: nil,
+            name: "Earthquake",
             summary: "An Earthquake happend",
             category: .core)
     }
