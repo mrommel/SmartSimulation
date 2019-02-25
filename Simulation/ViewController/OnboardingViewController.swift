@@ -7,27 +7,32 @@
 //
 
 import UIKit
+import Rswift
 
 class OnboardingViewController: UIPageViewController {
-    
-    fileprivate lazy var orderedViewController: [UIViewController] = {
-        return [self.getViewController(withIdentifier: "Onboarding1"),
-                self.getViewController(withIdentifier: "Onboarding2"),
-                self.getViewController(withIdentifier: "Onboarding3")]
-    }()
-    
-    fileprivate func getViewController(withIdentifier identifier: String) -> UIViewController
-    {
-        return (storyboard?.instantiateViewController(withIdentifier: identifier))!
-    }
+        
+    var viewModel: OnboardingViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.viewModel = OnboardingViewModel()
+        self.viewModel?.delegate = self
+        self.viewModel?.bootstrap()
+        
         self.dataSource = self
         self.delegate = self
+    }
+}
+
+extension OnboardingViewController:ViewModelDelegate {
+    
+    func willLoadData() {
         
-        if let firstViewController = orderedViewController.first {
+    }
+    
+    func didLoadData() {
+        if let firstViewController = self.viewModel?.orderedViewControllers.first {
             setViewControllers([firstViewController], direction: .forward, animated: true, completion: nil)
         }
     }
@@ -36,7 +41,7 @@ class OnboardingViewController: UIPageViewController {
 extension OnboardingViewController: UIPageViewControllerDataSource {
     
     func presentationCount(for: UIPageViewController) -> Int {
-        return self.orderedViewController.count
+        return self.viewModel?.orderedViewControllerCount() ?? 0
     }
     
     func presentationIndex(for pageViewController: UIPageViewController) -> Int {
@@ -45,25 +50,40 @@ extension OnboardingViewController: UIPageViewControllerDataSource {
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
-        return nil
+        return nil // don't go back
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
-        guard let viewControllerIndex = self.orderedViewController.index(of: viewController) else {
+        guard let viewControllerIndex = self.viewModel?.orderedViewControllers.index(of: viewController) else {
             return nil
         }
         
         let nextIndex = viewControllerIndex + 1
-        guard nextIndex < self.orderedViewController.count else {
-            self.performSegue(withIdentifier: "showDashboard", sender: self)
+        let orderedViewControllerCount = self.viewModel?.orderedViewControllerCount() ?? 0
+        
+        guard nextIndex < orderedViewControllerCount else {
+            if let lastViewController =  self.viewModel?.orderedViewControllers.last as? OnboardingDetailViewController {
+                lastViewController.viewModel?.trackNavigation()
+            }
+            self.performSegue(withIdentifier: R.segue.onboardingViewController.showDashboard.identifier, sender: self)
             return nil
         }
-        guard self.orderedViewController.count > nextIndex else { return nil }
-        return self.orderedViewController[nextIndex]
+        
+        guard orderedViewControllerCount > nextIndex else {
+            return nil
+        }
+        
+        return self.viewModel?.orderedViewControllers[nextIndex]
     }
 }
 
 extension OnboardingViewController: UIPageViewControllerDelegate {
     
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        
+        if let lastViewController = previousViewControllers.last as? OnboardingDetailViewController {
+            lastViewController.viewModel?.trackNavigation()
+        }
+    }
 }

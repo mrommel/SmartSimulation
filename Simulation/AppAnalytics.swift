@@ -29,6 +29,10 @@ enum AnalyticsEventType {
 
 enum AnalyticsNavigationType {
     
+    case navigateIntroWelcomeToSimulation
+    case navigateIntroSimulationToLetsgo
+    case navigateIntroLetsgoToDashboard
+    
     case navigateNavBarToDashboard
     case navigateNavBarToSimulations
     
@@ -42,6 +46,13 @@ enum AnalyticsNavigationType {
             return "navigate_nav_simulations"
         case .navigateSimulationsToSimulation:
             return "navigate_simulations_simulation"
+            
+        case .navigateIntroWelcomeToSimulation:
+            return "navigate_intro_welcome_simulations"
+        case .navigateIntroSimulationToLetsgo:
+            return "navigate_intro_simulations_letsgo"
+        case .navigateIntroLetsgoToDashboard:
+            return "navigate_intro_letsgo_dashboard"
         }
     }
 }

@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import SmartSimulationFramework
+import Rswift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -32,16 +33,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func startOnboarding() {
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        let onboardingViewController = OnboardingViewController.storyboardViewController(withIdentifier: "OnboardingViewController")
-        self.window?.rootViewController = onboardingViewController
+        self.window?.rootViewController = R.storyboard.main.onboardingViewController()
         self.window?.makeKeyAndVisible()
     }
     
     func startDashboard() {
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        let applicationTabBarController = ApplicationTabBarController.storyboardViewController(withIdentifier: "ApplicationTabBarController")
-        self.window?.rootViewController = applicationTabBarController
+        self.window?.rootViewController = R.storyboard.main.applicationTabBarController()
         self.window?.makeKeyAndVisible()
     }
 
