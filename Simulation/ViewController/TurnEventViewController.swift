@@ -45,9 +45,6 @@ extension TurnEventViewController: UIPageViewControllerDataSource {
 }
 
 extension TurnEventViewController: ViewModelDelegate {
-    func performSegue(named segue: String) {
-        
-    }
     
     func willLoadData() {
         

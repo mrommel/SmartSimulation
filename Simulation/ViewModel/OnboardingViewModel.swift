@@ -19,9 +19,9 @@ class OnboardingViewModel: ViewModelType {
         
         self.delegate?.willLoadData()
         
-        let onboardingViewModel1 = OnboardingDetailViewModel(image: R.image.onboarding_welcome(), title: "Welcome", summary: "Screen 1", analyticsNavigationType: .navigateIntroWelcomeToSimulation)
-        let onboardingViewModel2 = OnboardingDetailViewModel(image: R.image.onboarding_simulation(), title: "Simulations", summary: "Screen 2", analyticsNavigationType: .navigateIntroSimulationToLetsgo)
-        let onboardingViewModel3 = OnboardingDetailViewModel(image: R.image.onboarding_letsgo(), title: "Let's go", summary: "Screen 3", analyticsNavigationType: .navigateIntroLetsgoToDashboard)
+        let onboardingViewModel1 = OnboardingDetailViewModel(image: R.image.onboarding_welcome(), title: "Welcome", summary: "Screen 1", pageControlData: PageControlData(currentPage: 0, numberOfPages: 3), analyticsNavigationType: .navigateIntroWelcomeToSimulation)
+        let onboardingViewModel2 = OnboardingDetailViewModel(image: R.image.onboarding_simulation(), title: "Simulations", summary: "Screen 2", pageControlData: PageControlData(currentPage: 1, numberOfPages: 3), analyticsNavigationType: .navigateIntroSimulationToLetsgo)
+        let onboardingViewModel3 = OnboardingDetailViewModel(image: R.image.onboarding_letsgo(), title: "Let's go", summary: "Screen 3", pageControlData: PageControlData(currentPage: 2, numberOfPages: 3), analyticsNavigationType: .navigateIntroLetsgoToDashboard)
         
         self.orderedViewControllers = []
         

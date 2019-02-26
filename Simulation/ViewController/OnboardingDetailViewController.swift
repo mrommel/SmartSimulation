@@ -10,7 +10,7 @@ import UIKit
 
 class OnboardingDetailViewController: UIViewController {
     
-    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var pageControl: UIPageControl!
@@ -37,8 +37,13 @@ extension OnboardingDetailViewController: ViewModelDelegate {
     
     func didLoadData() {
         
-        self.image.image = self.viewModel?.image
+        self.imageView.image = self.viewModel?.image
         self.titleLabel.text = self.viewModel?.title
         self.summaryLabel.text = self.viewModel?.summary
+        
+        if let pageControlData = self.viewModel?.pageControlData {
+            self.pageControl.currentPage = pageControlData.currentPage
+            self.pageControl.numberOfPages = pageControlData.numberOfPages
+        }
     }
 }

@@ -417,7 +417,7 @@
                         <viewLayoutGuide key="safeArea" id="J8t-07-OTA"/>
                     </view>
                     <connections>
-                        <outlet property="image" destination="bJ6-FS-C3E" id="cdd-v6-NeM"/>
+                        <outlet property="imageView" destination="bJ6-FS-C3E" id="FET-qb-cip"/>
                         <outlet property="pageControl" destination="UfE-Dy-XDh" id="rzb-Wc-EHx"/>
                         <outlet property="summaryLabel" destination="TNb-58-y4F" id="vYu-vm-BdB"/>
                         <outlet property="titleLabel" destination="vs4-gE-qR9" id="Tdf-02-dba"/>
