@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MonumentVandalized: Event {
+public class MonumentVandalized: Event {
 
     init() {
         super.init(

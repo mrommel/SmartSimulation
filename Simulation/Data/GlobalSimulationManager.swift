@@ -8,6 +8,7 @@
 
 import Foundation
 import SmartSimulationFramework
+import SwiftLog
 
 struct GlobalSimulationEvent {
     
@@ -58,6 +59,10 @@ class GlobalSimulationManager {
     func simulations() -> Simulations? {
         return self.globalSimulation?.simulations
     }
+    
+    func groups() -> Groups? {
+        return self.globalSimulation?.groups
+    }
 }
 
 extension GlobalSimulationManager: GlobalSimulationDelegate {
@@ -65,12 +70,14 @@ extension GlobalSimulationManager: GlobalSimulationDelegate {
     func iterationComplete() {
         print("iterationComplete")
         eventLog?.addEvent(with: R.image.turn(), title: "New Iteration", and: "We have now ####")
+        logw("iterationComplete")
     }
     
     func triggered(event: Event?) {
         if let event = event {
             print("triggered: \(event)")
             eventLog?.addEvent(with: R.image.event(), title: "New Event", and: "\(event.name)")
+            logw("triggered: \(event)")
         }
     }
     
@@ -78,6 +85,7 @@ extension GlobalSimulationManager: GlobalSimulationDelegate {
         if let technic = technic {
             print("invented: \(technic)")
             eventLog?.addEvent(with: R.image.innovation(), title: "New Technic", and: "\(technic.name) invented")
+            logw("invented: \(technic)")
         }
     }
     
@@ -85,6 +93,7 @@ extension GlobalSimulationManager: GlobalSimulationDelegate {
         if let situation = situation {
             print("started: \(situation)")
             eventLog?.addEvent(with: R.image.bell(), title: "New Situation started", and: "\(situation.name)")
+            logw("started: \(situation)")
         }
     }
     
@@ -92,6 +101,7 @@ extension GlobalSimulationManager: GlobalSimulationDelegate {
         if let situation = situation {
             print("ended: \(situation)")
             eventLog?.addEvent(with: R.image.bell(), title: "Situation ended", and: "\(situation.name)")
+            logw("ended: \(situation)")
         }
     }
 }

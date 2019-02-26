@@ -103,6 +103,7 @@ extension SimulationListViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tableView.deselectRow(at: indexPath, animated: true)
         self.viewModel?.selectSimulation(at: indexPath.row)
         AppAnalytics.logNavigation(navigation: .navigateSimulationsToSimulation)
     }

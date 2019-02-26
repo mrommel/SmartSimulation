@@ -8,10 +8,10 @@
 
 import Foundation
 
-class Policies {
+public class Policies {
 
-    var primarySchools: PrimarySchools = PrimarySchools()
-    var sewage: Sewage = Sewage()
+    public var primarySchools: PrimarySchools = PrimarySchools()
+    public var sewage: Sewage = Sewage()
 
     fileprivate var policies: [Policy] = []
 
@@ -45,7 +45,7 @@ class Policies {
 
 extension Policies: Sequence {
 
-    struct PoliciesIterator: IteratorProtocol {
+    public struct PoliciesIterator: IteratorProtocol {
 
         private var index = 0
         private let policies: [Policy]
@@ -54,14 +54,14 @@ extension Policies: Sequence {
             self.policies = policies
         }
 
-        mutating func next() -> Policy? {
+        mutating public func next() -> Policy? {
             let policy = self.policies[safe: index]
             index += 1
             return policy
         }
     }
 
-    func makeIterator() -> PoliciesIterator {
+    public func makeIterator() -> PoliciesIterator {
         return PoliciesIterator(policies: self.policies)
     }
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Religious: Group {
+public class Religious: Group {
 
 	init() {
 

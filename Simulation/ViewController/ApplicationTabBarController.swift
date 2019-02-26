@@ -24,6 +24,10 @@ extension ApplicationTabBarController: UITabBarControllerDelegate {
             AppAnalytics.logNavigation(navigation: .navigateNavBarToDashboard)
         } else if viewController.children.first is SimulationListViewController {
             AppAnalytics.logNavigation(navigation: .navigateNavBarToSimulations)
+        } else if viewController.children.first is GroupListViewController {
+            AppAnalytics.logNavigation(navigation: .navigateNavBarToGroups)
+        } else if viewController.children.first is SettingsViewController {
+            AppAnalytics.logNavigation(navigation: .navigateNavBarToSettings)
         }
     }
 }

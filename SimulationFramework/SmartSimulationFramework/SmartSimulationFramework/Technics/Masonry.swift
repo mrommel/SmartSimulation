@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Masonry: Technic {
+public class Masonry: Technic {
 
     init() {
         super.init(name: "Masonry", era: .ancient, propability: 0.01)

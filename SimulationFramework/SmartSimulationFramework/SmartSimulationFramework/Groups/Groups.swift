@@ -8,12 +8,12 @@
 
 import Foundation
 
-class Groups {
+public class Groups {
 
-	var all: All
-	var conservatives: Conservatives
-	var poor: Poor
-	var religious: Religious
+	public var all: All
+	public var conservatives: Conservatives
+	public var poor: Poor
+	public var religious: Religious
 
 	fileprivate var groups: [Group] = []
 
@@ -47,4 +47,27 @@ class Groups {
 
 		self.groups.forEach { $0.push() }
 	}
+}
+
+extension Groups: Sequence {
+    
+    public struct GroupsIterator: IteratorProtocol {
+        
+        private var index = 0
+        private let groups: [Group]
+        
+        init(groups: [Group]) {
+            self.groups = groups
+        }
+        
+        mutating public func next() -> Group? {
+            let group = self.groups[safe: index]
+            index += 1
+            return group
+        }
+    }
+    
+    public func makeIterator() -> GroupsIterator {
+        return GroupsIterator(groups: self.groups)
+    }
 }

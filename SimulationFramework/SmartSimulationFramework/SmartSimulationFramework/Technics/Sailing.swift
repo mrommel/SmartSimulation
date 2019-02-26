@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Sailing: Technic {
+public class Sailing: Technic {
 
     init() {
         super.init(name: "Sailing", era: .ancient, propability: 0.001)

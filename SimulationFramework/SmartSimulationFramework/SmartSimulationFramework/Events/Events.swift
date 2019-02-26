@@ -8,11 +8,11 @@
 
 import Foundation
 
-class Events {
+public class Events {
 
-	var earthQuakeEvent: Earthquake
-	var monumentVandalizedEvent: MonumentVandalized
-	var ministerialScandal: MinisterialScandal
+	public var earthQuakeEvent: Earthquake
+	public var monumentVandalizedEvent: MonumentVandalized
+	public var ministerialScandal: MinisterialScandal
 
 	fileprivate var events: [Event] = []
 

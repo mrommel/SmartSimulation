@@ -97,11 +97,11 @@ public class GlobalSimulation {
     public let tileInfo: TileInfo
 
     public var simulations: Simulations
-    var policies: Policies
-    var events: Events
-    var groups: Groups
-    var situations: Situations
-    var technics: Technics
+    public var policies: Policies
+    public var events: Events
+    public var groups: Groups
+    public var situations: Situations
+    public var technics: Technics
     var effects: Effects
 
     public weak var delegate: GlobalSimulationDelegate?

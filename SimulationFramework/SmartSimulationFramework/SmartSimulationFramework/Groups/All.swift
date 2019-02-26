@@ -8,7 +8,7 @@
 
 import Foundation
 
-class All: Group {
+public class All: Group {
 
 	init() {
 

@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import SwiftLog
 
 enum AnalyticsEventType {
     
@@ -35,6 +36,8 @@ enum AnalyticsNavigationType {
     
     case navigateNavBarToDashboard
     case navigateNavBarToSimulations
+    case navigateNavBarToGroups
+    case navigateNavBarToSettings
     
     case navigateSimulationsToSimulation
     
@@ -44,6 +47,11 @@ enum AnalyticsNavigationType {
             return "navigate_nav_dashboard"
         case .navigateNavBarToSimulations:
             return "navigate_nav_simulations"
+        case .navigateNavBarToGroups:
+            return "navigate_nav_groups"
+        case .navigateNavBarToSettings:
+            return "navigate_nav_settings"
+            
         case .navigateSimulationsToSimulation:
             return "navigate_simulations_simulation"
             
@@ -62,22 +70,16 @@ class AppAnalytics {
     static func setup() {
         // initializes firebase (not only analytics)
         FirebaseApp.configure()
-        
-        // map screen names
-        /*Analytics.setScreenName("dashboard", screenClass: String(describing: DashboardViewController.self))
-        Analytics.setScreenName("dashboard2", screenClass: "DashboardViewController") // cross check
-        
-        Analytics.setScreenName("simulations", screenClass: String(describing: SimulationListViewController.self))
-        Analytics.setScreenName("simulation", screenClass: String(describing: SimulationDetailViewController.self))*/
     }
     
     static func logEvent(event: AnalyticsEventType, parameters: [String: Any]? = nil) {
         
-        Analytics.setUserProperty("Fritz!Box 7590", forName: "router") // just a test
         Analytics.logEvent(event.trackingKey, parameters: parameters)
+        logw("Analytics event navigation: \(event.trackingKey)")
     }
     
     static func logNavigation(navigation: AnalyticsNavigationType) {
         Analytics.logEvent(navigation.trackingKey, parameters: nil)
+        logw("Analytics log navigation: \(navigation.trackingKey)")
     }
 }

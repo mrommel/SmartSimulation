@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Earthquake: Event {
+public class Earthquake: Event {
 
     init() {
         super.init(

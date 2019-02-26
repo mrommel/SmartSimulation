@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Trapping: Technic {
+public class Trapping: Technic {
 
     init() {
         super.init(name: "Trapping", era: .ancient, propability: 0.001)

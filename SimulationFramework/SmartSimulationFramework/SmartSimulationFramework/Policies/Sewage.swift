@@ -9,7 +9,7 @@
 import Foundation
 
 /// https://en.wikipedia.org/wiki/History_of_water_supply_and_sanitation
-class Sewage: Policy {
+public class Sewage: Policy {
 
     init() {
 

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Homelessness: Situation {
+public class Homelessness: Situation {
 
 	init() {
 

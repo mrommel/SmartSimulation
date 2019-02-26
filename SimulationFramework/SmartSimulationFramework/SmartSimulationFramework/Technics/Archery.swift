@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Archery: Technic {
+public class Archery: Technic {
 
     init() {
         super.init(name: "Archery", era: .ancient, propability: 0.01)

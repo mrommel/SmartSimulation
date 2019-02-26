@@ -10,12 +10,12 @@ import UIKit
 
 public class Group {
 
-    let image: UIImage?
-	let name: String
-	let summary: String
+    public let image: UIImage?
+	public let name: String
+	public let summary: String
 
-	var mood: Simulation
-	var frequency: Simulation
+	public var mood: Simulation
+	public var frequency: Simulation
 
 	init(image: UIImage?, name: String, summary: String, moodValue: Double, frequencyValue: Double) {
 

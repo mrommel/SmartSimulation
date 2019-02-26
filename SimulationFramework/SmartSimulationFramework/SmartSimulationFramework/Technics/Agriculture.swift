@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Agriculture: Technic {
+public class Agriculture: Technic {
 
     init() {
         super.init(name: "Agriculture", era: .ancient, propability: 1.0, invented: true)

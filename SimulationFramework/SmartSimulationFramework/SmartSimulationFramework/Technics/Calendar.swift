@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Calendar: Technic {
+public class Calendar: Technic {
 
     init() {
         super.init(name: "Calendar", era: .ancient, propability: 0.01)

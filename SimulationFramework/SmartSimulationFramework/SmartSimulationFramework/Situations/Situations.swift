@@ -8,9 +8,9 @@
 
 import Foundation
 
-class Situations {
+public class Situations {
 
-	var homelessness: Homelessness
+	public var homelessness: Homelessness
 
 	fileprivate var situations: [Situation] = []
 
@@ -42,7 +42,7 @@ class Situations {
 
 extension Situations: Sequence {
 
-	struct SituationsIterator: IteratorProtocol {
+	public struct SituationsIterator: IteratorProtocol {
 
 		private var index = 0
 		private let situations: [Situation]
@@ -51,14 +51,14 @@ extension Situations: Sequence {
 			self.situations = situations
 		}
 
-		mutating func next() -> Situation? {
+        mutating public func next() -> Situation? {
 			let situation = self.situations[safe: index]
 			index += 1
 			return situation
 		}
 	}
 
-	func makeIterator() -> SituationsIterator {
+    public func makeIterator() -> SituationsIterator {
 		return SituationsIterator(situations: self.situations)
 	}
 }

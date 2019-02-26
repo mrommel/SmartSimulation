@@ -8,7 +8,7 @@
 
 import Foundation
 
-class PrimarySchools: Policy {
+public class PrimarySchools: Policy {
 
     init() {
         let noSchoolSelection = PolicySelection(name: "No primary Schools", description: "No primary Schools", value: 0.0, enabled: true)

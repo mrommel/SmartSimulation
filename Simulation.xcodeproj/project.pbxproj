@@ -17,14 +17,17 @@
 		C90BEF80220CD123007F24A6 /* SimulationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90BEF7F220CD123007F24A6 /* SimulationListViewController.swift */; };
 		C982EC8C221F0137007AB8B2 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982EC8B221F0137007AB8B2 /* OnboardingViewController.swift */; };
 		C982EC8E221F02B2007AB8B2 /* ApplicationLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982EC8D221F02B2007AB8B2 /* ApplicationLaunch.swift */; };
-		C982EC90221F05C2007AB8B2 /* Storyboardable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982EC8F221F05C2007AB8B2 /* Storyboardable.swift */; };
 		C982EC92221F28BB007AB8B2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982EC91221F28BB007AB8B2 /* SettingsViewController.swift */; };
 		C982EC94221F295E007AB8B2 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982EC93221F295E007AB8B2 /* SettingsViewModel.swift */; };
 		C982EC9A222407E6007AB8B2 /* OnboardingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982EC99222407E6007AB8B2 /* OnboardingDetailViewController.swift */; };
 		C982EC9C2224085E007AB8B2 /* OnboardingDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982EC9B2224085E007AB8B2 /* OnboardingDetailViewModel.swift */; };
 		C982EC9E222408F5007AB8B2 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982EC9D222408F5007AB8B2 /* OnboardingViewModel.swift */; };
-		C982ECA62224196B007AB8B2 /* SmartSimulationFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C982ECA52224196B007AB8B2 /* SmartSimulationFramework.framework */; };
-		C982ECA72224196B007AB8B2 /* SmartSimulationFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C982ECA52224196B007AB8B2 /* SmartSimulationFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C982ECAA22244A2A007AB8B2 /* SwiftLogExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982ECA922244A2A007AB8B2 /* SwiftLogExtension.swift */; };
+		C982ECAC22247106007AB8B2 /* GroupListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982ECAB22247106007AB8B2 /* GroupListViewController.swift */; };
+		C982ECAE22247373007AB8B2 /* GroupListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982ECAD22247373007AB8B2 /* GroupListViewModel.swift */; };
+		C982ECB022247560007AB8B2 /* GroupDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982ECAF22247560007AB8B2 /* GroupDetailViewModel.swift */; };
+		C982ECB222248350007AB8B2 /* SmartSimulationFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C982ECB122248350007AB8B2 /* SmartSimulationFramework.framework */; };
+		C982ECB322248350007AB8B2 /* SmartSimulationFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C982ECB122248350007AB8B2 /* SmartSimulationFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C9CE2C77220DB1DD00D94B8C /* ViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE2C76220DB1DD00D94B8C /* ViewModelDelegate.swift */; };
 		C9CE2C79220DB1F000D94B8C /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE2C78220DB1F000D94B8C /* ViewModelType.swift */; };
 		C9CE2C7B220DB21600D94B8C /* SimulationListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE2C7A220DB21600D94B8C /* SimulationListViewModel.swift */; };
@@ -64,7 +67,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C982ECA72224196B007AB8B2 /* SmartSimulationFramework.framework in Embed Frameworks */,
+				C982ECB322248350007AB8B2 /* SmartSimulationFramework.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -85,17 +88,17 @@
 		C90BEF7F220CD123007F24A6 /* SimulationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulationListViewController.swift; sourceTree = "<group>"; };
 		C982EC8B221F0137007AB8B2 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		C982EC8D221F02B2007AB8B2 /* ApplicationLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationLaunch.swift; sourceTree = "<group>"; };
-		C982EC8F221F05C2007AB8B2 /* Storyboardable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboardable.swift; sourceTree = "<group>"; };
 		C982EC91221F28BB007AB8B2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		C982EC93221F295E007AB8B2 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
-		C982EC972223E646007AB8B2 /* letsgo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = letsgo.jpg; path = /Users/michaelrommel/Prog/SmartSimulation/Simulation/Resources/letsgo.jpg; sourceTree = "<absolute>"; };
-		C982EC982223E646007AB8B2 /* simulation.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = simulation.jpg; path = /Users/michaelrommel/Prog/SmartSimulation/Simulation/Resources/simulation.jpg; sourceTree = "<absolute>"; };
 		C982EC99222407E6007AB8B2 /* OnboardingDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingDetailViewController.swift; sourceTree = "<group>"; };
 		C982EC9B2224085E007AB8B2 /* OnboardingDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingDetailViewModel.swift; sourceTree = "<group>"; };
 		C982EC9D222408F5007AB8B2 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		C982EC9F22241955007AB8B2 /* SmartSimulationFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SmartSimulationFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C982ECA12224195E007AB8B2 /* SmartSimulationFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SmartSimulationFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C982ECA52224196B007AB8B2 /* SmartSimulationFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SmartSimulationFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C982ECA922244A2A007AB8B2 /* SwiftLogExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftLogExtension.swift; sourceTree = "<group>"; };
+		C982ECAB22247106007AB8B2 /* GroupListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupListViewController.swift; sourceTree = "<group>"; };
+		C982ECAD22247373007AB8B2 /* GroupListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupListViewModel.swift; sourceTree = "<group>"; };
+		C982ECAF22247560007AB8B2 /* GroupDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailViewModel.swift; sourceTree = "<group>"; };
+		C982ECB122248350007AB8B2 /* SmartSimulationFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SmartSimulationFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9CE2C76220DB1DD00D94B8C /* ViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelDelegate.swift; sourceTree = "<group>"; };
 		C9CE2C78220DB1F000D94B8C /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		C9CE2C7A220DB21600D94B8C /* SimulationListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulationListViewModel.swift; sourceTree = "<group>"; };
@@ -135,7 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C982ECA62224196B007AB8B2 /* SmartSimulationFramework.framework in Frameworks */,
+				C982ECB222248350007AB8B2 /* SmartSimulationFramework.framework in Frameworks */,
 				76D8A008675F451A6A1782F1 /* Pods_Simulation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -165,8 +168,7 @@
 		C90BEF5D220CCC33007F24A6 = {
 			isa = PBXGroup;
 			children = (
-				C982ECA52224196B007AB8B2 /* SmartSimulationFramework.framework */,
-				C982ECA12224195E007AB8B2 /* SmartSimulationFramework.framework */,
+				C982ECB122248350007AB8B2 /* SmartSimulationFramework.framework */,
 				C90BEF68220CCC33007F24A6 /* Simulation */,
 				C90BEF67220CCC33007F24A6 /* Products */,
 				0C4B134E0096A4687D51D671 /* Pods */,
@@ -212,6 +214,7 @@
 				C90BEF7F220CD123007F24A6 /* SimulationListViewController.swift */,
 				C9CE2C84220DD26D00D94B8C /* SimulationDetailViewController.swift */,
 				C9CE2D56221D3EBD00D94B8C /* TurnEventViewController.swift */,
+				C982ECAB22247106007AB8B2 /* GroupListViewController.swift */,
 				C982EC91221F28BB007AB8B2 /* SettingsViewController.swift */,
 			);
 			path = ViewController;
@@ -225,6 +228,8 @@
 				C9CE2D52221C95A900D94B8C /* DashboardViewModel.swift */,
 				C9CE2C7A220DB21600D94B8C /* SimulationListViewModel.swift */,
 				C9CE2D3C2219E63B00D94B8C /* SimulationDetailViewModel.swift */,
+				C982ECAD22247373007AB8B2 /* GroupListViewModel.swift */,
+				C982ECAF22247560007AB8B2 /* GroupDetailViewModel.swift */,
 				C982EC93221F295E007AB8B2 /* SettingsViewModel.swift */,
 			);
 			path = ViewModel;
@@ -239,7 +244,7 @@
 				C9CE2D2F22160D4F00D94B8C /* ColorExtension.swift */,
 				C9CE2D54221C9EC900D94B8C /* ArrayExtension.swift */,
 				C982EC8D221F02B2007AB8B2 /* ApplicationLaunch.swift */,
-				C982EC8F221F05C2007AB8B2 /* Storyboardable.swift */,
+				C982ECA922244A2A007AB8B2 /* SwiftLogExtension.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -265,8 +270,6 @@
 			isa = PBXGroup;
 			children = (
 				C90BEF73220CCC38007F24A6 /* Assets.xcassets */,
-				C982EC972223E646007AB8B2 /* letsgo.jpg */,
-				C982EC982223E646007AB8B2 /* simulation.jpg */,
 				C9CE2C8C2214519F00D94B8C /* Default-568h@2x.png */,
 				C90BEF70220CCC33007F24A6 /* simulation.xcdatamodeld */,
 				C9CE2C8A2214514800D94B8C /* Localizable.strings */,
@@ -384,6 +387,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Simulation/Pods-Simulation-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftLog/SwiftLog.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -392,6 +396,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftLog.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -453,7 +458,9 @@
 				C9CE2D2E2215E03A00D94B8C /* GlobalSimulationManager.swift in Sources */,
 				C982EC9A222407E6007AB8B2 /* OnboardingDetailViewController.swift in Sources */,
 				C90BEF72220CCC33007F24A6 /* simulation.xcdatamodeld in Sources */,
+				C982ECAC22247106007AB8B2 /* GroupListViewController.swift in Sources */,
 				C982EC94221F295E007AB8B2 /* SettingsViewModel.swift in Sources */,
+				C982ECAE22247373007AB8B2 /* GroupListViewModel.swift in Sources */,
 				C9CE2D51221C23C200D94B8C /* AppAnalytics.swift in Sources */,
 				C982EC8E221F02B2007AB8B2 /* ApplicationLaunch.swift in Sources */,
 				C9CE2D3022160D4F00D94B8C /* ColorExtension.swift in Sources */,
@@ -462,10 +469,10 @@
 				C9CE2D47221A038B00D94B8C /* TableViewCategoryCell.swift in Sources */,
 				C9CE2C7B220DB21600D94B8C /* SimulationListViewModel.swift in Sources */,
 				C9CE2D57221D3EBD00D94B8C /* TurnEventViewController.swift in Sources */,
+				C982ECB022247560007AB8B2 /* GroupDetailViewModel.swift in Sources */,
 				C9CE2D55221C9EC900D94B8C /* ArrayExtension.swift in Sources */,
 				C982EC8C221F0137007AB8B2 /* OnboardingViewController.swift in Sources */,
 				C9CE2C7E220DC26800D94B8C /* R.generated.swift in Sources */,
-				C982EC90221F05C2007AB8B2 /* Storyboardable.swift in Sources */,
 				C982EC9E222408F5007AB8B2 /* OnboardingViewModel.swift in Sources */,
 				C9CE2D3D2219E63B00D94B8C /* SimulationDetailViewModel.swift in Sources */,
 				C9CE2D4B221B491D00D94B8C /* TableViewRelationCell.swift in Sources */,
@@ -477,6 +484,7 @@
 				C9CE2D43221A01A100D94B8C /* TableViewValueCell.swift in Sources */,
 				C9CE2C77220DB1DD00D94B8C /* ViewModelDelegate.swift in Sources */,
 				C982EC9C2224085E007AB8B2 /* OnboardingDetailViewModel.swift in Sources */,
+				C982ECAA22244A2A007AB8B2 /* SwiftLogExtension.swift in Sources */,
 				C9CE2D3F2219F31C00D94B8C /* TableViewDescriptionCell.swift in Sources */,
 				C90BEF6A220CCC33007F24A6 /* AppDelegate.swift in Sources */,
 				C9CE2D372218ADBD00D94B8C /* UITableViewExtension.swift in Sources */,

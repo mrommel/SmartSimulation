@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MinisterialScandal: Event {
+public class MinisterialScandal: Event {
 
     init() {
         super.init(

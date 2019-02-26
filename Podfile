@@ -7,6 +7,6 @@ target 'Simulation' do
   # Pods for Simulation
   pod 'R.swift'
   pod 'Firebase/Core'
-  
+  pod 'SwiftLog', '~> 1.0.0'
 
 end

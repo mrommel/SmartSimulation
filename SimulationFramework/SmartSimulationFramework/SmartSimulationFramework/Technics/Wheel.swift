@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Wheel: Technic {
+public class Wheel: Technic {
 
     init() {
         super.init(name: "Wheel", era: .ancient, propability: 0.001)

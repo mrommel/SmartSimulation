@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import SwiftLog
 
 class SettingItem {
     
     let title: String
     let enabled: Bool
-    var completionHandler: ()->Void = { }
+    var completionHandler: () -> Void = { }
     
     init(title: String, enabled: Bool, completionHandler: @escaping () ->Void) {
         self.title = title
@@ -49,6 +50,11 @@ class SettingsViewModel: ViewModelType {
         self.settingItems.append(SettingItem(title: "Reset first use", enabled: applicationLaunch.launchCount > 0, completionHandler: {
             applicationLaunch.reset()
             self.bootstrap()
+        }))
+        
+        self.settingItems.append(SettingItem(title: "Eventlog", enabled: true, completionHandler: {
+            
+            self.delegate?.showAlertText(title: "Log", text: Log.logger.readAll())
         }))
     }
     

@@ -8,12 +8,12 @@
 
 import Foundation
 
-class PolicySelection {
+public class PolicySelection {
 
-	let name: String
-	let description: String
-	let value: Double
-	var enabled: Bool
+	public let name: String
+	public let description: String
+	public let value: Double
+	public var enabled: Bool
 
 	init(name: String, description: String, value: Double, enabled: Bool = false) {
 		self.name = name
@@ -24,9 +24,9 @@ class PolicySelection {
 }
 
 /// a Policy is a Property that can be modified by he user
-class Policy: Simulation {
+public class Policy: Simulation {
 
-	let selections: [PolicySelection]
+	public let selections: [PolicySelection]
 	var selectionIndex: Int
 
 	init(name: String, summary: String, category: Category, selections: [PolicySelection], initialSelection: PolicySelection) {

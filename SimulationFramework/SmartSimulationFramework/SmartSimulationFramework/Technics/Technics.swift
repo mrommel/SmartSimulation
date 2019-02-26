@@ -9,21 +9,21 @@
 import Foundation
 
 // http://civilization.wikia.com/wiki/List_of_technologies_in_Civ5
-class Technics {
+public class Technics {
 
     // era: ancient
-    var agriculture: Agriculture
-    var animalHusbandry: AnimalHusbandry
-    var archery: Archery
-    var bronzeWorking: BronzeWorking
-    var calendar: Calendar
-    var masonry: Masonry
-    var mining: Mining
-    var pottery: Pottery
-    var sailing: Sailing
-    var wheel: Wheel
-    var trapping: Trapping
-    var writing: Writing
+    public var agriculture: Agriculture
+    public var animalHusbandry: AnimalHusbandry
+    public var archery: Archery
+    public var bronzeWorking: BronzeWorking
+    public var calendar: Calendar
+    public var masonry: Masonry
+    public var mining: Mining
+    public var pottery: Pottery
+    public var sailing: Sailing
+    public var wheel: Wheel
+    public var trapping: Trapping
+    public var writing: Writing
 
     fileprivate var techs: [Technic] = []
 

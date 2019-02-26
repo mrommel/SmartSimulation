@@ -125,6 +125,63 @@
             </objects>
             <point key="canvasLocation" x="2015" y="874"/>
         </scene>
+        <!--Group List View Controller-->
+        <scene sceneID="oOl-us-U6S">
+            <objects>
+                <viewController id="VbG-4q-6cR" customClass="GroupListViewController" customModule="Simulation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="28r-nt-mcr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ws9-S0-3dU">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GroupCell" textLabel="6nZ-Ns-LSd" detailTextLabel="WoQ-M3-r0D" style="IBUITableViewCellStyleSubtitle" id="FFM-u2-HdF">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FFM-u2-HdF" id="aWZ-Rg-2lD">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6nZ-Ns-LSd">
+                                                    <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WoQ-M3-r0D">
+                                                    <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ws9-S0-3dU" firstAttribute="top" secondItem="igM-XR-dhD" secondAttribute="top" id="0Uo-DL-Rbi"/>
+                            <constraint firstItem="Ws9-S0-3dU" firstAttribute="bottom" secondItem="igM-XR-dhD" secondAttribute="bottom" id="IkN-20-8Mm"/>
+                            <constraint firstItem="Ws9-S0-3dU" firstAttribute="leading" secondItem="igM-XR-dhD" secondAttribute="leading" id="McQ-bZ-C9V"/>
+                            <constraint firstItem="Ws9-S0-3dU" firstAttribute="trailing" secondItem="igM-XR-dhD" secondAttribute="trailing" id="jNL-aA-sZF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="igM-XR-dhD"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ld8-wU-kr5"/>
+                    <connections>
+                        <outlet property="tableView" destination="Ws9-S0-3dU" id="sID-M7-60y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wy7-Hs-DtI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2015" y="1585"/>
+        </scene>
         <!--Simulation Detail View Controller-->
         <scene sceneID="n5W-xc-4Ai">
             <objects>
@@ -182,6 +239,7 @@
                     <connections>
                         <segue destination="rqq-uT-dnW" kind="relationship" relationship="viewControllers" id="yFp-DH-jzT"/>
                         <segue destination="7Ql-4R-T88" kind="relationship" relationship="viewControllers" id="qiG-91-vPU"/>
+                        <segue destination="H5j-NT-2kd" kind="relationship" relationship="viewControllers" id="7po-Al-EdK"/>
                         <segue destination="QdF-8c-T7o" kind="relationship" relationship="viewControllers" id="ImZ-D1-F2o"/>
                     </connections>
                 </tabBarController>
@@ -237,7 +295,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iKv-Dp-cZe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2015" y="1594"/>
+            <point key="canvasLocation" x="2014" y="2302"/>
         </scene>
         <!--Dashboard-->
         <scene sceneID="Wbx-f9-55F">
@@ -302,7 +360,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ve9-a6-tRt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="1595"/>
+            <point key="canvasLocation" x="1076" y="2301"/>
         </scene>
         <!--Onboarding Detail View Controller-->
         <scene sceneID="IqX-vd-gLF">
@@ -312,7 +370,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="simulation" translatesAutoresizingMaskIntoConstraints="NO" id="bJ6-FS-C3E">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="onboarding_letsgo" translatesAutoresizingMaskIntoConstraints="NO" id="bJ6-FS-C3E">
                                 <rect key="frame" x="67.5" y="44" width="240" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="5BL-Dt-j63"/>
@@ -369,9 +427,30 @@
             </objects>
             <point key="canvasLocation" x="942" y="-672"/>
         </scene>
+        <!--Groups-->
+        <scene sceneID="ddo-D5-7km">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="H5j-NT-2kd" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Groups" image="group" id="x09-C9-76S"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DkC-9f-se7">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="VbG-4q-6cR" kind="relationship" relationship="rootViewController" id="wXQ-gn-ZN5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Txp-Py-VIQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="1585"/>
+        </scene>
     </scenes>
     <resources>
         <image name="dashboard" width="14.399999618530273" height="14.399999618530273"/>
+        <image name="group" width="14.399999618530273" height="14.399999618530273"/>
+        <image name="onboarding_letsgo" width="500" height="301"/>
         <image name="settings" width="14.399999618530273" height="14.399999618530273"/>
         <image name="simulation" width="14.399999618530273" height="14.399999618530273"/>
     </resources>

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Writing: Technic {
+public class Writing: Technic {
 
     init() {
         super.init(name: "Writing", era: .ancient, propability: 0.01)
