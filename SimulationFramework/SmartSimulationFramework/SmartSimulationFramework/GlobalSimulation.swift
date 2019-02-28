@@ -87,6 +87,7 @@ public protocol GlobalSimulationDelegate: class {
     func iterationComplete()
 
     func triggered(event: Event?)
+    func triggered(dilemma: Dilemma?)
     func invented(technic: Technic?)
     func started(situation: Situation?)
     func ended(situation: Situation?)
@@ -99,6 +100,7 @@ public class GlobalSimulation {
     public var simulations: Simulations
     public var policies: Policies
     public var events: Events
+    public var dilemmas: Dilemmas
     public var groups: Groups
     public var situations: Situations
     public var technics: Technics
@@ -114,6 +116,7 @@ public class GlobalSimulation {
         self.simulations = Simulations()
         self.policies = Policies()
         self.events = Events()
+        self.dilemmas = Dilemmas()
         self.groups = Groups()
         self.situations = Situations()
         self.technics = Technics()
@@ -123,6 +126,7 @@ public class GlobalSimulation {
         self.simulations.setup(with: self)
         self.policies.setup(with: self)
         self.events.setup(with: self)
+        self.dilemmas.setup(with: self)
         self.groups.setup(with: self)
         self.situations.setup(with: self)
         self.technics.setup(with: self)
@@ -147,6 +151,7 @@ public class GlobalSimulation {
         self.simulations.calculate()
         self.policies.calculate()
         self.events.calculate()
+        self.dilemmas.calculate()
         self.groups.calculate()
         self.situations.calculate()
         self.effects.calculate()
@@ -157,18 +162,36 @@ public class GlobalSimulation {
                 // Inform the UI
                 self.delegate?.triggered(event: event)
             }
+        } else if let dilemma = self.dilemmas.findBestDilemma(with: self) { // else find best dilemma
+            DispatchQueue.main.async {
+                // Inform the UI
+                self.delegate?.triggered(dilemma: dilemma)
+            }
         }
 
         // then we need to push the value
         self.simulations.push()
         self.policies.push()
         self.events.push()
+        self.dilemmas.push()
         self.groups.push()
         self.situations.push()
         self.effects.push()
 
         // filter effects that are too small
         self.effects.reduce()
+    }
+    
+    public func select(of event: Event) {
+        let newEffects = event.effects(for: self)
+        newEffects.forEach { $0.calculate() }
+        self.effects.add(effects: newEffects)
+    }
+    
+    public func select(option: DilemmaOptionType, of dilemma: Dilemma) {
+        let newEffects = dilemma.effectsOf(optionType: option, for: self)
+        newEffects.forEach { $0.calculate() }
+        self.effects.add(effects: newEffects)
     }
 }
 

@@ -47,15 +47,17 @@ public class Events {
 	func findBestEvent(with global: GlobalSimulation) -> Event? {
 
 		let maxScore = self.events.max(by: { $0.value() < $1.value() })?.value() ?? 0
+        
+        guard maxScore > 0.7 else {
+            // highest score must be above 70%, otherwise the dilemmas step in
+            return nil
+        }
+        
 		let allEventsWithMaxScore = self.events.filter { $0.value() == maxScore }
-		//print("Best score: \(maxScore) => \(allEventsWithMaxScore.count) items")
 
 		if !allEventsWithMaxScore.isEmpty {
 
 			let eventThatTriggered = allEventsWithMaxScore.randomItem()
-			let newEffects = eventThatTriggered.effects(for: global)
-			newEffects.forEach { $0.calculate() }
-			global.effects.add(effects: newEffects)
 
 			return eventThatTriggered
 		}

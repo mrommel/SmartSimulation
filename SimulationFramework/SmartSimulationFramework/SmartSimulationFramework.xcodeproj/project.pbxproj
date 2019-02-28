@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C982ECB72225E715007AB8B2 /* Dilemma.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982ECB62225E715007AB8B2 /* Dilemma.swift */; };
+		C982ECB92225EA1F007AB8B2 /* Blasphemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982ECB82225EA1F007AB8B2 /* Blasphemy.swift */; };
+		C982ECBB2225EA8A007AB8B2 /* Dilemmas.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982ECBA2225EA8A007AB8B2 /* Dilemmas.swift */; };
+		C982ECBD2226BE24007AB8B2 /* Liberals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982ECBC2226BE24007AB8B2 /* Liberals.swift */; };
+		C982ECBF2226E418007AB8B2 /* Farmers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982ECBE2226E418007AB8B2 /* Farmers.swift */; };
 		C9CE2C9D2215D00F00D94B8C /* SmartSimulationFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = C9CE2C9B2215D00F00D94B8C /* SmartSimulationFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9CE2CB22215D07100D94B8C /* Policy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE2CA42215D07000D94B8C /* Policy.swift */; };
 		C9CE2CB32215D07100D94B8C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE2CA52215D07000D94B8C /* Category.swift */; };
@@ -71,10 +76,14 @@
 		C9CE2D2A2215D32B00D94B8C /* Agriculture.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE2D1D2215D32B00D94B8C /* Agriculture.swift */; };
 		C9CE2D2B2215D32B00D94B8C /* BronzeWorking.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE2D1E2215D32B00D94B8C /* BronzeWorking.swift */; };
 		C9CE2D2C2215D32B00D94B8C /* Trapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE2D1F2215D32B00D94B8C /* Trapping.swift */; };
-		C9CE2D5C221E90E100D94B8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9CE2D5B221E90E100D94B8C /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C982ECB62225E715007AB8B2 /* Dilemma.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dilemma.swift; sourceTree = "<group>"; };
+		C982ECB82225EA1F007AB8B2 /* Blasphemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blasphemy.swift; sourceTree = "<group>"; };
+		C982ECBA2225EA8A007AB8B2 /* Dilemmas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dilemmas.swift; sourceTree = "<group>"; };
+		C982ECBC2226BE24007AB8B2 /* Liberals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Liberals.swift; sourceTree = "<group>"; };
+		C982ECBE2226E418007AB8B2 /* Farmers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Farmers.swift; sourceTree = "<group>"; };
 		C9CE2C982215D00F00D94B8C /* SmartSimulationFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SmartSimulationFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9CE2C9B2215D00F00D94B8C /* SmartSimulationFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SmartSimulationFramework.h; sourceTree = "<group>"; };
 		C9CE2C9C2215D00F00D94B8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -141,7 +150,6 @@
 		C9CE2D1D2215D32B00D94B8C /* Agriculture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Agriculture.swift; sourceTree = "<group>"; };
 		C9CE2D1E2215D32B00D94B8C /* BronzeWorking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BronzeWorking.swift; sourceTree = "<group>"; };
 		C9CE2D1F2215D32B00D94B8C /* Trapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trapping.swift; sourceTree = "<group>"; };
-		C9CE2D5B221E90E100D94B8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +163,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C982ECB52225E5B2007AB8B2 /* Dilemmas */ = {
+			isa = PBXGroup;
+			children = (
+				C982ECBA2225EA8A007AB8B2 /* Dilemmas.swift */,
+				C982ECB82225EA1F007AB8B2 /* Blasphemy.swift */,
+			);
+			path = Dilemmas;
+			sourceTree = "<group>";
+		};
 		C9CE2C8E2215D00F00D94B8C = {
 			isa = PBXGroup;
 			children = (
@@ -180,10 +197,10 @@
 				C9CE2CFB2215D2B000D94B8C /* Policies */,
 				C9CE2CDA2215D24300D94B8C /* Simulations */,
 				C9CE2CC52215D14B00D94B8C /* Events */,
+				C982ECB52225E5B2007AB8B2 /* Dilemmas */,
 				C9CE2CC42215D13B00D94B8C /* Effects */,
 				C9CE2CC02215D0B900D94B8C /* GlobalSimulation.swift */,
 				C9CE2CA32215D05F00D94B8C /* Core */,
-				C9CE2D5A221E90C000D94B8C /* Resources */,
 				C9CE2C9B2215D00F00D94B8C /* SmartSimulationFramework.h */,
 				C9CE2C9C2215D00F00D94B8C /* Info.plist */,
 				C9CE2CCE2215D1AA00D94B8C /* Util */,
@@ -198,6 +215,7 @@
 				C9CE2CA72215D07000D94B8C /* Effect.swift */,
 				C9CE2CAE2215D07000D94B8C /* Era.swift */,
 				C9CE2CAF2215D07000D94B8C /* Event.swift */,
+				C982ECB62225E715007AB8B2 /* Dilemma.swift */,
 				C9CE2CAD2215D07000D94B8C /* Group.swift */,
 				C9CE2CA42215D07000D94B8C /* Policy.swift */,
 				C9CE2CA82215D07000D94B8C /* RandomProperty.swift */,
@@ -280,9 +298,11 @@
 			children = (
 				C9CE2D062215D2E100D94B8C /* All.swift */,
 				C9CE2D052215D2E100D94B8C /* Conservatives.swift */,
+				C982ECBC2226BE24007AB8B2 /* Liberals.swift */,
 				C9CE2D042215D2E000D94B8C /* Groups.swift */,
 				C9CE2D072215D2E100D94B8C /* Poor.swift */,
 				C9CE2D032215D2E000D94B8C /* Religious.swift */,
+				C982ECBE2226E418007AB8B2 /* Farmers.swift */,
 			);
 			path = Groups;
 			sourceTree = "<group>";
@@ -314,14 +334,6 @@
 				C9CE2D1B2215D32B00D94B8C /* Writing.swift */,
 			);
 			path = Technics;
-			sourceTree = "<group>";
-		};
-		C9CE2D5A221E90C000D94B8C /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				C9CE2D5B221E90E100D94B8C /* Assets.xcassets */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,7 +405,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9CE2D5C221E90E100D94B8C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +439,7 @@
 				C9CE2D292215D32B00D94B8C /* Masonry.swift in Sources */,
 				C9CE2D2C2215D32B00D94B8C /* Trapping.swift in Sources */,
 				C9CE2CF72215D25200D94B8C /* BirthRate.swift in Sources */,
+				C982ECBD2226BE24007AB8B2 /* Liberals.swift in Sources */,
 				C9CE2D272215D32B00D94B8C /* Sailing.swift in Sources */,
 				C9CE2CB22215D07100D94B8C /* Policy.swift in Sources */,
 				C9CE2CBF2215D07100D94B8C /* SimulationRelation.swift in Sources */,
@@ -437,11 +449,13 @@
 				C9CE2D0C2215D2E100D94B8C /* Poor.swift in Sources */,
 				C9CE2CD62215D1ED00D94B8C /* ArrayExtension.swift in Sources */,
 				C9CE2CB82215D07100D94B8C /* Simulation.swift in Sources */,
+				C982ECB72225E715007AB8B2 /* Dilemma.swift in Sources */,
 				C9CE2D2A2215D32B00D94B8C /* Agriculture.swift in Sources */,
 				C9CE2CB32215D07100D94B8C /* Category.swift in Sources */,
 				C9CE2CF22215D25200D94B8C /* Simulations.swift in Sources */,
 				C9CE2CD42215D1CF00D94B8C /* IntegerExtension.swift in Sources */,
 				C9CE2CBE2215D07100D94B8C /* StaticProperty.swift in Sources */,
+				C982ECBF2226E418007AB8B2 /* Farmers.swift in Sources */,
 				C9CE2CFF2215D2B800D94B8C /* Policies.swift in Sources */,
 				C9CE2CF52215D25200D94B8C /* Unemployment.swift in Sources */,
 				C9CE2D0B2215D2E100D94B8C /* All.swift in Sources */,
@@ -455,6 +469,7 @@
 				C9CE2CCC2215D18100D94B8C /* MonumentVandalized.swift in Sources */,
 				C9CE2CCB2215D18100D94B8C /* Earthquake.swift in Sources */,
 				C9CE2CFA2215D27600D94B8C /* Collection.swift in Sources */,
+				C982ECB92225EA1F007AB8B2 /* Blasphemy.swift in Sources */,
 				C9CE2D202215D32B00D94B8C /* AnimalHusbandry.swift in Sources */,
 				C9CE2D0A2215D2E100D94B8C /* Conservatives.swift in Sources */,
 				C9CE2CEE2215D25200D94B8C /* Poverty.swift in Sources */,
@@ -463,6 +478,7 @@
 				C9CE2CF32215D25200D94B8C /* MortalityRate.swift in Sources */,
 				C9CE2CBA2215D07100D94B8C /* TechnicRelation.swift in Sources */,
 				C9CE2D012215D2B800D94B8C /* Sewage.swift in Sources */,
+				C982ECBB2225EA8A007AB8B2 /* Dilemmas.swift in Sources */,
 				C9CE2CEB2215D25200D94B8C /* Religiosity.swift in Sources */,
 				C9CE2CD32215D1CF00D94B8C /* Random.swift in Sources */,
 				C9CE2CED2215D25200D94B8C /* LifeSpan.swift in Sources */,

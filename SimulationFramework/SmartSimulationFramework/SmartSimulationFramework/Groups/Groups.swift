@@ -12,8 +12,10 @@ public class Groups {
 
 	public var all: All
 	public var conservatives: Conservatives
+    public var liberals: Liberals
 	public var poor: Poor
 	public var religious: Religious
+    public var farmers: Farmers
 
 	fileprivate var groups: [Group] = []
 
@@ -21,16 +23,20 @@ public class Groups {
 
 		self.all = All()
 		self.conservatives = Conservatives()
+        self.liberals = Liberals()
 		self.poor = Poor()
 		self.religious = Religious()
+        self.farmers = Farmers()
 	}
 
 	func setup(with global: GlobalSimulation) {
 
 		self.all.setup(with: global)
 		self.conservatives.setup(with: global)
+        self.liberals.setup(with: global)
 		self.poor.setup(with: global)
 		self.religious.setup(with: global)
+        self.farmers.setup(with: global)
 	}
 
 	func add(group: Group) {

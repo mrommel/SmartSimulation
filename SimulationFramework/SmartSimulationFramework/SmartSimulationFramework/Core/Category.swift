@@ -16,6 +16,7 @@ public enum Category {
 	case foreign
 	case lawOrder
 	case publicServices
+    case religion
 
 	case effects
 	case groups
@@ -38,6 +39,8 @@ public enum Category {
             return "lawOrder"
         case .publicServices:
             return "publicServices"
+        case .religion:
+            return "religion"
         case .effects:
             return "effects"
         case .groups:

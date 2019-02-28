@@ -35,10 +35,6 @@ class SettingsViewController: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-    
-    func showVersionAlert() {
-        
-    }
 }
 
 // notifications from the view model

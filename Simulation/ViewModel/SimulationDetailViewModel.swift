@@ -49,6 +49,8 @@ extension SmartSimulationFramework.Category {
             return UIImage()
         case .publicServices:
             return UIImage()
+        case .religion:
+            return UIImage()
         case .effects:
             return UIImage()
         case .groups:

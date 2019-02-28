@@ -9,15 +9,6 @@
 import UIKit
 
 // https://github.com/apraka16/swipeableOnboardingUIPageView/blob/master/testPageView/OnboardingViewController.swift
-class TurnEventViewModel: ViewModelType {
-    
-    var delegate: ViewModelDelegate?
-    
-    func bootstrap() {
-        
-        self.delegate?.didLoadData()
-    }
-}
 
 class TurnEventViewController: UIPageViewController, UIPageViewControllerDelegate {
     

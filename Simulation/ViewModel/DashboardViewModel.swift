@@ -31,12 +31,20 @@ class DashboardViewModel: ViewModelType {
 
 extension DashboardViewModel {
     
-    func eventCount() -> Int {
-        return GlobalSimulationManager.shared.eventLog?.events.count ?? 0
+    func turns() -> Int {
+        return GlobalSimulationManager.shared.eventLog?.turns.count ?? 0
     }
     
-    func event(at index: Int) -> GlobalSimulationEvent? {
-        return GlobalSimulationManager.shared.eventLog?.events[index]
+    func turn(in section: Int) -> GlobalSimulationTurn? {
+        return GlobalSimulationManager.shared.eventLog?.turns[section]
+    }
+    
+    func events(in section: Int) -> Int {
+        return GlobalSimulationManager.shared.eventLog?.turns[section].events.count ?? 0
+    }
+    
+    func event(at indexPath: IndexPath) -> GlobalSimulationEvent? {
+        return GlobalSimulationManager.shared.eventLog?.turns[indexPath.section].events[indexPath.row]
     }
 }
 
