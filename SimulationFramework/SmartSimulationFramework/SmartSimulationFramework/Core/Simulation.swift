@@ -64,6 +64,10 @@ public class Simulation {
 				self.stashedValue += tempVal
 			}
 		}
+        
+        if self.stashedValue < 0.0 {
+            self.stashedValue = 0.0
+        }
 	}
 
 	func push() {

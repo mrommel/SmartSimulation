@@ -142,7 +142,7 @@ extension DashboardViewController: GlobalSimulationInteractionDelegate {
         }
         alertController.addAction(secondOptionAction)
         
-        alertController.view.tintColor = App.Color.refreshControlColor
+        alertController.view.tintColor = App.Color.alertControllerTintColor
         
         present(alertController, animated: true, completion: nil)
     }

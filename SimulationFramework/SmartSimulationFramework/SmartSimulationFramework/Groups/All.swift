@@ -16,12 +16,15 @@ public class All: Group {
             image: nil,
             name: "All",
             summary: "A general group representing the interests of society as a whole, with opinions not related to a particular age group, gender or occupation.",
-            moodValue: 0.0,
+            moodValue: 0.7,
             frequencyValue: 1.0)
 	}
 
 	override func setup(with global: GlobalSimulation) {
 
+        self.mood.add(simulation: self.mood, formula: "x") // keep self value
+        self.frequency.add(simulation: StaticProperty(value: 1.0))
+        
 		global.groups.add(group: self)
 	}
 }

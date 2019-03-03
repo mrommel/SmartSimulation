@@ -42,6 +42,16 @@ extension GroupListViewController: ViewModelDelegate {
 
 extension GroupListViewController: UITableViewDataSource {
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        let title = "\(GlobalSimulationManager.shared.voters()?.generalMood() ?? 0.0)"
+        return title
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 80
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.viewModel?.groupCount() ?? 0
     }

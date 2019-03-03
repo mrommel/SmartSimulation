@@ -19,8 +19,15 @@ public class Farmers: Group {
                    frequencyValue: 0.25)
     }
     
-    override func setup(with simulation: GlobalSimulation) {
+    override func setup(with global: GlobalSimulation) {
         
-        simulation.groups.add(group: self)
+        self.groupFrequenceInfluences.append(GroupFrequenceInfluence(group: global.groups.poor, influence: 0.25))
+        self.groupFrequenceInfluences.append(GroupFrequenceInfluence(group: global.groups.conservatives, influence: 0.25))
+        self.groupFrequenceInfluences.append(GroupFrequenceInfluence(group: global.groups.ethnicMinorities, influence: -0.25))
+        
+        self.mood.add(simulation: self.mood, formula: "x") // keep self value
+        self.frequency.add(simulation: self.frequency, formula: "x") // keep self value
+        
+        global.groups.add(group: self)
     }
 }

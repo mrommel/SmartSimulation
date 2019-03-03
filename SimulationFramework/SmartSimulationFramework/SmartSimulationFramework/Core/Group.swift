@@ -8,6 +8,12 @@
 
 import UIKit
 
+struct GroupFrequenceInfluence {
+    
+    let group: Group?
+    let influence: Double
+}
+
 public class Group {
 
     public let image: UIImage?
@@ -16,6 +22,8 @@ public class Group {
 
 	public var mood: Simulation
 	public var frequency: Simulation
+    
+    var groupFrequenceInfluences: [GroupFrequenceInfluence] = []
 
 	init(image: UIImage?, name: String, summary: String, moodValue: Double, frequencyValue: Double) {
 
@@ -38,8 +46,30 @@ public class Group {
 		self.mood.push()
 		self.frequency.push()
 	}
+    
+    func influencedFrequency(by groups: [Group]) -> Double {
+        
+        var frequencyValue = self.frequency.value()
+        
+        for groupFrequenceInfluence in self.groupFrequenceInfluences {
+            for group in groups {
+                if group.name == groupFrequenceInfluence.group?.name {
+                    frequencyValue += groupFrequenceInfluence.influence
+                }
+            }
+        }
+        
+        return frequencyValue
+    }
 
 	func setup(with simulation: GlobalSimulation) {
 		assertionFailure("Subclasses need to implement this method")
 	}
+}
+
+extension Group: CustomDebugStringConvertible {
+    
+    public var debugDescription: String {
+        return "Group(name: \(self.name))"
+    }
 }

@@ -105,6 +105,7 @@ public class GlobalSimulation {
     public var situations: Situations
     public var technics: Technics
     var effects: Effects
+    public var voters: Voters
 
     public weak var delegate: GlobalSimulationDelegate?
 
@@ -121,6 +122,7 @@ public class GlobalSimulation {
         self.situations = Situations()
         self.technics = Technics()
         self.effects = Effects()
+        self.voters = Voters()
 
         // setup
         self.simulations.setup(with: self)
@@ -130,6 +132,7 @@ public class GlobalSimulation {
         self.groups.setup(with: self)
         self.situations.setup(with: self)
         self.technics.setup(with: self)
+        self.voters.setup(with: self)
     }
 
     public func iterate() {
@@ -181,13 +184,13 @@ public class GlobalSimulation {
         // filter effects that are too small
         self.effects.reduce()
     }
-    
+
     public func select(of event: Event) {
         let newEffects = event.effects(for: self)
         newEffects.forEach { $0.calculate() }
         self.effects.add(effects: newEffects)
     }
-    
+
     public func select(option: DilemmaOptionType, of dilemma: Dilemma) {
         let newEffects = dilemma.effectsOf(optionType: option, for: self)
         newEffects.forEach { $0.calculate() }

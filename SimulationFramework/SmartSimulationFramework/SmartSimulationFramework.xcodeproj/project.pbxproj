@@ -12,6 +12,14 @@
 		C982ECBB2225EA8A007AB8B2 /* Dilemmas.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982ECBA2225EA8A007AB8B2 /* Dilemmas.swift */; };
 		C982ECBD2226BE24007AB8B2 /* Liberals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982ECBC2226BE24007AB8B2 /* Liberals.swift */; };
 		C982ECBF2226E418007AB8B2 /* Farmers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982ECBE2226E418007AB8B2 /* Farmers.swift */; };
+		C982ECC32227EF12007AB8B2 /* Voter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982ECC22227EF12007AB8B2 /* Voter.swift */; };
+		C982ECC52227FC78007AB8B2 /* Retired.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982ECC42227FC78007AB8B2 /* Retired.swift */; };
+		C982ECC72227FD62007AB8B2 /* Parents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982ECC62227FD62007AB8B2 /* Parents.swift */; };
+		C982ECC9222803D7007AB8B2 /* EthnicMinorities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982ECC8222803D7007AB8B2 /* EthnicMinorities.swift */; };
+		C982ECCB2228042D007AB8B2 /* Patriots.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982ECCA2228042D007AB8B2 /* Patriots.swift */; };
+		C982ECCD222808F7007AB8B2 /* Young.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982ECCC222808F7007AB8B2 /* Young.swift */; };
+		C982ECCF22280AA4007AB8B2 /* Nobles.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982ECCE22280AA4007AB8B2 /* Nobles.swift */; };
+		C982ECD122280B27007AB8B2 /* Wealthy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982ECD022280B27007AB8B2 /* Wealthy.swift */; };
 		C9CE2C9D2215D00F00D94B8C /* SmartSimulationFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = C9CE2C9B2215D00F00D94B8C /* SmartSimulationFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9CE2CB22215D07100D94B8C /* Policy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE2CA42215D07000D94B8C /* Policy.swift */; };
 		C9CE2CB32215D07100D94B8C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE2CA52215D07000D94B8C /* Category.swift */; };
@@ -84,6 +92,14 @@
 		C982ECBA2225EA8A007AB8B2 /* Dilemmas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dilemmas.swift; sourceTree = "<group>"; };
 		C982ECBC2226BE24007AB8B2 /* Liberals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Liberals.swift; sourceTree = "<group>"; };
 		C982ECBE2226E418007AB8B2 /* Farmers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Farmers.swift; sourceTree = "<group>"; };
+		C982ECC22227EF12007AB8B2 /* Voter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Voter.swift; sourceTree = "<group>"; };
+		C982ECC42227FC78007AB8B2 /* Retired.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Retired.swift; sourceTree = "<group>"; };
+		C982ECC62227FD62007AB8B2 /* Parents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parents.swift; sourceTree = "<group>"; };
+		C982ECC8222803D7007AB8B2 /* EthnicMinorities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthnicMinorities.swift; sourceTree = "<group>"; };
+		C982ECCA2228042D007AB8B2 /* Patriots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patriots.swift; sourceTree = "<group>"; };
+		C982ECCC222808F7007AB8B2 /* Young.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Young.swift; sourceTree = "<group>"; };
+		C982ECCE22280AA4007AB8B2 /* Nobles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nobles.swift; sourceTree = "<group>"; };
+		C982ECD022280B27007AB8B2 /* Wealthy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wealthy.swift; sourceTree = "<group>"; };
 		C9CE2C982215D00F00D94B8C /* SmartSimulationFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SmartSimulationFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9CE2C9B2215D00F00D94B8C /* SmartSimulationFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SmartSimulationFramework.h; sourceTree = "<group>"; };
 		C9CE2C9C2215D00F00D94B8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -225,6 +241,7 @@
 				C9CE2CB02215D07100D94B8C /* StaticProperty.swift */,
 				C9CE2CA92215D07000D94B8C /* Technic.swift */,
 				C9CE2CAC2215D07000D94B8C /* TechnicRelation.swift */,
+				C982ECC22227EF12007AB8B2 /* Voter.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -303,6 +320,13 @@
 				C9CE2D072215D2E100D94B8C /* Poor.swift */,
 				C9CE2D032215D2E000D94B8C /* Religious.swift */,
 				C982ECBE2226E418007AB8B2 /* Farmers.swift */,
+				C982ECC42227FC78007AB8B2 /* Retired.swift */,
+				C982ECC62227FD62007AB8B2 /* Parents.swift */,
+				C982ECC8222803D7007AB8B2 /* EthnicMinorities.swift */,
+				C982ECCA2228042D007AB8B2 /* Patriots.swift */,
+				C982ECCC222808F7007AB8B2 /* Young.swift */,
+				C982ECCE22280AA4007AB8B2 /* Nobles.swift */,
+				C982ECD022280B27007AB8B2 /* Wealthy.swift */,
 			);
 			path = Groups;
 			sourceTree = "<group>";
@@ -425,22 +449,26 @@
 				C9CE2CF02215D25200D94B8C /* CrimeRate.swift in Sources */,
 				C9CE2CEA2215D25200D94B8C /* GrossDomesticProduct.swift in Sources */,
 				C9CE2D252215D32B00D94B8C /* Mining.swift in Sources */,
+				C982ECCB2228042D007AB8B2 /* Patriots.swift in Sources */,
 				C9CE2D282215D32B00D94B8C /* Writing.swift in Sources */,
 				C9CE2D222215D32B00D94B8C /* Calendar.swift in Sources */,
 				C9CE2D092215D2E100D94B8C /* Groups.swift in Sources */,
 				C9CE2CF82215D25200D94B8C /* Health.swift in Sources */,
 				C9CE2CF12215D25200D94B8C /* Education.swift in Sources */,
+				C982ECCD222808F7007AB8B2 /* Young.swift in Sources */,
 				C9CE2CB92215D07100D94B8C /* Situation.swift in Sources */,
 				C9CE2CBB2215D07100D94B8C /* Group.swift in Sources */,
 				C9CE2CF42215D25200D94B8C /* Happiness.swift in Sources */,
 				C9CE2D242215D32B00D94B8C /* Archery.swift in Sources */,
 				C9CE2CBD2215D07100D94B8C /* Event.swift in Sources */,
+				C982ECD122280B27007AB8B2 /* Wealthy.swift in Sources */,
 				C9CE2CCD2215D18100D94B8C /* MinisterialScandal.swift in Sources */,
 				C9CE2D292215D32B00D94B8C /* Masonry.swift in Sources */,
 				C9CE2D2C2215D32B00D94B8C /* Trapping.swift in Sources */,
 				C9CE2CF72215D25200D94B8C /* BirthRate.swift in Sources */,
 				C982ECBD2226BE24007AB8B2 /* Liberals.swift in Sources */,
 				C9CE2D272215D32B00D94B8C /* Sailing.swift in Sources */,
+				C982ECCF22280AA4007AB8B2 /* Nobles.swift in Sources */,
 				C9CE2CB22215D07100D94B8C /* Policy.swift in Sources */,
 				C9CE2CBF2215D07100D94B8C /* SimulationRelation.swift in Sources */,
 				C9CE2D212215D32B00D94B8C /* Wheel.swift in Sources */,
@@ -454,6 +482,7 @@
 				C9CE2CB32215D07100D94B8C /* Category.swift in Sources */,
 				C9CE2CF22215D25200D94B8C /* Simulations.swift in Sources */,
 				C9CE2CD42215D1CF00D94B8C /* IntegerExtension.swift in Sources */,
+				C982ECC32227EF12007AB8B2 /* Voter.swift in Sources */,
 				C9CE2CBE2215D07100D94B8C /* StaticProperty.swift in Sources */,
 				C982ECBF2226E418007AB8B2 /* Farmers.swift in Sources */,
 				C9CE2CFF2215D2B800D94B8C /* Policies.swift in Sources */,
@@ -461,6 +490,7 @@
 				C9CE2D0B2215D2E100D94B8C /* All.swift in Sources */,
 				C9CE2CC72215D15300D94B8C /* Events.swift in Sources */,
 				C9CE2D262215D32B00D94B8C /* Technics.swift in Sources */,
+				C982ECC9222803D7007AB8B2 /* EthnicMinorities.swift in Sources */,
 				C9CE2D082215D2E100D94B8C /* Religious.swift in Sources */,
 				C9CE2CEC2215D25200D94B8C /* TransportSpeed.swift in Sources */,
 				C9CE2D102215D30800D94B8C /* Homelessness.swift in Sources */,
@@ -471,12 +501,14 @@
 				C9CE2CFA2215D27600D94B8C /* Collection.swift in Sources */,
 				C982ECB92225EA1F007AB8B2 /* Blasphemy.swift in Sources */,
 				C9CE2D202215D32B00D94B8C /* AnimalHusbandry.swift in Sources */,
+				C982ECC52227FC78007AB8B2 /* Retired.swift in Sources */,
 				C9CE2D0A2215D2E100D94B8C /* Conservatives.swift in Sources */,
 				C9CE2CEE2215D25200D94B8C /* Poverty.swift in Sources */,
 				C9CE2CBC2215D07100D94B8C /* Era.swift in Sources */,
 				C9CE2CD22215D1CF00D94B8C /* FloatExtension.swift in Sources */,
 				C9CE2CF32215D25200D94B8C /* MortalityRate.swift in Sources */,
 				C9CE2CBA2215D07100D94B8C /* TechnicRelation.swift in Sources */,
+				C982ECC72227FD62007AB8B2 /* Parents.swift in Sources */,
 				C9CE2D012215D2B800D94B8C /* Sewage.swift in Sources */,
 				C982ECBB2225EA8A007AB8B2 /* Dilemmas.swift in Sources */,
 				C9CE2CEB2215D25200D94B8C /* Religiosity.swift in Sources */,

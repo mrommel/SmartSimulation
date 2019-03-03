@@ -19,8 +19,15 @@ public class Conservatives: Group {
 				   frequencyValue: 0.25)
 	}
 
-	override func setup(with simulation: GlobalSimulation) {
+	override func setup(with global: GlobalSimulation) {
 
-		simulation.groups.add(group: self)
+        // Conservatives are 25% more likely to be religious and 10% less likely to be environmentalist.
+        self.groupFrequenceInfluences.append(GroupFrequenceInfluence(group: global.groups.religious, influence: 0.25))
+        //self.groupFrequenceInfluences.append(GroupFrequenceInfluence(group: global.groups.environmentalist, influence: -0.1))
+        
+        self.mood.add(simulation: self.mood, formula: "x") // keep self value
+        self.frequency.add(simulation: self.frequency, formula: "x") // keep self value
+        
+        global.groups.add(group: self)
 	}
 }

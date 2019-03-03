@@ -18,6 +18,6 @@ class GroupDetailViewModel {
     init(group: Group) {
         self.image = group.image
         self.name = group.name
-        self.summary = group.summary
+        self.summary = "\(group.frequency.valueText()) freq, \(group.mood.valueText()) mood"
     }
 }
