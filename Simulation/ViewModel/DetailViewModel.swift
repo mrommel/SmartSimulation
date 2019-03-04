@@ -61,7 +61,13 @@ extension SmartSimulationFramework.Category {
     }
 }
 
-class SimulationDetailViewModel {
+enum DetailViewModelType {
+    case simulation
+    case situation
+    case policy
+}
+
+class DetailViewModel {
     
     let image: UIImage?
     let name: String
@@ -70,6 +76,7 @@ class SimulationDetailViewModel {
     let value: String
     var inputs: [SimulationInputRelationViewModel]
     var outputs: [SimulationInputRelationViewModel]
+    let type: DetailViewModelType
     
     init(simulation: Simulation?) {
         self.image = simulation?.image
@@ -91,6 +98,56 @@ class SimulationDetailViewModel {
                 self.outputs.append(SimulationInputRelationViewModel(simulationRelation: output))
             }
         }
+        
+        self.type = .simulation
+    }
+    
+    init(situation: Situation?) {
+        self.image = situation?.image
+        self.name = situation?.name ?? "-"
+        self.summary = situation?.summary ?? "-"
+        self.category = situation?.category.text ?? "-"
+        self.value = situation?.valueText() ?? "-"
+        
+        self.inputs = []
+        if let inputs = situation?.inputs {
+            for input in inputs {
+                self.inputs.append(SimulationInputRelationViewModel(simulationRelation: input))
+            }
+        }
+        
+        self.outputs = []
+        if let outputs = situation?.outputs {
+            for output in outputs {
+                self.outputs.append(SimulationInputRelationViewModel(simulationRelation: output))
+            }
+        }
+        
+        self.type = .situation
+    }
+    
+    init(policy: Policy?) {
+        self.image = policy?.image
+        self.name = policy?.name ?? "-"
+        self.summary = policy?.summary ?? "-"
+        self.category = policy?.category.text ?? "-"
+        self.value = policy?.valueText() ?? "-"
+        
+        self.inputs = []
+        if let inputs = policy?.inputs {
+            for input in inputs {
+                self.inputs.append(SimulationInputRelationViewModel(simulationRelation: input))
+            }
+        }
+        
+        self.outputs = []
+        if let outputs = policy?.outputs {
+            for output in outputs {
+                self.outputs.append(SimulationInputRelationViewModel(simulationRelation: output))
+            }
+        }
+        
+        self.type = .policy
     }
     
     func getInputRelation(at index: Int) -> SimulationInputRelationViewModel? {
@@ -102,28 +159,28 @@ class SimulationDetailViewModel {
     }
 }
 
-extension SimulationDetailViewModel: NameProviderProtocol {
+extension DetailViewModel: NameProviderProtocol {
     
     func getName() -> String {
         return self.name
     }
 }
 
-extension SimulationDetailViewModel: DescriptionProviderProtocol {
+extension DetailViewModel: DescriptionProviderProtocol {
     
     func getDescription() -> String {
         return self.summary
     }
 }
 
-extension SimulationDetailViewModel: CategoryProviderProtocol {
+extension DetailViewModel: CategoryProviderProtocol {
     
     func getCategoryText() -> String {
         return self.category
     }
 }
 
-extension SimulationDetailViewModel: ValueProviderProtocol {
+extension DetailViewModel: ValueProviderProtocol {
     
     func getValue() -> String {
         return self.value

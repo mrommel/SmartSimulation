@@ -15,6 +15,9 @@
 		C90BEF74220CCC38007F24A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C90BEF73220CCC38007F24A6 /* Assets.xcassets */; };
 		C90BEF77220CCC38007F24A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C90BEF75220CCC38007F24A6 /* LaunchScreen.storyboard */; };
 		C90BEF80220CD123007F24A6 /* SimulationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90BEF7F220CD123007F24A6 /* SimulationListViewController.swift */; };
+		C910482B222D55FA00EE8FDB /* CollectionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910482A222D55FA00EE8FDB /* CollectionExtension.swift */; };
+		C910482D222D7F8500EE8FDB /* SituationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910482C222D7F8500EE8FDB /* SituationDetailViewController.swift */; };
+		C910482F222D803D00EE8FDB /* PolicyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910482E222D803D00EE8FDB /* PolicyDetailViewController.swift */; };
 		C982EC8C221F0137007AB8B2 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982EC8B221F0137007AB8B2 /* OnboardingViewController.swift */; };
 		C982EC8E221F02B2007AB8B2 /* ApplicationLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982EC8D221F02B2007AB8B2 /* ApplicationLaunch.swift */; };
 		C982EC92221F28BB007AB8B2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982EC91221F28BB007AB8B2 /* SettingsViewController.swift */; };
@@ -44,7 +47,7 @@
 		C9CE2D372218ADBD00D94B8C /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE2D362218ADBC00D94B8C /* UITableViewExtension.swift */; };
 		C9CE2D392218B0EA00D94B8C /* TableViewNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE2D382218B0EA00D94B8C /* TableViewNameCell.swift */; };
 		C9CE2D3B2218B10E00D94B8C /* TableViewNameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9CE2D3A2218B10E00D94B8C /* TableViewNameCell.xib */; };
-		C9CE2D3D2219E63B00D94B8C /* SimulationDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE2D3C2219E63B00D94B8C /* SimulationDetailViewModel.swift */; };
+		C9CE2D3D2219E63B00D94B8C /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE2D3C2219E63B00D94B8C /* DetailViewModel.swift */; };
 		C9CE2D3F2219F31C00D94B8C /* TableViewDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE2D3E2219F31C00D94B8C /* TableViewDescriptionCell.swift */; };
 		C9CE2D412219F37A00D94B8C /* TableViewDescriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9CE2D402219F37900D94B8C /* TableViewDescriptionCell.xib */; };
 		C9CE2D43221A01A100D94B8C /* TableViewValueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE2D42221A01A100D94B8C /* TableViewValueCell.swift */; };
@@ -57,7 +60,6 @@
 		C9CE2D51221C23C200D94B8C /* AppAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE2D50221C23C200D94B8C /* AppAnalytics.swift */; };
 		C9CE2D53221C95A900D94B8C /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE2D52221C95A900D94B8C /* DashboardViewModel.swift */; };
 		C9CE2D55221C9EC900D94B8C /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE2D54221C9EC900D94B8C /* ArrayExtension.swift */; };
-		C9CE2D57221D3EBD00D94B8C /* TurnEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE2D56221D3EBD00D94B8C /* TurnEventViewController.swift */; };
 		C9CE2D59221D469D00D94B8C /* ApplicationTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE2D58221D469D00D94B8C /* ApplicationTabBarController.swift */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +89,9 @@
 		C90BEF76220CCC38007F24A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C90BEF78220CCC38007F24A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C90BEF7F220CD123007F24A6 /* SimulationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulationListViewController.swift; sourceTree = "<group>"; };
+		C910482A222D55FA00EE8FDB /* CollectionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtension.swift; sourceTree = "<group>"; };
+		C910482C222D7F8500EE8FDB /* SituationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SituationDetailViewController.swift; sourceTree = "<group>"; };
+		C910482E222D803D00EE8FDB /* PolicyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyDetailViewController.swift; sourceTree = "<group>"; };
 		C982EC8B221F0137007AB8B2 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		C982EC8D221F02B2007AB8B2 /* ApplicationLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationLaunch.swift; sourceTree = "<group>"; };
 		C982EC91221F28BB007AB8B2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -117,7 +122,7 @@
 		C9CE2D362218ADBC00D94B8C /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		C9CE2D382218B0EA00D94B8C /* TableViewNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewNameCell.swift; sourceTree = "<group>"; };
 		C9CE2D3A2218B10E00D94B8C /* TableViewNameCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewNameCell.xib; sourceTree = "<group>"; };
-		C9CE2D3C2219E63B00D94B8C /* SimulationDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulationDetailViewModel.swift; sourceTree = "<group>"; };
+		C9CE2D3C2219E63B00D94B8C /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		C9CE2D3E2219F31C00D94B8C /* TableViewDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDescriptionCell.swift; sourceTree = "<group>"; };
 		C9CE2D402219F37900D94B8C /* TableViewDescriptionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewDescriptionCell.xib; sourceTree = "<group>"; };
 		C9CE2D42221A01A100D94B8C /* TableViewValueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewValueCell.swift; sourceTree = "<group>"; };
@@ -130,7 +135,6 @@
 		C9CE2D50221C23C200D94B8C /* AppAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAnalytics.swift; sourceTree = "<group>"; };
 		C9CE2D52221C95A900D94B8C /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		C9CE2D54221C9EC900D94B8C /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
-		C9CE2D56221D3EBD00D94B8C /* TurnEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnEventViewController.swift; sourceTree = "<group>"; };
 		C9CE2D58221D469D00D94B8C /* ApplicationTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationTabBarController.swift; sourceTree = "<group>"; };
 		E0B1FE2964BEBBC2BD95EE28 /* Pods_Simulation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Simulation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -215,7 +219,8 @@
 				C90BEF6B220CCC33007F24A6 /* DashboardViewController.swift */,
 				C90BEF7F220CD123007F24A6 /* SimulationListViewController.swift */,
 				C9CE2C84220DD26D00D94B8C /* SimulationDetailViewController.swift */,
-				C9CE2D56221D3EBD00D94B8C /* TurnEventViewController.swift */,
+				C910482C222D7F8500EE8FDB /* SituationDetailViewController.swift */,
+				C910482E222D803D00EE8FDB /* PolicyDetailViewController.swift */,
 				C982ECAB22247106007AB8B2 /* GroupListViewController.swift */,
 				C982EC91221F28BB007AB8B2 /* SettingsViewController.swift */,
 			);
@@ -229,7 +234,7 @@
 				C982EC9B2224085E007AB8B2 /* OnboardingDetailViewModel.swift */,
 				C9CE2D52221C95A900D94B8C /* DashboardViewModel.swift */,
 				C9CE2C7A220DB21600D94B8C /* SimulationListViewModel.swift */,
-				C9CE2D3C2219E63B00D94B8C /* SimulationDetailViewModel.swift */,
+				C9CE2D3C2219E63B00D94B8C /* DetailViewModel.swift */,
 				C982ECAD22247373007AB8B2 /* GroupListViewModel.swift */,
 				C982ECAF22247560007AB8B2 /* GroupDetailViewModel.swift */,
 				C982EC93221F295E007AB8B2 /* SettingsViewModel.swift */,
@@ -248,6 +253,7 @@
 				C9CE2D54221C9EC900D94B8C /* ArrayExtension.swift */,
 				C982EC8D221F02B2007AB8B2 /* ApplicationLaunch.swift */,
 				C982ECA922244A2A007AB8B2 /* SwiftLogExtension.swift */,
+				C910482A222D55FA00EE8FDB /* CollectionExtension.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -465,6 +471,7 @@
 				C982ECAC22247106007AB8B2 /* GroupListViewController.swift in Sources */,
 				C982EC94221F295E007AB8B2 /* SettingsViewModel.swift in Sources */,
 				C982ECAE22247373007AB8B2 /* GroupListViewModel.swift in Sources */,
+				C910482D222D7F8500EE8FDB /* SituationDetailViewController.swift in Sources */,
 				C9CE2D51221C23C200D94B8C /* AppAnalytics.swift in Sources */,
 				C982EC8E221F02B2007AB8B2 /* ApplicationLaunch.swift in Sources */,
 				C9CE2D3022160D4F00D94B8C /* ColorExtension.swift in Sources */,
@@ -472,13 +479,13 @@
 				C9CE2C85220DD26D00D94B8C /* SimulationDetailViewController.swift in Sources */,
 				C9CE2D47221A038B00D94B8C /* TableViewCategoryCell.swift in Sources */,
 				C9CE2C7B220DB21600D94B8C /* SimulationListViewModel.swift in Sources */,
-				C9CE2D57221D3EBD00D94B8C /* TurnEventViewController.swift in Sources */,
 				C982ECB022247560007AB8B2 /* GroupDetailViewModel.swift in Sources */,
 				C9CE2D55221C9EC900D94B8C /* ArrayExtension.swift in Sources */,
 				C982EC8C221F0137007AB8B2 /* OnboardingViewController.swift in Sources */,
 				C9CE2C7E220DC26800D94B8C /* R.generated.swift in Sources */,
 				C982EC9E222408F5007AB8B2 /* OnboardingViewModel.swift in Sources */,
-				C9CE2D3D2219E63B00D94B8C /* SimulationDetailViewModel.swift in Sources */,
+				C910482B222D55FA00EE8FDB /* CollectionExtension.swift in Sources */,
+				C9CE2D3D2219E63B00D94B8C /* DetailViewModel.swift in Sources */,
 				C9CE2D4B221B491D00D94B8C /* TableViewRelationCell.swift in Sources */,
 				C9CE2C79220DB1F000D94B8C /* ViewModelType.swift in Sources */,
 				C90BEF6C220CCC33007F24A6 /* DashboardViewController.swift in Sources */,
@@ -488,6 +495,7 @@
 				C9CE2D43221A01A100D94B8C /* TableViewValueCell.swift in Sources */,
 				C9CE2C77220DB1DD00D94B8C /* ViewModelDelegate.swift in Sources */,
 				C982EC9C2224085E007AB8B2 /* OnboardingDetailViewModel.swift in Sources */,
+				C910482F222D803D00EE8FDB /* PolicyDetailViewController.swift in Sources */,
 				C982ECAA22244A2A007AB8B2 /* SwiftLogExtension.swift in Sources */,
 				C9CE2D3F2219F31C00D94B8C /* TableViewDescriptionCell.swift in Sources */,
 				C90BEF6A220CCC33007F24A6 /* AppDelegate.swift in Sources */,

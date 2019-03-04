@@ -44,8 +44,11 @@ extension GroupListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
-        let title = "\(GlobalSimulationManager.shared.voters()?.generalMood() ?? 0.0)"
-        return title
+        if let title = GlobalSimulationManager.shared.voters()?.generalMoodValueText() {
+            return title
+        }
+        
+        return "---"
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

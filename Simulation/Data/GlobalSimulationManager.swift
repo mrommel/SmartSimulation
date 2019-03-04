@@ -78,9 +78,6 @@ class GlobalSimulationManager {
     
     func iterate() {
         self.globalSimulation?.iterate()
-        
-        // DEBUG
-        print("mood: \(self.globalSimulation?.voters.generalMood() ?? 0.0)")
     }
     
     func setup() {
@@ -93,6 +90,14 @@ class GlobalSimulationManager {
     
     func groups() -> Groups? {
         return self.globalSimulation?.groups
+    }
+    
+    func situations() -> Situations? {
+        return self.globalSimulation?.situations
+    }
+    
+    func policies() -> Policies? {
+        return self.globalSimulation?.policies
     }
     
     func select(of event: Event) {

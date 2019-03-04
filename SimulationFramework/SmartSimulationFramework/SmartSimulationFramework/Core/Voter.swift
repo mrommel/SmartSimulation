@@ -100,7 +100,7 @@ public class Voters {
         return names.map { self.generateVoter(named: $0) }
     }
     
-    public func generalMood() -> Double {
+    public func generalMoodValue() -> Double {
         
         let voters = self.generateVoters()
         
@@ -115,5 +115,10 @@ public class Voters {
         }
         
         return mood / Double(voters.count)
+    }
+    
+    public func generalMoodValueText() -> String {
+        
+        return self.generalMoodValue().format(with: ".2")
     }
 }

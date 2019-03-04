@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum Category {
+public enum Category: CaseIterable {
 	case core
 
 	case economy

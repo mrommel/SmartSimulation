@@ -40,6 +40,8 @@ enum AnalyticsNavigationType {
     case navigateNavBarToSettings
     
     case navigateSimulationsToSimulation
+    case navigateSimulationsToSituation
+    case navigateSimulationsToPolicy
     
     var trackingKey: String {
         switch self {
@@ -54,6 +56,10 @@ enum AnalyticsNavigationType {
             
         case .navigateSimulationsToSimulation:
             return "navigate_simulations_simulation"
+        case .navigateSimulationsToSituation:
+            return "navigate_simulations_situation"
+        case .navigateSimulationsToPolicy:
+            return "navigate_simulations_policy"
             
         case .navigateIntroWelcomeToSimulation:
             return "navigate_intro_welcome_simulations"

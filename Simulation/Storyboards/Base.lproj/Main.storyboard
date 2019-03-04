@@ -119,6 +119,8 @@
                     <connections>
                         <outlet property="tableView" destination="ReS-UH-xaT" id="M3l-kM-3eh"/>
                         <segue destination="Ndl-aN-l9h" kind="show" identifier="showSimulation" id="n2a-8s-8Vr"/>
+                        <segue destination="GNH-bH-heH" kind="show" identifier="showSituation" id="asE-KK-Esu"/>
+                        <segue destination="n07-mH-HgY" kind="show" identifier="showPolicy" id="CVN-H8-bL8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TT2-sE-HRK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -211,7 +213,67 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UFo-sF-ZZP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2981.5999999999999" y="873.91304347826099"/>
+            <point key="canvasLocation" x="3630" y="560"/>
+        </scene>
+        <!--Policy Detail View Controller-->
+        <scene sceneID="Xbw-MI-4d8">
+            <objects>
+                <viewController id="n07-mH-HgY" customClass="PolicyDetailViewController" customModule="Simulation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xD7-Sg-cHE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CfV-UQ-SU6">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CfV-UQ-SU6" firstAttribute="trailing" secondItem="cy5-2b-70a" secondAttribute="trailing" id="C5j-ZD-HQf"/>
+                            <constraint firstItem="CfV-UQ-SU6" firstAttribute="bottom" secondItem="cy5-2b-70a" secondAttribute="bottom" id="YJz-Cm-gm6"/>
+                            <constraint firstItem="CfV-UQ-SU6" firstAttribute="top" secondItem="cy5-2b-70a" secondAttribute="top" id="caW-ZB-5q6"/>
+                            <constraint firstItem="CfV-UQ-SU6" firstAttribute="leading" secondItem="cy5-2b-70a" secondAttribute="leading" id="uCK-XY-BA0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cy5-2b-70a"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="CfV-UQ-SU6" id="zF3-zL-5ZL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oOE-XJ-9sk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3630" y="1379"/>
+        </scene>
+        <!--Situation Detail View Controller-->
+        <scene sceneID="akm-44-v0G">
+            <objects>
+                <viewController id="GNH-bH-heH" customClass="SituationDetailViewController" customModule="Simulation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HaV-Ic-IDd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DOp-nW-AXj">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DOp-nW-AXj" firstAttribute="leading" secondItem="H3v-Zq-C1J" secondAttribute="leading" id="DSo-JN-fzi"/>
+                            <constraint firstItem="DOp-nW-AXj" firstAttribute="trailing" secondItem="H3v-Zq-C1J" secondAttribute="trailing" id="Mo8-fu-Cfi"/>
+                            <constraint firstItem="DOp-nW-AXj" firstAttribute="bottom" secondItem="H3v-Zq-C1J" secondAttribute="bottom" id="Ogy-Bg-d2X"/>
+                            <constraint firstItem="DOp-nW-AXj" firstAttribute="top" secondItem="H3v-Zq-C1J" secondAttribute="top" id="U0k-yZ-1g2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="H3v-Zq-C1J"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="DOp-nW-AXj" id="yeV-nf-hBk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3qg-b4-YNZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4406" y="968"/>
         </scene>
         <!--Onboarding View Controller-->
         <scene sceneID="Oga-QH-vvW">

@@ -58,6 +58,10 @@ class SimulationListViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationViewController = segue.destination as? SimulationDetailViewController {
             destinationViewController.simulationDetailViewModel = self.viewModel?.selectedSimulationDetailViewModel
+        } else if let destinationViewController = segue.destination as? SituationDetailViewController {
+            destinationViewController.situationDetailViewModel = self.viewModel?.selectedSituationDetailViewModel
+        } else if let destinationViewController = segue.destination as? PolicyDetailViewController {
+            destinationViewController.policyDetailViewModel = self.viewModel?.selectedPolicyDetailViewModel
         }
     }
 }
@@ -82,20 +86,21 @@ extension SimulationListViewController: ViewModelDelegate {
 extension SimulationListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.viewModel?.simulationCount() ?? 0
+        return self.viewModel?.sectionCount() ?? 0
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return R.string.localizable.simulationListViewControllerTitle()
+        //return R.string.localizable.simulationListViewControllerTitle()
+        return self.viewModel?.sectionTitle(for: section)
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.viewModel?.simulations(in: section) ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SimulationListViewController.reuseableIdentifier, for: indexPath)
-        let simulation = self.viewModel?.simulation(at: indexPath.row)
+        let simulation = self.viewModel?.detail(at: indexPath)
         cell.imageView?.image = simulation?.image
         cell.textLabel?.text = simulation?.name
         cell.detailTextLabel?.text = simulation?.value
@@ -104,7 +109,6 @@ extension SimulationListViewController: UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView.deselectRow(at: indexPath, animated: true)
-        self.viewModel?.selectSimulation(at: indexPath.row)
-        AppAnalytics.logNavigation(navigation: .navigateSimulationsToSimulation)
+        self.viewModel?.selectDetail(at: indexPath)
     }
 }
