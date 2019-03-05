@@ -8,6 +8,7 @@
 
 import UIKit
 import SmartSimulationFramework
+import Rswift
 
 class PolicyDetailViewController: UIViewController {
     
@@ -59,7 +60,7 @@ extension PolicyDetailViewController: UITableViewDelegate, UITableViewDataSource
         case 0:
             return nil
         case 1:
-            return "Output"
+            return R.string.localizable.policyDetailViewControllerSectionOutput()
         default:
             return nil
         }

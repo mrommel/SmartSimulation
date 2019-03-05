@@ -57,10 +57,6 @@ class SimulationListViewModel: ViewModelType {
         }
     }
     
-    /*func addSimulation() {
-        // self.delegate?.performSegue(named: SimulationListViewModel.simulationDetailSegue.identifier)
-    }*/
-    
     func sectionCount() -> Int {
         
         return Category.allCases.count
@@ -86,9 +82,7 @@ class SimulationListViewModel: ViewModelType {
     }
     
     func selectDetail(at indexPath: IndexPath) {
-        
-        print("selectDetail \(indexPath)")
-        
+
         let detail = self.detail(at: indexPath)
         let type: DetailViewModelType = detail?.type ?? .simulation
         

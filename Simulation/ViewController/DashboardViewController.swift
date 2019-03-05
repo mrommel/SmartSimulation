@@ -93,7 +93,7 @@ extension DashboardViewController: GlobalSimulationInteractionDelegate {
         
         let alertController = UIAlertController(title: "", message: "", preferredStyle: .alert)
     
-        let titleFont = [NSAttributedString.Key.font: UIFont(name: "ArialHebrew-Bold", size: 18.0)!]
+        let titleFont = [NSAttributedString.Key.font: UIFont(name: "Avenir-Roman", size: 18.0)!]
         let messageFont = [NSAttributedString.Key.font: UIFont(name: "Avenir-Roman", size: 12.0)!]
         
         let titleAttrString = NSMutableAttributedString(string: event?.name ?? "", attributes: titleFont)

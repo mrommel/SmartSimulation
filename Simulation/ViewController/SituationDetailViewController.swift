@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Rswift
 
 class SituationDetailViewController: UIViewController {
     
@@ -49,9 +50,9 @@ extension SituationDetailViewController: UITableViewDelegate, UITableViewDataSou
         case 0:
             return nil
         case 1:
-            return "Input"
+            return R.string.localizable.situationDetailViewControllerSectionInput()
         case 2:
-            return "Output"
+            return R.string.localizable.situationDetailViewControllerSectionOutput()
         default:
             return nil
         }

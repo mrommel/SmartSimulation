@@ -90,7 +90,6 @@ extension SimulationListViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        //return R.string.localizable.simulationListViewControllerTitle()
         return self.viewModel?.sectionTitle(for: section)
     }
     

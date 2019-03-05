@@ -8,5 +8,20 @@
 
 "DashboardViewController.Title" = "Dashboard";
 
+"OnboardingViewController.Slide1.Title" = "Welcome";
+"OnboardingViewController.Slide1.Summary" = "Screen 1";
+"OnboardingViewController.Slide2.Title" = "Simulations";
+"OnboardingViewController.Slide2.Summary" = "Screen 2";
+"OnboardingViewController.Slide3.Title" = "Let's go";
+"OnboardingViewController.Slide3.Summary" = "Screen 3";
+
 "SimulationListViewController.Title" = "Simulations";
 "SimulationListViewController.RefreshControl.Text" = "Fetching Simulation Data ...";
+
+"SimulationDetailViewController.Section.Output" = "Output";
+"SimulationDetailViewController.Section.Input" = "Input";
+
+"SituationDetailViewController.Section.Output" = "Output";
+"SituationDetailViewController.Section.Input" = "Input";
+
+"PolicyDetailViewController.Section.Output" = "Output";

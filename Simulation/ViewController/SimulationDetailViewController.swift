@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Rswift
 
 class SimulationDetailViewController: UIViewController {
 
@@ -49,9 +50,9 @@ extension SimulationDetailViewController: UITableViewDelegate, UITableViewDataSo
         case 0:
             return nil
         case 1:
-            return "Input"
+            return R.string.localizable.simulationDetailViewControllerSectionInput()
         case 2:
-            return "Output"
+            return R.string.localizable.simulationDetailViewControllerSectionOutput()
         default:
             return nil
         }
