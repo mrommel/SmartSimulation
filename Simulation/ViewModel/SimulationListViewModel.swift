@@ -35,19 +35,19 @@ class SimulationListViewModel: ViewModelType {
             
             if let simulations = GlobalSimulationManager.shared.simulations() {
                 for simulation in simulations {
-                    self.detailViewModels.append(DetailViewModel(simulation: simulation))
+                    self.detailViewModels.append(SimulationDetailViewModel(simulation: simulation))
                 }
             }
             
             if let situations = GlobalSimulationManager.shared.situations() {
                 for situation in situations {
-                    self.detailViewModels.append(DetailViewModel(situation: situation))
+                    self.detailViewModels.append(SituationDetailViewModel(situation: situation))
                 }
             }
             
             if let policies = GlobalSimulationManager.shared.policies() {
                 for policy in policies {
-                    self.detailViewModels.append(DetailViewModel(policy: policy))
+                    self.detailViewModels.append(PolicyDetailViewModel(policy: policy))
                 }
             }
             

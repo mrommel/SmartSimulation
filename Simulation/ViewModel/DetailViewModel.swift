@@ -62,6 +62,7 @@ extension SmartSimulationFramework.Category {
 }
 
 enum DetailViewModelType {
+    
     case simulation
     case situation
     case policy
@@ -74,80 +75,18 @@ class DetailViewModel {
     let summary: String
     let category: String
     let value: String
-    var inputs: [SimulationInputRelationViewModel]
-    var outputs: [SimulationInputRelationViewModel]
+    var inputs: [SimulationInputRelationViewModel] = []
+    var outputs: [SimulationInputRelationViewModel] = []
     let type: DetailViewModelType
     
-    init(simulation: Simulation?) {
-        self.image = simulation?.image
-        self.name = simulation?.name ?? "-"
-        self.summary = simulation?.summary ?? "-"
-        self.category = simulation?.category.text ?? "-"
-        self.value = simulation?.valueText() ?? "-"
+    init(image: UIImage?, name: String, summary: String, category: String, value: String, type: DetailViewModelType) {
         
-        self.inputs = []
-        if let inputs = simulation?.inputs {
-            for input in inputs {
-                self.inputs.append(SimulationInputRelationViewModel(simulationRelation: input))
-            }
-        }
-        
-        self.outputs = []
-        if let outputs = simulation?.outputs {
-            for output in outputs {
-                self.outputs.append(SimulationInputRelationViewModel(simulationRelation: output))
-            }
-        }
-        
-        self.type = .simulation
-    }
-    
-    init(situation: Situation?) {
-        self.image = situation?.image
-        self.name = situation?.name ?? "-"
-        self.summary = situation?.summary ?? "-"
-        self.category = situation?.category.text ?? "-"
-        self.value = situation?.valueText() ?? "-"
-        
-        self.inputs = []
-        if let inputs = situation?.inputs {
-            for input in inputs {
-                self.inputs.append(SimulationInputRelationViewModel(simulationRelation: input))
-            }
-        }
-        
-        self.outputs = []
-        if let outputs = situation?.outputs {
-            for output in outputs {
-                self.outputs.append(SimulationInputRelationViewModel(simulationRelation: output))
-            }
-        }
-        
-        self.type = .situation
-    }
-    
-    init(policy: Policy?) {
-        self.image = policy?.image
-        self.name = policy?.name ?? "-"
-        self.summary = policy?.summary ?? "-"
-        self.category = policy?.category.text ?? "-"
-        self.value = policy?.valueText() ?? "-"
-        
-        self.inputs = []
-        if let inputs = policy?.inputs {
-            for input in inputs {
-                self.inputs.append(SimulationInputRelationViewModel(simulationRelation: input))
-            }
-        }
-        
-        self.outputs = []
-        if let outputs = policy?.outputs {
-            for output in outputs {
-                self.outputs.append(SimulationInputRelationViewModel(simulationRelation: output))
-            }
-        }
-        
-        self.type = .policy
+        self.image = image
+        self.name = name
+        self.summary = summary
+        self.category = category
+        self.value = value
+        self.type = type
     }
     
     func getInputRelation(at index: Int) -> SimulationInputRelationViewModel? {
@@ -156,6 +95,71 @@ class DetailViewModel {
     
     func getOutputRelation(at index: Int) -> SimulationInputRelationViewModel? {
         return self.outputs[index]
+    }
+}
+
+class SimulationDetailViewModel : DetailViewModel {
+    
+    init(simulation: Simulation?) {
+        
+        super.init(image: simulation?.image, name: simulation?.name ?? "-", summary: simulation?.summary ?? "-", category: simulation?.category.text ?? "-", value: simulation?.valueText() ?? "-", type: .simulation)
+
+        if let inputs = simulation?.inputs {
+            for input in inputs {
+                self.inputs.append(SimulationInputRelationViewModel(simulationRelation: input))
+            }
+        }
+
+        if let outputs = simulation?.outputs {
+            for output in outputs {
+                self.outputs.append(SimulationInputRelationViewModel(simulationRelation: output))
+            }
+        }
+    }
+}
+
+class SituationDetailViewModel : DetailViewModel {
+    
+    init(situation: Situation?) {
+        
+        super.init(image: situation?.image, name: situation?.name ?? "-", summary: situation?.summary ?? "-", category: situation?.category.text ?? "-", value: situation?.valueText() ?? "-", type: .situation)
+
+        if let inputs = situation?.inputs {
+            for input in inputs {
+                self.inputs.append(SimulationInputRelationViewModel(simulationRelation: input))
+            }
+        }
+        
+        if let outputs = situation?.outputs {
+            for output in outputs {
+                self.outputs.append(SimulationInputRelationViewModel(simulationRelation: output))
+            }
+        }
+    }
+}
+
+
+class PolicyDetailViewModel : DetailViewModel {
+    
+    let policy: Policy?
+    
+    init(policy: Policy?) {
+        
+        self.policy = policy
+        
+        super.init(image: policy?.image, name: policy?.name ?? "-", summary: policy?.summary ?? "-", category: policy?.category.text ?? "-", value: policy?.valueText() ?? "-", type: .policy)
+        
+        if let inputs = policy?.inputs {
+            for input in inputs {
+                self.inputs.append(SimulationInputRelationViewModel(simulationRelation: input))
+            }
+        }
+        
+        if let outputs = policy?.outputs {
+            for output in outputs {
+                self.outputs.append(SimulationInputRelationViewModel(simulationRelation: output))
+            }
+        }
     }
 }
 

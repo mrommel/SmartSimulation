@@ -116,6 +116,7 @@ extension SituationDetailViewController: UITableViewDelegate, UITableViewDataSou
             case 3:
                 let cell: TableViewValueCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
                 cell.setup(with: self.situationDetailViewModel)
+                cell.accessoryType = .disclosureIndicator
                 return cell
             default:
                 return UITableViewCell()

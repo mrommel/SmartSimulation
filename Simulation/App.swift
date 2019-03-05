@@ -21,6 +21,7 @@ class App {
         
         static var tableViewCellTextEnabled: UIColor { return .black }
         static var tableViewCellTextDisabled: UIColor { return .darkGray }
+        static var tableViewCellAccessory: UIColor { return UIColor(hex: "#809C13") }
         
         static var refreshControlColor: UIColor { return UIColor(hex: "#809C13") }
         

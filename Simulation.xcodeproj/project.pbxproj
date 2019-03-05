@@ -18,6 +18,7 @@
 		C910482B222D55FA00EE8FDB /* CollectionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910482A222D55FA00EE8FDB /* CollectionExtension.swift */; };
 		C910482D222D7F8500EE8FDB /* SituationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910482C222D7F8500EE8FDB /* SituationDetailViewController.swift */; };
 		C910482F222D803D00EE8FDB /* PolicyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910482E222D803D00EE8FDB /* PolicyDetailViewController.swift */; };
+		C9104833222DB96000EE8FDB /* PolicySelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9104832222DB96000EE8FDB /* PolicySelectionController.swift */; };
 		C982EC8C221F0137007AB8B2 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982EC8B221F0137007AB8B2 /* OnboardingViewController.swift */; };
 		C982EC8E221F02B2007AB8B2 /* ApplicationLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982EC8D221F02B2007AB8B2 /* ApplicationLaunch.swift */; };
 		C982EC92221F28BB007AB8B2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982EC91221F28BB007AB8B2 /* SettingsViewController.swift */; };
@@ -92,6 +93,7 @@
 		C910482A222D55FA00EE8FDB /* CollectionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtension.swift; sourceTree = "<group>"; };
 		C910482C222D7F8500EE8FDB /* SituationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SituationDetailViewController.swift; sourceTree = "<group>"; };
 		C910482E222D803D00EE8FDB /* PolicyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyDetailViewController.swift; sourceTree = "<group>"; };
+		C9104832222DB96000EE8FDB /* PolicySelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicySelectionController.swift; sourceTree = "<group>"; };
 		C982EC8B221F0137007AB8B2 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		C982EC8D221F02B2007AB8B2 /* ApplicationLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationLaunch.swift; sourceTree = "<group>"; };
 		C982EC91221F28BB007AB8B2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				C982EC8D221F02B2007AB8B2 /* ApplicationLaunch.swift */,
 				C982ECA922244A2A007AB8B2 /* SwiftLogExtension.swift */,
 				C910482A222D55FA00EE8FDB /* CollectionExtension.swift */,
+				C9104832222DB96000EE8FDB /* PolicySelectionController.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -477,6 +480,7 @@
 				C9CE2D3022160D4F00D94B8C /* ColorExtension.swift in Sources */,
 				C90BEF80220CD123007F24A6 /* SimulationListViewController.swift in Sources */,
 				C9CE2C85220DD26D00D94B8C /* SimulationDetailViewController.swift in Sources */,
+				C9104833222DB96000EE8FDB /* PolicySelectionController.swift in Sources */,
 				C9CE2D47221A038B00D94B8C /* TableViewCategoryCell.swift in Sources */,
 				C9CE2C7B220DB21600D94B8C /* SimulationListViewModel.swift in Sources */,
 				C982ECB022247560007AB8B2 /* GroupDetailViewModel.swift in Sources */,

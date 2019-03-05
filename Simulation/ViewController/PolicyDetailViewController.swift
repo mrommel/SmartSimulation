@@ -7,12 +7,23 @@
 //
 
 import UIKit
+import SmartSimulationFramework
 
 class PolicyDetailViewController: UIViewController {
+    
+    static let reuseIdentifier: String = "policyCell"
     
     @IBOutlet weak var tableView: UITableView!
     
     var policyDetailViewModel: DetailViewModel?
+    
+    lazy var standardCell: UITableViewCell = {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: PolicyDetailViewController.reuseIdentifier) {
+            return cell
+        } else {
+            return UITableViewCell(style: .default, reuseIdentifier: PolicyDetailViewController.reuseIdentifier)
+        }
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +38,6 @@ class PolicyDetailViewController: UIViewController {
         self.tableView.register(TableViewNameCell.self)
         self.tableView.register(TableViewDescriptionCell.self)
         self.tableView.register(TableViewCategoryCell.self)
-        self.tableView.register(TableViewValueCell.self)
         self.tableView.register(TableViewRelationCell.self)
         
         self.tableView.tableFooterView = UIView()
@@ -89,7 +99,7 @@ extension PolicyDetailViewController: UITableViewDelegate, UITableViewDataSource
         }
         
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         switch indexPath.section {
@@ -108,15 +118,20 @@ extension PolicyDetailViewController: UITableViewDelegate, UITableViewDataSource
                 cell.setup(with: self.policyDetailViewModel)
                 return cell
             case 3:
-                let cell: TableViewValueCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
-                cell.setup(with: self.policyDetailViewModel)
+                let cell = self.standardCell
+                
+                if let policyDetailViewModel = self.policyDetailViewModel as? PolicyDetailViewModel {
+                    cell.textLabel?.text = policyDetailViewModel.policy?.selection.name
+                }
+                cell.accessoryType = .disclosureIndicator
+                cell.tintColor = App.Color.tableViewCellAccessory
                 return cell
             default:
                 return UITableViewCell()
             }
         case 1:
             let cell: TableViewRelationCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
-            cell.setup(with: self.policyDetailViewModel?.getInputRelation(at: indexPath.row))
+            cell.setup(with: self.policyDetailViewModel?.getOutputRelation(at: indexPath.row))
             return cell
         default:
             return UITableViewCell()
@@ -125,5 +140,22 @@ extension PolicyDetailViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView.deselectRow(at: indexPath, animated: true)
+        
+        if indexPath.section == 0 && indexPath.row == 3 {
+            if let policyDetailViewModel = self.policyDetailViewModel as? PolicyDetailViewModel {
+                
+                let viewController = PolicySelectionController(title: policyDetailViewModel.name,
+                                                               data: policyDetailViewModel.policy?.selections,
+                                                               selectedIndex: policyDetailViewModel.policy?.selectedIndex,
+                                                               onSelect:
+                    { newSelection in
+                    
+                        // TODO: move to model
+                        policyDetailViewModel.policy?.selection = newSelection
+                        self.tableView.reloadData()
+                    })
+                self.navigationController?.pushViewController(viewController, animated: true)
+            }
+        }
     }
 }
