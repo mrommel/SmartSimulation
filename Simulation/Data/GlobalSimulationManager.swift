@@ -108,10 +108,12 @@ class GlobalSimulationManager {
         self.globalSimulation?.select(option: option, of: dilemma)
         
         if option == .option1 {
-            self.eventLog?.addEvent(with: R.image.innovation(), title: "\(dilemma.name)", and: "\(dilemma.firstOption.title)")
+            self.eventLog?.addEvent(with: R.image.dilemma(), title: "\(dilemma.name) happend", and: "\(dilemma.firstOption.title) selected")
         } else {
-            self.eventLog?.addEvent(with: R.image.innovation(), title: "\(dilemma.name)", and: "\(dilemma.secondOption.title)")
+            self.eventLog?.addEvent(with: R.image.dilemma(), title: "\(dilemma.name) happend", and: "\(dilemma.secondOption.title) selected")
         }
+        
+        self.eventLog?.delegate?.didAddEvent()
     }
     
     func voters() -> Voters? {

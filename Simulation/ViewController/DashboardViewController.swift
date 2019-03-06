@@ -77,12 +77,9 @@ extension DashboardViewController: ViewModelDelegate {
     }
 
     func didLoadData() {
+        
         self.tableView.reloadData()
         self.refreshControl.endRefreshing()
-    }
-
-    func performSegue(named segue: String) {
-        self.performSegue(withIdentifier: segue, sender: self)
     }
 }
 
@@ -91,15 +88,18 @@ extension DashboardViewController: GlobalSimulationInteractionDelegate {
     func showAlert(for event: Event?) {
         
         let alertController = UIAlertController(title: "", message: "", preferredStyle: .alert)
-
-        let titleFont = [NSAttributedString.Key.font: App.Font.alertTitleFont]
-        let messageFont = [NSAttributedString.Key.font: App.Font.alertTextFont]
         
-        let titleAttrString = NSMutableAttributedString(string: event?.name ?? "", attributes: titleFont)
-        let messageAttrString = NSMutableAttributedString(string: event?.summary ?? "", attributes: messageFont)
+        if let title = event?.name {
+            let titleFont = [NSAttributedString.Key.font: App.Font.alertTitleFont]
+            let titleAttrString = NSMutableAttributedString(string: title, attributes: titleFont)
+            alertController.setValue(titleAttrString, forKey: "attributedTitle")
+        }
         
-        alertController.setValue(titleAttrString, forKey: "attributedTitle")
-        alertController.setValue(messageAttrString, forKey: "attributedMessage")
+        if let message = event?.summary {
+            let messageFont = [NSAttributedString.Key.font: App.Font.alertTextFont]
+            let messageAttrString = NSMutableAttributedString(string: message, attributes: messageFont)
+            alertController.setValue(messageAttrString, forKey: "attributedMessage")
+        }
         
         let okAction = UIAlertAction(title: R.string.localizable.dashboardViewControllerButtonOkay(), style: .default) { (action) in
             GlobalSimulationManager.shared.select(of: event!)
@@ -116,20 +116,30 @@ extension DashboardViewController: GlobalSimulationInteractionDelegate {
         
         let alertController = UIAlertController(title: "", message: "", preferredStyle: .alert)
         
-        let titleFont = [NSAttributedString.Key.font: App.Font.alertTitleFont]
-        let subtitleFont = [NSAttributedString.Key.font: App.Font.alertSubtitleFont]
-        let messageFont = [NSAttributedString.Key.font: App.Font.alertTextFont]
+        if let title = dilemma?.name {
+            let titleFont = [NSAttributedString.Key.font: App.Font.alertTitleFont]
+            let titleAttrString = NSMutableAttributedString(string: title, attributes: titleFont)
+            alertController.setValue(titleAttrString, forKey: "attributedTitle")
+        }
         
-        let titleAttrString = NSMutableAttributedString(string: dilemma?.name ?? "", attributes: titleFont)
-        let messageAttrString = NSMutableAttributedString(string: "\(dilemma?.summary ?? "")\n", attributes: messageFont)
-        messageAttrString.append(NSMutableAttributedString(string: "\(dilemma?.firstOption.title ?? "")\n", attributes: subtitleFont))
-        messageAttrString.append(NSMutableAttributedString(string: "\(dilemma?.firstOption.summary ?? "")\n", attributes: messageFont))
-        messageAttrString.append(NSMutableAttributedString(string: "\(dilemma?.secondOption.title ?? "")\n", attributes: subtitleFont))
-        messageAttrString.append(NSMutableAttributedString(string: "\(dilemma?.secondOption.summary ?? "")", attributes: messageFont))
-        
-        alertController.setValue(titleAttrString, forKey: "attributedTitle")
-        alertController.setValue(messageAttrString, forKey: "attributedMessage")
-        
+        if let message = dilemma?.summary,
+            let firstTitle = dilemma?.firstOption.title,
+            let firstMessage = dilemma?.firstOption.summary,
+            let secondTitle = dilemma?.secondOption.title,
+            let secondMessage = dilemma?.secondOption.summary {
+            
+            let subtitleFont = [NSAttributedString.Key.font: App.Font.alertSubtitleFont]
+            let messageFont = [NSAttributedString.Key.font: App.Font.alertTextFont]
+            
+            let messageAttrString = NSMutableAttributedString(string: "\(message)\n", attributes: messageFont)
+            messageAttrString.append(NSMutableAttributedString(string: "\(firstTitle)\n", attributes: subtitleFont))
+            messageAttrString.append(NSMutableAttributedString(string: "\(firstMessage)\n", attributes: messageFont))
+            messageAttrString.append(NSMutableAttributedString(string: "\(secondTitle)\n", attributes: subtitleFont))
+            messageAttrString.append(NSMutableAttributedString(string: "\(secondMessage)", attributes: messageFont))
+            
+            alertController.setValue(messageAttrString, forKey: "attributedMessage")
+        }
+
         let firstOptionAction = UIAlertAction(title: dilemma?.firstOption.title, style: .default) { (action) in
             GlobalSimulationManager.shared.select(option: .option1, of: dilemma!)
         }
@@ -170,6 +180,7 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: DashboardViewController.reuseableIdentifier, for: indexPath)
 
         let event = self.viewModel?.event(at: indexPath)
@@ -182,6 +193,7 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         self.tableView.deselectRow(at: indexPath, animated: true)
     }
 }
