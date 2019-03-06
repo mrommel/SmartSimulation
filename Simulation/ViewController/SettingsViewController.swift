@@ -71,11 +71,11 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             if enabled {
                 cell.selectionStyle = .blue
                 cell.textLabel?.text = settingItem?.title
-                cell.textLabel?.textColor = App.Color.tableViewCellTextEnabled
+                cell.textLabel?.textColor = App.Color.tableViewCellTextEnabledColor
             } else {
                 cell.selectionStyle = .none
                 cell.textLabel?.text = settingItem?.title
-                cell.textLabel?.textColor = App.Color.tableViewCellTextDisabled
+                cell.textLabel?.textColor = App.Color.tableViewCellTextDisabledColor
             }
         }
 

@@ -59,23 +59,23 @@ class SimulationListViewModel: ViewModelType {
     
     func sectionCount() -> Int {
         
-        return Category.allCases.count
+        return Category.listItems.count
     }
     
     func sectionTitle(for section: Int) -> String {
         
-        let sectionCategory = Category.allCases[section]
+        let sectionCategory = Category.listItems[section]
         return sectionCategory.text
     }
     
     func simulations(in section: Int) -> Int {
         
-        let sectionCategory = Category.allCases[section]
+        let sectionCategory = Category.listItems[section]
         return self.detailViewModels.count { $0.category == sectionCategory.text }
     }
     
     func detail(at indexPath: IndexPath) -> DetailViewModel? {
-        let sectionCategory = Category.allCases[indexPath.section]
+        let sectionCategory = Category.listItems[indexPath.section]
         let sectionDetails = self.detailViewModels.filter { $0.category == sectionCategory.text }
         
         return sectionDetails[indexPath.row]

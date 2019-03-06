@@ -11,21 +11,28 @@ import UIKit
 class App {
     
     struct Color {
-        static var navigationBarBackgroundColor: UIColor { return UIColor(hex: "#809C13") }
+        static var navigationBarBackgroundColor: UIColor { return UIColor(red: 128, green: 156, blue: 19) } // #809c13
         static var navigationBarTextColor: UIColor { return .white }
         
-        static var tabBarItemNormal: UIColor { return .darkGray }
-        static var tabBarItemSelected: UIColor { return .black }
+        static var tabBarItemNormalColor: UIColor { return .darkGray }
+        static var tabBarItemSelectedColor: UIColor { return .black }
         
         static var viewBackgroundColor: UIColor { return .white }
         
-        static var tableViewCellTextEnabled: UIColor { return .black }
-        static var tableViewCellTextDisabled: UIColor { return .darkGray }
-        static var tableViewCellAccessory: UIColor { return UIColor(hex: "#809C13") }
+        static var tableViewCellTextEnabledColor: UIColor { return .black }
+        static var tableViewCellTextDisabledColor: UIColor { return .darkGray }
+        static var tableViewCellAccessoryColor: UIColor { return UIColor(red: 128, green: 156, blue: 19) } // #809c13
         
-        static var refreshControlColor: UIColor { return UIColor(hex: "#809C13") }
+        static var refreshControlColor: UIColor { return UIColor(red: 128, green: 156, blue: 19) } // #809c13
         
-        static var alertControllerTintColor: UIColor { return UIColor(hex: "#809C13") }
+        static var alertControllerTextColor: UIColor { return .black }
+        static var alertControllerTintColor: UIColor { return UIColor(red: 128, green: 156, blue: 19) } // #809c13
+    }
+    
+    struct Font {
+        static var alertTitleFont: UIFont { return UIFont(name: "Avenir-Roman", size: 20.0)! }
+        static var alertSubtitleFont: UIFont { return UIFont(name: "Avenir-Roman", size: 14.0)! }
+        static var alertTextFont: UIFont { return UIFont(name: "Avenir-Roman", size: 12.0)! }
     }
     
     init() {
@@ -35,10 +42,10 @@ class App {
     func setup() {
 
         // UITabBar
-        let attributesNormal = [ NSAttributedString.Key.foregroundColor: App.Color.tabBarItemNormal ]
+        let attributesNormal = [ NSAttributedString.Key.foregroundColor: App.Color.tabBarItemNormalColor ]
         UITabBarItem.appearance().setTitleTextAttributes(attributesNormal, for: .normal)
         
-        let attributesSelected = [ NSAttributedString.Key.foregroundColor: App.Color.tabBarItemSelected ]
+        let attributesSelected = [ NSAttributedString.Key.foregroundColor: App.Color.tabBarItemSelectedColor ]
         UITabBarItem.appearance().setTitleTextAttributes(attributesSelected, for: .selected)
         
         // UINavigationBar

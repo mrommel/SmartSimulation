@@ -103,6 +103,7 @@ extension SimulationListViewController: UITableViewDelegate, UITableViewDataSour
         cell.imageView?.image = simulation?.image
         cell.textLabel?.text = simulation?.name
         cell.detailTextLabel?.text = simulation?.value
+        cell.tintColor = App.Color.tableViewCellAccessoryColor
         return cell
     }
     

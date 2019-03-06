@@ -59,7 +59,6 @@ class DashboardViewController: UIViewController {
     }
 
     @IBAction func turnAction(sender: UIView?) {
-        print("turn pressed")
         GlobalSimulationManager.shared.iterate()
         AppAnalytics.logEvent(event: .pressTurn)
     }
@@ -92,9 +91,9 @@ extension DashboardViewController: GlobalSimulationInteractionDelegate {
     func showAlert(for event: Event?) {
         
         let alertController = UIAlertController(title: "", message: "", preferredStyle: .alert)
-    
-        let titleFont = [NSAttributedString.Key.font: UIFont(name: "Avenir-Roman", size: 18.0)!]
-        let messageFont = [NSAttributedString.Key.font: UIFont(name: "Avenir-Roman", size: 12.0)!]
+
+        let titleFont = [NSAttributedString.Key.font: App.Font.alertTitleFont]
+        let messageFont = [NSAttributedString.Key.font: App.Font.alertTextFont]
         
         let titleAttrString = NSMutableAttributedString(string: event?.name ?? "", attributes: titleFont)
         let messageAttrString = NSMutableAttributedString(string: event?.summary ?? "", attributes: messageFont)
@@ -102,13 +101,13 @@ extension DashboardViewController: GlobalSimulationInteractionDelegate {
         alertController.setValue(titleAttrString, forKey: "attributedTitle")
         alertController.setValue(messageAttrString, forKey: "attributedMessage")
         
-        let okAction = UIAlertAction(title: "Ok", style: .default) { (action) in
+        let okAction = UIAlertAction(title: R.string.localizable.dashboardViewControllerButtonOkay(), style: .default) { (action) in
             GlobalSimulationManager.shared.select(of: event!)
         }
         alertController.addAction(okAction)
         
-        alertController.view.tintColor = UIColor.blue
-        alertController.view.backgroundColor = UIColor.black
+        alertController.view.tintColor = App.Color.alertControllerTintColor
+        alertController.view.backgroundColor = App.Color.alertControllerTextColor
         alertController.view.layer.cornerRadius = 40
         
         present(alertController, animated: true, completion: nil)
@@ -118,9 +117,9 @@ extension DashboardViewController: GlobalSimulationInteractionDelegate {
         
         let alertController = UIAlertController(title: "", message: "", preferredStyle: .alert)
         
-        let titleFont = [NSAttributedString.Key.font: UIFont(name: "Avenir-Roman", size: 18.0)!]
-        let subtitleFont = [NSAttributedString.Key.font: UIFont(name: "Avenir-Roman", size: 14.0)!]
-        let messageFont = [NSAttributedString.Key.font: UIFont(name: "Avenir-Roman", size: 12.0)!]
+        let titleFont = [NSAttributedString.Key.font: App.Font.alertTitleFont]
+        let subtitleFont = [NSAttributedString.Key.font: App.Font.alertSubtitleFont]
+        let messageFont = [NSAttributedString.Key.font: App.Font.alertTextFont]
         
         let titleAttrString = NSMutableAttributedString(string: dilemma?.name ?? "", attributes: titleFont)
         let messageAttrString = NSMutableAttributedString(string: "\(dilemma?.summary ?? "")\n", attributes: messageFont)
@@ -143,6 +142,8 @@ extension DashboardViewController: GlobalSimulationInteractionDelegate {
         alertController.addAction(secondOptionAction)
         
         alertController.view.tintColor = App.Color.alertControllerTintColor
+        alertController.view.backgroundColor = App.Color.alertControllerTextColor
+        alertController.view.layer.cornerRadius = 40
         
         present(alertController, animated: true, completion: nil)
     }

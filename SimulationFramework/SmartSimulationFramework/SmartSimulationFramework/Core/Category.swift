@@ -8,7 +8,8 @@
 
 import Foundation
 
-public enum Category: CaseIterable {
+public enum Category {
+    
 	case core
 
 	case economy
@@ -22,6 +23,8 @@ public enum Category: CaseIterable {
 	case groups
 
 	case `static`
+    
+    public static var listItems: [Category] = [.core, .economy, .welfare, .foreign, .lawOrder, .publicServices, .religion]
     
     public var text: String {
     

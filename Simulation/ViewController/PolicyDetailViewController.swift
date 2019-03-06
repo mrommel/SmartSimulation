@@ -124,8 +124,12 @@ extension PolicyDetailViewController: UITableViewDelegate, UITableViewDataSource
                 if let policyDetailViewModel = self.policyDetailViewModel as? PolicyDetailViewModel {
                     cell.textLabel?.text = policyDetailViewModel.policy?.selection.name
                 }
-                cell.accessoryType = .disclosureIndicator
-                cell.tintColor = App.Color.tableViewCellAccessory
+                //cell.accessoryType = .disclosureIndicator
+                //cell.tintColor = App.Color.tableViewCellAccessoryColor
+                let disclosureIndicatorView = DisclosureIndicatorView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+                disclosureIndicatorView.color = App.Color.tableViewCellAccessoryColor
+                //disclosureIndicatorView.tintColor = App.Color.tableViewCellAccessoryColor
+                cell.accessoryView = disclosureIndicatorView
                 return cell
             default:
                 return UITableViewCell()

@@ -16,7 +16,9 @@ class PolicySelectionController: UITableViewController {
     var selectedIndex: Int? = nil
     let onSelect: (PolicySelection) -> ()
     
-    required init?(coder aDecoder: NSCoder) { fatalError("Not implemented") }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("Not implemented")
+    }
     
     init(title: String, data: [PolicySelection]?, selectedIndex: Int?, onSelect: @escaping (PolicySelection) -> ()) {
 
@@ -50,6 +52,7 @@ class PolicySelectionController: UITableViewController {
             cell.detailTextLabel?.text = option.description
         } 
         
+        cell.tintColor = App.Color.tableViewCellAccessoryColor
         cell.accessoryType = self.selectedIndex == indexPath.row ? .checkmark : .none
     }
     

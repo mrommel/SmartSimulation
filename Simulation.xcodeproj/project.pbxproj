@@ -19,6 +19,7 @@
 		C910482D222D7F8500EE8FDB /* SituationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910482C222D7F8500EE8FDB /* SituationDetailViewController.swift */; };
 		C910482F222D803D00EE8FDB /* PolicyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910482E222D803D00EE8FDB /* PolicyDetailViewController.swift */; };
 		C9104833222DB96000EE8FDB /* PolicySelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9104832222DB96000EE8FDB /* PolicySelectionController.swift */; };
+		C9104835222F15F400EE8FDB /* DisclosureIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9104834222F15F400EE8FDB /* DisclosureIndicatorView.swift */; };
 		C982EC8C221F0137007AB8B2 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982EC8B221F0137007AB8B2 /* OnboardingViewController.swift */; };
 		C982EC8E221F02B2007AB8B2 /* ApplicationLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982EC8D221F02B2007AB8B2 /* ApplicationLaunch.swift */; };
 		C982EC92221F28BB007AB8B2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982EC91221F28BB007AB8B2 /* SettingsViewController.swift */; };
@@ -93,6 +94,7 @@
 		C910482C222D7F8500EE8FDB /* SituationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SituationDetailViewController.swift; sourceTree = "<group>"; };
 		C910482E222D803D00EE8FDB /* PolicyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyDetailViewController.swift; sourceTree = "<group>"; };
 		C9104832222DB96000EE8FDB /* PolicySelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicySelectionController.swift; sourceTree = "<group>"; };
+		C9104834222F15F400EE8FDB /* DisclosureIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclosureIndicatorView.swift; sourceTree = "<group>"; };
 		C982EC8B221F0137007AB8B2 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		C982EC8D221F02B2007AB8B2 /* ApplicationLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationLaunch.swift; sourceTree = "<group>"; };
 		C982EC91221F28BB007AB8B2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 				C9CE2D44221A01F700D94B8C /* TableViewValueCell.xib */,
 				C9CE2D4A221B491D00D94B8C /* TableViewRelationCell.swift */,
 				C9CE2D4C221B498300D94B8C /* TableViewRelationCell.xib */,
+				C9104834222F15F400EE8FDB /* DisclosureIndicatorView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 				C982ECAE22247373007AB8B2 /* GroupListViewModel.swift in Sources */,
 				C910482D222D7F8500EE8FDB /* SituationDetailViewController.swift in Sources */,
 				C9CE2D51221C23C200D94B8C /* AppAnalytics.swift in Sources */,
+				C9104835222F15F400EE8FDB /* DisclosureIndicatorView.swift in Sources */,
 				C982EC8E221F02B2007AB8B2 /* ApplicationLaunch.swift in Sources */,
 				C9CE2D3022160D4F00D94B8C /* ColorExtension.swift in Sources */,
 				C90BEF80220CD123007F24A6 /* SimulationListViewController.swift in Sources */,
