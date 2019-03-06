@@ -26,3 +26,5 @@
 "SituationDetailViewController.Section.Input" = "Input";
 
 "PolicyDetailViewController.Section.Output" = "Output";
+
+"SettingsViewController.Title" = "Settings";

@@ -22,6 +22,10 @@ class GroupListViewController: UIViewController {
         self.viewModel?.delegate = self
         self.viewModel?.bootstrap()
         
+        // Do any additional setup after loading the view.
+        self.title = "Groups"
+        self.view.backgroundColor = App.Color.viewBackgroundColor
+        
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.tableFooterView = UIView()

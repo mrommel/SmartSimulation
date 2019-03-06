@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Rswift
 
 class SettingsViewController: UIViewController {
     
@@ -24,7 +25,7 @@ class SettingsViewController: UIViewController {
         self.viewModel?.bootstrap()
         
         // Do any additional setup after loading the view, typically from a nib.
-        self.title = R.string.localizable.dashboardViewControllerTitle()
+        self.title = R.string.localizable.settingsViewControllerTitle()
         self.view.backgroundColor = App.Color.viewBackgroundColor
         
         self.tableView.delegate = self

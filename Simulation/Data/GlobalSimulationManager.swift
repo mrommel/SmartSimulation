@@ -106,6 +106,12 @@ class GlobalSimulationManager {
     
     func select(option: DilemmaOptionType, of dilemma: Dilemma) {
         self.globalSimulation?.select(option: option, of: dilemma)
+        
+        if option == .option1 {
+            self.eventLog?.addEvent(with: R.image.innovation(), title: "\(dilemma.name)", and: "\(dilemma.firstOption.title)")
+        } else {
+            self.eventLog?.addEvent(with: R.image.innovation(), title: "\(dilemma.name)", and: "\(dilemma.secondOption.title)")
+        }
     }
     
     func voters() -> Voters? {
@@ -124,9 +130,9 @@ extension GlobalSimulationManager: GlobalSimulationDelegate {
     
     func triggered(event: Event?) {
         if let event = event {
-            //self.eventLog?.addEvent(with: R.image.event(), title: "New Event", and: "\(event.name)")
             logw("triggered: \(event)")
             self.delegate?.showAlert(for: event)
+            self.eventLog?.addEvent(with: R.image.event(), title: "New Event", and: "\(event.name)")
         }
     }
     
@@ -139,22 +145,22 @@ extension GlobalSimulationManager: GlobalSimulationDelegate {
     
     func invented(technic: Technic?) {
         if let technic = technic {
-            self.eventLog?.addEvent(with: R.image.innovation(), title: "New Technic", and: "\(technic.name) invented")
             logw("invented: \(technic)")
+            self.eventLog?.addEvent(with: R.image.innovation(), title: "New Technic", and: "\(technic.name) invented")
         }
     }
     
     func started(situation: Situation?) {
         if let situation = situation {
-            self.eventLog?.addEvent(with: R.image.bell(), title: "New Situation started", and: "\(situation.name)")
             logw("started: \(situation)")
+            self.eventLog?.addEvent(with: R.image.bell(), title: "New Situation started", and: "\(situation.name)")
         }
     }
     
     func ended(situation: Situation?) {
         if let situation = situation {
-            self.eventLog?.addEvent(with: R.image.bell(), title: "Situation ended", and: "\(situation.name)")
             logw("ended: \(situation)")
+            self.eventLog?.addEvent(with: R.image.bell(), title: "Situation ended", and: "\(situation.name)")
         }
     }
 }

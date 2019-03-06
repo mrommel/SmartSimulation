@@ -26,6 +26,7 @@ class App {
         static var refreshControlColor: UIColor { return UIColor(red: 128, green: 156, blue: 19) } // #809c13
         
         static var alertControllerTextColor: UIColor { return .black }
+        static var alertControllerBackgroundColor: UIColor { return .white }
         static var alertControllerTintColor: UIColor { return UIColor(red: 128, green: 156, blue: 19) } // #809c13
     }
     
@@ -41,6 +42,8 @@ class App {
     
     func setup() {
 
+        UIApplication.shared.statusBarStyle = .lightContent
+        
         // UITabBar
         let attributesNormal = [ NSAttributedString.Key.foregroundColor: App.Color.tabBarItemNormalColor ]
         UITabBarItem.appearance().setTitleTextAttributes(attributesNormal, for: .normal)

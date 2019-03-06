@@ -107,8 +107,7 @@ extension DashboardViewController: GlobalSimulationInteractionDelegate {
         alertController.addAction(okAction)
         
         alertController.view.tintColor = App.Color.alertControllerTintColor
-        alertController.view.backgroundColor = App.Color.alertControllerTextColor
-        alertController.view.layer.cornerRadius = 40
+        alertController.view.backgroundColor = App.Color.alertControllerBackgroundColor
         
         present(alertController, animated: true, completion: nil)
     }
@@ -142,8 +141,7 @@ extension DashboardViewController: GlobalSimulationInteractionDelegate {
         alertController.addAction(secondOptionAction)
         
         alertController.view.tintColor = App.Color.alertControllerTintColor
-        alertController.view.backgroundColor = App.Color.alertControllerTextColor
-        alertController.view.layer.cornerRadius = 40
+        alertController.view.backgroundColor = App.Color.alertControllerBackgroundColor
         
         present(alertController, animated: true, completion: nil)
     }
@@ -157,6 +155,7 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     private func tableView (tableView: UITableView, heightForHeaderInSection section: Int) -> Float {
+        
         return 20.0
     }
 
