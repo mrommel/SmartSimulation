@@ -26,7 +26,9 @@ public class Conservatives: Group {
         //self.groupFrequenceInfluences.append(GroupFrequenceInfluence(group: global.groups.environmentalist, influence: -0.1))
         
         self.mood.add(simulation: self.mood, formula: "x") // keep self value
+        self.mood.add(simulation: global.simulations.racialTension, formula: "0-(0.5*x)") // Conservatives,0-(0.5*x)
         self.frequency.add(simulation: self.frequency, formula: "x") // keep self value
+        
         
         global.groups.add(group: self)
 	}

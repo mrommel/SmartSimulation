@@ -10,83 +10,6 @@ import Foundation
 import SmartSimulationFramework
 import SwiftLog
 
-class GlobalSimulationTurn {
-    
-    let title: String
-    var events: [GlobalSimulationEvent] = []
-    
-    init(title: String) {
-        self.title = title
-    }
-}
-
-struct GlobalSimulationEvent {
-    
-    let image: UIImage?
-    let title: String
-    let summary: String
-}
-
-protocol GlobalSimulationEventLogDelegate {
-    
-    func didAddEvent()
-}
-
-enum SituationEventType {
-    case started
-    case ended
-}
-
-class GlobalSimulationEventLog {
-    
-    var turns: [GlobalSimulationTurn]
-    var delegate: GlobalSimulationEventLogDelegate?
-    
-    init() {
-        self.turns = []
-    }
-    
-    fileprivate func addEvent(with image: UIImage?, title: String, and summary: String) {
-        
-        self.turns.first?.events.prepend(GlobalSimulationEvent(image: image, title: title, summary: summary))
-    }
-    
-    func addEvent(for situation: Situation, type: SituationEventType) {
-        
-        if type == .started {
-            self.addEvent(with: R.image.bell(), title: "New Situation started", and: "\(situation.name)")
-        } else {
-            self.addEvent(with: R.image.bell(), title: "Situation ended", and: "\(situation.name)")
-        }
-    }
-    
-    func addEvent(for dilemma: Dilemma, option: DilemmaOptionType) {
-        
-        if option == .option1 {
-            self.addEvent(with: R.image.dilemma(), title: "\(dilemma.name) happend", and: "\(dilemma.firstOption.title) selected")
-        } else {
-            self.addEvent(with: R.image.dilemma(), title: "\(dilemma.name) happend", and: "\(dilemma.secondOption.title) selected")
-        }
-        self.delegate?.didAddEvent()
-    }
-    
-    func addEvent(for event: Event) {
-        
-        self.addEvent(with: R.image.event(), title: "New Event", and: "\(event.name)")
-    }
-    
-    func addEvent(for technic: Technic) {
-        
-        self.addEvent(with: R.image.innovation(), title: "New Technic", and: "\(technic.name) invented")
-    }
-    
-    func doTurn(with title: String) {
-        
-        self.turns.prepend(GlobalSimulationTurn(title: title))
-        self.delegate?.didAddEvent()
-    }
-}
-
 protocol GlobalSimulationInteractionDelegate {
     
     func showAlert(for event: Event?)
@@ -107,7 +30,7 @@ class GlobalSimulationManager {
         self.globalSimulation = GlobalSimulation(tileInfo: TileInfo(terrain: TerrainInfo.grassland, features: [FeatureInfo.hill]))
         self.eventLog = GlobalSimulationEventLog()
         
-        self.eventLog?.doTurn(with: "We have now \(self.year)")
+        self.eventLog?.doTurn(with: self.year)
     }
     
     func iterate() {
@@ -153,7 +76,7 @@ extension GlobalSimulationManager: GlobalSimulationDelegate {
     
     func iterationComplete() {
         self.year += 5
-        self.eventLog?.doTurn(with: "We have now \(self.year)")
+        self.eventLog?.doTurn(with: self.year)
         logw("iterationComplete")
     }
     

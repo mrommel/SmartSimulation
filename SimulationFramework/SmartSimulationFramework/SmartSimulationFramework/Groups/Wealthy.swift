@@ -25,6 +25,7 @@ public class Wealthy: Group {
         self.groupFrequenceInfluences.append(GroupFrequenceInfluence(group: global.groups.nobles, influence: 0.4))
         
         self.mood.add(simulation: self.mood, formula: "x") // keep self value
+        self.mood.add(simulation: global.simulations.highIncome, formula: "-0.25*(x-1)^2") // HighIncome,-0.25*(x-1)^2
         self.frequency.add(simulation: self.frequency, formula: "x") // keep self value
         
         global.groups.add(group: self)

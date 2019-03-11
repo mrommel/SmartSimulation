@@ -20,6 +20,9 @@
 		C910482F222D803D00EE8FDB /* PolicyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910482E222D803D00EE8FDB /* PolicyDetailViewController.swift */; };
 		C9104833222DB96000EE8FDB /* PolicySelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9104832222DB96000EE8FDB /* PolicySelectionController.swift */; };
 		C9104835222F15F400EE8FDB /* DisclosureIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9104834222F15F400EE8FDB /* DisclosureIndicatorView.swift */; };
+		C910483722369D2600EE8FDB /* GlobalSimulationTurn.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910483622369D2600EE8FDB /* GlobalSimulationTurn.swift */; };
+		C910483922369D4600EE8FDB /* GlobalSimulationEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910483822369D4600EE8FDB /* GlobalSimulationEvent.swift */; };
+		C910483B22369D5F00EE8FDB /* GlobalSimulationEventLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910483A22369D5F00EE8FDB /* GlobalSimulationEventLog.swift */; };
 		C982EC8C221F0137007AB8B2 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982EC8B221F0137007AB8B2 /* OnboardingViewController.swift */; };
 		C982EC8E221F02B2007AB8B2 /* ApplicationLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982EC8D221F02B2007AB8B2 /* ApplicationLaunch.swift */; };
 		C982EC92221F28BB007AB8B2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982EC91221F28BB007AB8B2 /* SettingsViewController.swift */; };
@@ -95,6 +98,9 @@
 		C910482E222D803D00EE8FDB /* PolicyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyDetailViewController.swift; sourceTree = "<group>"; };
 		C9104832222DB96000EE8FDB /* PolicySelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicySelectionController.swift; sourceTree = "<group>"; };
 		C9104834222F15F400EE8FDB /* DisclosureIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclosureIndicatorView.swift; sourceTree = "<group>"; };
+		C910483622369D2600EE8FDB /* GlobalSimulationTurn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalSimulationTurn.swift; sourceTree = "<group>"; };
+		C910483822369D4600EE8FDB /* GlobalSimulationEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalSimulationEvent.swift; sourceTree = "<group>"; };
+		C910483A22369D5F00EE8FDB /* GlobalSimulationEventLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalSimulationEventLog.swift; sourceTree = "<group>"; };
 		C982EC8B221F0137007AB8B2 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		C982EC8D221F02B2007AB8B2 /* ApplicationLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationLaunch.swift; sourceTree = "<group>"; };
 		C982EC91221F28BB007AB8B2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -264,6 +270,9 @@
 			isa = PBXGroup;
 			children = (
 				C9CE2D2D2215E03A00D94B8C /* GlobalSimulationManager.swift */,
+				C910483622369D2600EE8FDB /* GlobalSimulationTurn.swift */,
+				C910483822369D4600EE8FDB /* GlobalSimulationEvent.swift */,
+				C910483A22369D5F00EE8FDB /* GlobalSimulationEventLog.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -466,6 +475,7 @@
 			files = (
 				C9CE2D322216906000D94B8C /* App.swift in Sources */,
 				C9CE2C87220DD38A00D94B8C /* Delay.swift in Sources */,
+				C910483922369D4600EE8FDB /* GlobalSimulationEvent.swift in Sources */,
 				C9CE2D59221D469D00D94B8C /* ApplicationTabBarController.swift in Sources */,
 				C9CE2D2E2215E03A00D94B8C /* GlobalSimulationManager.swift in Sources */,
 				C982EC9A222407E6007AB8B2 /* OnboardingDetailViewController.swift in Sources */,
@@ -480,6 +490,7 @@
 				C9CE2D3022160D4F00D94B8C /* ColorExtension.swift in Sources */,
 				C90BEF80220CD123007F24A6 /* SimulationListViewController.swift in Sources */,
 				C9CE2C85220DD26D00D94B8C /* SimulationDetailViewController.swift in Sources */,
+				C910483722369D2600EE8FDB /* GlobalSimulationTurn.swift in Sources */,
 				C9104833222DB96000EE8FDB /* PolicySelectionController.swift in Sources */,
 				C9CE2D47221A038B00D94B8C /* TableViewCategoryCell.swift in Sources */,
 				C9CE2C7B220DB21600D94B8C /* SimulationListViewModel.swift in Sources */,
@@ -494,6 +505,7 @@
 				C9CE2C79220DB1F000D94B8C /* ViewModelType.swift in Sources */,
 				C90BEF6C220CCC33007F24A6 /* DashboardViewController.swift in Sources */,
 				C9CE2D53221C95A900D94B8C /* DashboardViewModel.swift in Sources */,
+				C910483B22369D5F00EE8FDB /* GlobalSimulationEventLog.swift in Sources */,
 				C9CE2D392218B0EA00D94B8C /* TableViewNameCell.swift in Sources */,
 				C982EC92221F28BB007AB8B2 /* SettingsViewController.swift in Sources */,
 				C9CE2D43221A01A100D94B8C /* TableViewValueCell.swift in Sources */,

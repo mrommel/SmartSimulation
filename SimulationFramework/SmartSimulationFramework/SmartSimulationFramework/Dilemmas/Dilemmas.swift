@@ -11,16 +11,19 @@ import Foundation
 public class Dilemmas {
     
     public var blasphemyDilemma: Blasphemy
+    public var hostageSituationDilemma: HostageSituation
     
     fileprivate var dilemmas: [Dilemma] = []
     
     init() {
         self.blasphemyDilemma = Blasphemy()
+        self.hostageSituationDilemma = HostageSituation()
     }
 
     func setup(with global: GlobalSimulation) {
         
         self.blasphemyDilemma.setup(with: global)
+        self.hostageSituationDilemma.setup(with: global)
     }
     
     func add(dilemma: Dilemma) {

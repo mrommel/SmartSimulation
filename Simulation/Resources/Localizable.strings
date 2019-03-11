@@ -9,6 +9,14 @@
 "DashboardViewController.Title" = "Dashboard";
 "DashboardViewController.Button.Okay" = "Okay";
 
+"DashboardViewController.Events.Situation.Started" = "New Situation started";
+"DashboardViewController.Events.Situation.Ended" = "Situation ended";
+"DashboardViewController.Events.Event.New" = "New Event";
+"DashboardViewController.Events.Technic.New" = "New Technic";
+"DashboardViewController.Events.Technic.Invented" = "invented";
+"DashboardViewController.Events.Dilemma.Happend" = "happend";
+"DashboardViewController.Events.Dilemma.Selected" = "selected";
+
 "OnboardingViewController.Slide1.Title" = "Welcome";
 "OnboardingViewController.Slide1.Summary" = "Screen 1";
 "OnboardingViewController.Slide2.Title" = "Simulations";

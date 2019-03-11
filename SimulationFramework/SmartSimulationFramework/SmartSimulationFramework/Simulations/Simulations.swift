@@ -24,6 +24,16 @@ public class Simulations {
 	var unemployment: Unemployment
 	var education: Education
 	var transportSpeed: TransportSpeed
+    var racialTension: RacialTension
+    var wages: Wages
+    
+    // income
+    var lowIncome: LowIncome
+    var middleIncome: MiddleIncome
+    var highIncome: HighIncome
+    
+    // hidden
+    var terrorism: Terrorism
 
 	var sims: [Simulation] = []
 
@@ -43,6 +53,14 @@ public class Simulations {
 		self.unemployment = Unemployment()
 		self.education = Education()
 		self.transportSpeed = TransportSpeed()
+        
+        self.lowIncome = LowIncome()
+        self.middleIncome = MiddleIncome()
+        self.highIncome = HighIncome()
+        
+        self.terrorism = Terrorism()
+        self.racialTension = RacialTension()
+        self.wages = Wages()
 	}
 
 	func setup(with simulation: GlobalSimulation) {
@@ -61,6 +79,13 @@ public class Simulations {
 		self.unemployment.setup(with: simulation)
 		self.education.setup(with: simulation)
 		self.transportSpeed.setup(with: simulation)
+        self.terrorism.setup(with: simulation)
+        self.racialTension.setup(with: simulation)
+        self.wages.setup(with: simulation)
+        
+        self.lowIncome.setup(with: simulation)
+        self.middleIncome.setup(with: simulation)
+        self.highIncome.setup(with: simulation)
 	}
 
 	func add(simulation: Simulation) {

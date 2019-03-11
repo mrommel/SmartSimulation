@@ -22,6 +22,8 @@ public class Blasphemy: Dilemma {
     
     override func setup(with global: GlobalSimulation) {
 
+        self.add(simulation: RandomProperty(minimum: 0.0, maximum: 0.8))
+        
         global.dilemmas.add(dilemma: self)
     }
     
@@ -33,7 +35,7 @@ public class Blasphemy: Dilemma {
             
             // +13% Religious relations
             let effectOnReligious = Effect(name: "Blasphemy effect on Religious", value: 1.0, decay: 0.8)
-            global?.groups.religious.mood.add(simulation: effectOnReligious, formula: "-0.13*x")
+            global?.groups.religious.mood.add(simulation: effectOnReligious, formula: "0.13*x")
             
             let decayEffect = Effect(name: "Blasphemy decay", value: -1.0, decay: 0.9) //
             global?.dilemmas.blasphemyDilemma.add(simulation: decayEffect)
@@ -41,9 +43,17 @@ public class Blasphemy: Dilemma {
             return [effectOnLiberals, effectOnReligious, decayEffect]
         } else {
             // +10% Liberal relations
+            let effectOnLiberals = Effect(name: "Blasphemy effect on Liberals", value: 1.0, decay: 0.8)
+            global?.groups.liberals.mood.add(simulation: effectOnLiberals, formula: "0.1*x")
+            
             // -21% Religious relations
+            let effectOnReligious = Effect(name: "Blasphemy effect on Religious", value: 1.0, decay: 0.8)
+            global?.groups.religious.mood.add(simulation: effectOnReligious, formula: "-0.21*x")
+            
+            let decayEffect = Effect(name: "Blasphemy decay", value: -1.0, decay: 0.9) //
+            global?.dilemmas.blasphemyDilemma.add(simulation: decayEffect)
+            
+            return [effectOnLiberals, effectOnReligious, decayEffect]
         }
-        
-        return []
     }
 }
