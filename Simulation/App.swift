@@ -36,14 +36,8 @@ class App {
         static var alertTextFont: UIFont { return UIFont(name: "Avenir-Roman", size: 12.0)! }
     }
     
-    init() {
-        
-    }
-    
     func setup() {
 
-        UIApplication.shared.statusBarStyle = .lightContent
-        
         // UITabBar
         let attributesNormal = [ NSAttributedString.Key.foregroundColor: App.Color.tabBarItemNormalColor ]
         UITabBarItem.appearance().setTitleTextAttributes(attributesNormal, for: .normal)

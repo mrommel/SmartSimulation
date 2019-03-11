@@ -104,6 +104,10 @@ extension SimulationListViewController: UITableViewDelegate, UITableViewDataSour
         cell.textLabel?.text = simulation?.name
         cell.detailTextLabel?.text = simulation?.value
         cell.tintColor = App.Color.tableViewCellAccessoryColor
+        
+        let disclosureIndicatorView = DisclosureIndicatorView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        disclosureIndicatorView.color = App.Color.tableViewCellAccessoryColor
+        cell.accessoryView = disclosureIndicatorView
         return cell
     }
     

@@ -25,9 +25,20 @@
                                     <constraint firstAttribute="width" constant="256" id="94M-Si-Fcl"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SmartSimulation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5t-01-TVk">
+                                <rect key="frame" x="57.5" y="403" width="260" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="260" id="KZ2-gP-ZDk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
+                            <constraint firstItem="R5t-01-TVk" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Br1-Qb-mFc"/>
+                            <constraint firstItem="R5t-01-TVk" firstAttribute="top" secondItem="r4e-u3-miL" secondAttribute="top" constant="283" id="LyK-9g-LcC"/>
                             <constraint firstItem="r4e-u3-miL" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="120" id="U7C-B8-PJ3"/>
                             <constraint firstItem="r4e-u3-miL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="59" id="fGI-aI-WtE"/>
                         </constraints>

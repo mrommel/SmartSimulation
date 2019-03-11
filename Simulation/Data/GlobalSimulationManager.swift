@@ -32,6 +32,11 @@ protocol GlobalSimulationEventLogDelegate {
     func didAddEvent()
 }
 
+enum SituationEventType {
+    case started
+    case ended
+}
+
 class GlobalSimulationEventLog {
     
     var turns: [GlobalSimulationTurn]
@@ -41,15 +46,44 @@ class GlobalSimulationEventLog {
         self.turns = []
     }
     
-    func addEvent(with image: UIImage?, title: String, and summary: String) {
+    fileprivate func addEvent(with image: UIImage?, title: String, and summary: String) {
         
         self.turns.first?.events.prepend(GlobalSimulationEvent(image: image, title: title, summary: summary))
+    }
+    
+    func addEvent(for situation: Situation, type: SituationEventType) {
+        
+        if type == .started {
+            self.addEvent(with: R.image.bell(), title: "New Situation started", and: "\(situation.name)")
+        } else {
+            self.addEvent(with: R.image.bell(), title: "Situation ended", and: "\(situation.name)")
+        }
+    }
+    
+    func addEvent(for dilemma: Dilemma, option: DilemmaOptionType) {
+        
+        if option == .option1 {
+            self.addEvent(with: R.image.dilemma(), title: "\(dilemma.name) happend", and: "\(dilemma.firstOption.title) selected")
+        } else {
+            self.addEvent(with: R.image.dilemma(), title: "\(dilemma.name) happend", and: "\(dilemma.secondOption.title) selected")
+        }
+        self.delegate?.didAddEvent()
+    }
+    
+    func addEvent(for event: Event) {
+        
+        self.addEvent(with: R.image.event(), title: "New Event", and: "\(event.name)")
+    }
+    
+    func addEvent(for technic: Technic) {
+        
+        self.addEvent(with: R.image.innovation(), title: "New Technic", and: "\(technic.name) invented")
     }
     
     func doTurn(with title: String) {
         
         self.turns.prepend(GlobalSimulationTurn(title: title))
-        delegate?.didAddEvent()
+        self.delegate?.didAddEvent()
     }
 }
 
@@ -107,13 +141,7 @@ class GlobalSimulationManager {
     func select(option: DilemmaOptionType, of dilemma: Dilemma) {
         self.globalSimulation?.select(option: option, of: dilemma)
         
-        if option == .option1 {
-            self.eventLog?.addEvent(with: R.image.dilemma(), title: "\(dilemma.name) happend", and: "\(dilemma.firstOption.title) selected")
-        } else {
-            self.eventLog?.addEvent(with: R.image.dilemma(), title: "\(dilemma.name) happend", and: "\(dilemma.secondOption.title) selected")
-        }
-        
-        self.eventLog?.delegate?.didAddEvent()
+        self.eventLog?.addEvent(for: dilemma, option: option)
     }
     
     func voters() -> Voters? {
@@ -124,7 +152,6 @@ class GlobalSimulationManager {
 extension GlobalSimulationManager: GlobalSimulationDelegate {
     
     func iterationComplete() {
-        //eventLog?.addEvent(with: R.image.turn(), title: "New Iteration", and: "We have now ####")
         self.year += 5
         self.eventLog?.doTurn(with: "We have now \(self.year)")
         logw("iterationComplete")
@@ -134,7 +161,7 @@ extension GlobalSimulationManager: GlobalSimulationDelegate {
         if let event = event {
             logw("triggered: \(event)")
             self.delegate?.showAlert(for: event)
-            self.eventLog?.addEvent(with: R.image.event(), title: "New Event", and: "\(event.name)")
+            self.eventLog?.addEvent(for: event)
         }
     }
     
@@ -148,21 +175,21 @@ extension GlobalSimulationManager: GlobalSimulationDelegate {
     func invented(technic: Technic?) {
         if let technic = technic {
             logw("invented: \(technic)")
-            self.eventLog?.addEvent(with: R.image.innovation(), title: "New Technic", and: "\(technic.name) invented")
+            self.eventLog?.addEvent(for: technic)
         }
     }
     
     func started(situation: Situation?) {
         if let situation = situation {
             logw("started: \(situation)")
-            self.eventLog?.addEvent(with: R.image.bell(), title: "New Situation started", and: "\(situation.name)")
+            self.eventLog?.addEvent(for: situation, type: .started)
         }
     }
     
     func ended(situation: Situation?) {
         if let situation = situation {
             logw("ended: \(situation)")
-            self.eventLog?.addEvent(with: R.image.bell(), title: "Situation ended", and: "\(situation.name)")
+            self.eventLog?.addEvent(for: situation, type: .ended)
         }
     }
 }
