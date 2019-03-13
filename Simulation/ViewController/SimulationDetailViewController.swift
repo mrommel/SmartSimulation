@@ -17,11 +17,17 @@ class SimulationDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        guard simulationDetailViewModel != nil else {
+            fatalError("Model must be initialized before display")
+        }
 
         // Do any additional setup after loading the view.
         self.title = self.simulationDetailViewModel?.name
         self.view.backgroundColor = App.Color.viewBackgroundColor
 
+        self.simulationDetailViewModel?.delegate = self
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
 
@@ -36,6 +42,18 @@ class SimulationDetailViewController: UIViewController {
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+}
+
+extension SimulationDetailViewController: ViewModelDelegate {
+    
+    func willLoadData() {
+        
+    }
+    
+    func didLoadData() {
+        
+        self.tableView.reloadData()
     }
 }
 
@@ -63,9 +81,9 @@ extension SimulationDetailViewController: UITableViewDelegate, UITableViewDataSo
         case 0:
             return 4
         case 1:
-            return self.simulationDetailViewModel?.inputs.count ?? 0
+            return self.simulationDetailViewModel?.inputIdentifiers.count ?? 0
         case 2:
-            return self.simulationDetailViewModel?.outputs.count ?? 0
+            return self.simulationDetailViewModel?.outputIdentifiers.count ?? 0
         default:
             return 0
         }
@@ -135,6 +153,8 @@ extension SimulationDetailViewController: UITableViewDelegate, UITableViewDataSo
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         self.tableView.deselectRow(at: indexPath, animated: true)
+        self.simulationDetailViewModel?.selectDetail(at: indexPath, from: self)
     }
 }

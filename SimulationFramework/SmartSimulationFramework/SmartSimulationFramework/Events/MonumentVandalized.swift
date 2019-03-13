@@ -12,6 +12,7 @@ public class MonumentVandalized: Event {
 
     init() {
         super.init(
+            identifier: "MonumentVandalized",
             image: nil, 
             name: "MonumentVandalized",
             summary: "Vandalism on our streets has reached new heights today when a gang of young thugs defaced our scared (sic) war memorial. It seems that crime has got completely out of control and no place is safe from the thugs and the vandals. Conservative voters are likely to be especially disappointed that things have got this bad.",

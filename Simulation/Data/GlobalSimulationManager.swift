@@ -45,6 +45,10 @@ class GlobalSimulationManager {
         return self.globalSimulation?.simulations
     }
     
+    func simulation(by identifier: String) -> Simulation? {
+        return self.globalSimulation?.simulation(by: identifier)
+    }
+    
     func groups() -> Groups? {
         return self.globalSimulation?.groups
     }

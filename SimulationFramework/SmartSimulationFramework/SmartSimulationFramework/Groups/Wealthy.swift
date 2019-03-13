@@ -12,11 +12,13 @@ public class Wealthy: Group {
     
     init() {
         
-        super.init(image: UIImage(named: "wealthy"),
-                   name: "Wealthy",
-                   summary: "",
-                   moodValue: 0.8,
-                   frequencyValue: 0.05)
+        super.init(
+            identifier: "Wealthy",
+            image: UIImage(named: "wealthy"),
+            name: "Wealthy",
+            summary: "",
+            moodValue: 0.8,
+            frequencyValue: 0.05)
     }
     
     override func setup(with global: GlobalSimulation) {

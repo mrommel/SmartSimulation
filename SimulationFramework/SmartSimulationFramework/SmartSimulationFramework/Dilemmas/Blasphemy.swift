@@ -12,6 +12,7 @@ public class Blasphemy: Dilemma {
     
     init() {
         super.init(
+            identifier: "Blasphemy",
             image: nil,
             name: "Blasphemy",
             summary: "A book has been published which is highly critical of a religion followed by a cross section of our society. Religious leaders have described the book as blasphemy and demanded that it be removed from sale. There have been violent protests outside bookstores where copies of the book have been burned.",

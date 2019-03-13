@@ -13,6 +13,7 @@ class Religiosity: Simulation {
 
     init() {
         super.init(
+            identifier: "Religiosity",
             image: nil,
             name: "Religiosity",
             summary: "Religiosity desc",

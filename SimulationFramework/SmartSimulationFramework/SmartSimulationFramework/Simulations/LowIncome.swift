@@ -13,6 +13,7 @@ public class LowIncome: Simulation {
     init() {
         
         super.init(
+            identifier: "LowIncome",
             image: nil,
             name: "Poor Discretionary Income",
             summary: "The amount of a poor individual's income that remains after paying for necessities such as food, shelter, clothing, taxes, and debt obligations. A positive value allows saving wealth over time, so people can move out of poverty, and into the middle income group. Raising this significantly improves equality.",

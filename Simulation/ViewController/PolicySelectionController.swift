@@ -75,5 +75,8 @@ class PolicySelectionController: UITableViewController {
         // add a checkmark to the selected row and deselect it
         tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        // close view controller after selection
+        self.navigationController?.popViewController(animated: true)
     }
 }

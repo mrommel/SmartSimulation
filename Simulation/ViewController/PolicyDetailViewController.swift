@@ -29,9 +29,15 @@ class PolicyDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        guard self.policyDetailViewModel != nil else {
+            fatalError("Model must be initialized before display")
+        }
+        
         // Do any additional setup after loading the view.
         self.title = self.policyDetailViewModel?.name
         self.view.backgroundColor = App.Color.viewBackgroundColor
+        
+        self.policyDetailViewModel?.delegate = self
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -46,6 +52,18 @@ class PolicyDetailViewController: UIViewController {
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+}
+
+extension PolicyDetailViewController: ViewModelDelegate {
+    
+    func willLoadData() {
+        
+    }
+    
+    func didLoadData() {
+        
+        self.tableView.reloadData()
     }
 }
 
@@ -71,7 +89,7 @@ extension PolicyDetailViewController: UITableViewDelegate, UITableViewDataSource
         case 0:
             return 4
         case 1:
-            return self.policyDetailViewModel?.outputs.count ?? 0
+            return self.policyDetailViewModel?.outputIdentifiers.count ?? 0
         default:
             return 0
         }
@@ -145,22 +163,6 @@ extension PolicyDetailViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView.deselectRow(at: indexPath, animated: true)
-        
-        if indexPath.section == 0 && indexPath.row == 3 {
-            if let policyDetailViewModel = self.policyDetailViewModel as? PolicyDetailViewModel {
-                
-                let viewController = PolicySelectionController(title: policyDetailViewModel.name,
-                                                               data: policyDetailViewModel.policy?.selections,
-                                                               selectedIndex: policyDetailViewModel.policy?.selectedIndex,
-                                                               onSelect:
-                    { newSelection in
-                    
-                        // TODO: move to model
-                        policyDetailViewModel.policy?.selection = newSelection
-                        self.tableView.reloadData()
-                    })
-                self.navigationController?.pushViewController(viewController, animated: true)
-            }
-        }
+        self.policyDetailViewModel?.selectDetail(at: indexPath, from: self)
     }
 }

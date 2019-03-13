@@ -188,7 +188,7 @@
         <!--Simulation Detail View Controller-->
         <scene sceneID="n5W-xc-4Ai">
             <objects>
-                <viewController id="Ndl-aN-l9h" customClass="SimulationDetailViewController" customModule="Simulation" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SimulationDetailViewController" id="Ndl-aN-l9h" customClass="SimulationDetailViewController" customModule="Simulation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="be2-2u-pfy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -219,7 +219,7 @@
         <!--Policy Detail View Controller-->
         <scene sceneID="Xbw-MI-4d8">
             <objects>
-                <viewController id="n07-mH-HgY" customClass="PolicyDetailViewController" customModule="Simulation" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PolicyDetailViewController" id="n07-mH-HgY" customClass="PolicyDetailViewController" customModule="Simulation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xD7-Sg-cHE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -250,7 +250,7 @@
         <!--Situation Detail View Controller-->
         <scene sceneID="akm-44-v0G">
             <objects>
-                <viewController id="GNH-bH-heH" customClass="SituationDetailViewController" customModule="Simulation" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SituationDetailViewController" id="GNH-bH-heH" customClass="SituationDetailViewController" customModule="Simulation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HaV-Ic-IDd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

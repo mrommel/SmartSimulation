@@ -12,6 +12,7 @@ class Happiness: Simulation {
 
     init() {
         super.init(
+            identifier: "Happiness",
             image: nil,
             name: "Happiness",
             summary: "Happiness desc",

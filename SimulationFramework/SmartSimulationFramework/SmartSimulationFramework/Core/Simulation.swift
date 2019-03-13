@@ -10,6 +10,7 @@ import UIKit
 
 public class Simulation {
 
+    public let identifier: String
     public let image: UIImage?
 	public let name: String
 	public let summary: String
@@ -21,8 +22,9 @@ public class Simulation {
 
 	var stashedValue: Double = 0.0
 
-	init(image: UIImage?, name: String, summary: String, category: Category, value: Double) {
-		self.image = image
+	init(identifier: String, image: UIImage?, name: String, summary: String, category: Category, value: Double) {
+		self.identifier = identifier
+        self.image = image
         self.name = name
 		self.summary = summary
 		self.category = category

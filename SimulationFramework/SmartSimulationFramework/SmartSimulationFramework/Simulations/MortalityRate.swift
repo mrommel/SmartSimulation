@@ -13,6 +13,7 @@ class MortalityRate: Simulation {
 
     init() {
         super.init(
+            identifier: "MortalityRate",
             image: nil,
             name: "MortalityRate",
             summary: "MortalityRate desc",

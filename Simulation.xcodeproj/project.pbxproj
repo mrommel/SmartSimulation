@@ -23,6 +23,9 @@
 		C910483722369D2600EE8FDB /* GlobalSimulationTurn.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910483622369D2600EE8FDB /* GlobalSimulationTurn.swift */; };
 		C910483922369D4600EE8FDB /* GlobalSimulationEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910483822369D4600EE8FDB /* GlobalSimulationEvent.swift */; };
 		C910483B22369D5F00EE8FDB /* GlobalSimulationEventLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910483A22369D5F00EE8FDB /* GlobalSimulationEventLog.swift */; };
+		C9104850223919AE00EE8FDB /* SimulationDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910484F223919AE00EE8FDB /* SimulationDetailViewModel.swift */; };
+		C9104852223919CE00EE8FDB /* SituationDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9104851223919CE00EE8FDB /* SituationDetailViewModel.swift */; };
+		C910485422391A0800EE8FDB /* PolicyDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910485322391A0800EE8FDB /* PolicyDetailViewModel.swift */; };
 		C982EC8C221F0137007AB8B2 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982EC8B221F0137007AB8B2 /* OnboardingViewController.swift */; };
 		C982EC8E221F02B2007AB8B2 /* ApplicationLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982EC8D221F02B2007AB8B2 /* ApplicationLaunch.swift */; };
 		C982EC92221F28BB007AB8B2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982EC91221F28BB007AB8B2 /* SettingsViewController.swift */; };
@@ -101,6 +104,9 @@
 		C910483622369D2600EE8FDB /* GlobalSimulationTurn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalSimulationTurn.swift; sourceTree = "<group>"; };
 		C910483822369D4600EE8FDB /* GlobalSimulationEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalSimulationEvent.swift; sourceTree = "<group>"; };
 		C910483A22369D5F00EE8FDB /* GlobalSimulationEventLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalSimulationEventLog.swift; sourceTree = "<group>"; };
+		C910484F223919AE00EE8FDB /* SimulationDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulationDetailViewModel.swift; sourceTree = "<group>"; };
+		C9104851223919CE00EE8FDB /* SituationDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SituationDetailViewModel.swift; sourceTree = "<group>"; };
+		C910485322391A0800EE8FDB /* PolicyDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyDetailViewModel.swift; sourceTree = "<group>"; };
 		C982EC8B221F0137007AB8B2 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		C982EC8D221F02B2007AB8B2 /* ApplicationLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationLaunch.swift; sourceTree = "<group>"; };
 		C982EC91221F28BB007AB8B2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -229,6 +235,7 @@
 				C9CE2C84220DD26D00D94B8C /* SimulationDetailViewController.swift */,
 				C910482C222D7F8500EE8FDB /* SituationDetailViewController.swift */,
 				C910482E222D803D00EE8FDB /* PolicyDetailViewController.swift */,
+				C9104832222DB96000EE8FDB /* PolicySelectionController.swift */,
 				C982ECAB22247106007AB8B2 /* GroupListViewController.swift */,
 				C982EC91221F28BB007AB8B2 /* SettingsViewController.swift */,
 			);
@@ -243,6 +250,9 @@
 				C9CE2D52221C95A900D94B8C /* DashboardViewModel.swift */,
 				C9CE2C7A220DB21600D94B8C /* SimulationListViewModel.swift */,
 				C9CE2D3C2219E63B00D94B8C /* DetailViewModel.swift */,
+				C910484F223919AE00EE8FDB /* SimulationDetailViewModel.swift */,
+				C9104851223919CE00EE8FDB /* SituationDetailViewModel.swift */,
+				C910485322391A0800EE8FDB /* PolicyDetailViewModel.swift */,
 				C982ECAD22247373007AB8B2 /* GroupListViewModel.swift */,
 				C982ECAF22247560007AB8B2 /* GroupDetailViewModel.swift */,
 				C982EC93221F295E007AB8B2 /* SettingsViewModel.swift */,
@@ -261,7 +271,6 @@
 				C982EC8D221F02B2007AB8B2 /* ApplicationLaunch.swift */,
 				C982ECA922244A2A007AB8B2 /* SwiftLogExtension.swift */,
 				C910482A222D55FA00EE8FDB /* CollectionExtension.swift */,
-				C9104832222DB96000EE8FDB /* PolicySelectionController.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -474,11 +483,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9CE2D322216906000D94B8C /* App.swift in Sources */,
+				C910485422391A0800EE8FDB /* PolicyDetailViewModel.swift in Sources */,
 				C9CE2C87220DD38A00D94B8C /* Delay.swift in Sources */,
 				C910483922369D4600EE8FDB /* GlobalSimulationEvent.swift in Sources */,
 				C9CE2D59221D469D00D94B8C /* ApplicationTabBarController.swift in Sources */,
 				C9CE2D2E2215E03A00D94B8C /* GlobalSimulationManager.swift in Sources */,
 				C982EC9A222407E6007AB8B2 /* OnboardingDetailViewController.swift in Sources */,
+				C9104850223919AE00EE8FDB /* SimulationDetailViewModel.swift in Sources */,
 				C90BEF72220CCC33007F24A6 /* simulation.xcdatamodeld in Sources */,
 				C982ECAC22247106007AB8B2 /* GroupListViewController.swift in Sources */,
 				C982EC94221F295E007AB8B2 /* SettingsViewModel.swift in Sources */,
@@ -498,6 +509,7 @@
 				C9CE2D55221C9EC900D94B8C /* ArrayExtension.swift in Sources */,
 				C982EC8C221F0137007AB8B2 /* OnboardingViewController.swift in Sources */,
 				C9CE2C7E220DC26800D94B8C /* R.generated.swift in Sources */,
+				C9104852223919CE00EE8FDB /* SituationDetailViewModel.swift in Sources */,
 				C982EC9E222408F5007AB8B2 /* OnboardingViewModel.swift in Sources */,
 				C910482B222D55FA00EE8FDB /* CollectionExtension.swift in Sources */,
 				C9CE2D3D2219E63B00D94B8C /* DetailViewModel.swift in Sources */,

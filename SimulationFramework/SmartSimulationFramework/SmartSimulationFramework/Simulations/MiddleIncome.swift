@@ -13,6 +13,7 @@ public class MiddleIncome: Simulation {
     init() {
         
         super.init(
+            identifier: "MiddleIncome",
             image: nil,
             name: "Middle Discretionary Income",
             summary: "The amount of a middle-class individual's income that remains after paying for necessities such as food, shelter, clothing, taxes, and debt obligations. A positive value allows saving or investing wealth over time.",

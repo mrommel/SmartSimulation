@@ -16,6 +16,7 @@ struct GroupFrequenceInfluence {
 
 public class Group {
 
+    public let identifier: String
     public let image: UIImage?
 	public let name: String
 	public let summary: String
@@ -25,14 +26,15 @@ public class Group {
     
     var groupFrequenceInfluences: [GroupFrequenceInfluence] = []
 
-	init(image: UIImage?, name: String, summary: String, moodValue: Double, frequencyValue: Double) {
+    init(identifier: String, image: UIImage?, name: String, summary: String, moodValue: Double, frequencyValue: Double) {
 
+        self.identifier = identifier
         self.image = image
 		self.name = name
 		self.summary = summary
 
-		self.mood = Simulation(image: image, name: "\(self.name) mood", summary: "", category: .groups, value: moodValue)
-		self.frequency = Simulation(image: image, name: "\(self.name) freq", summary: "", category: .groups, value: frequencyValue)
+        self.mood = Simulation(identifier: "\(self.identifier)Mood", image: image, name: "\(self.name) mood", summary: "", category: .groups, value: moodValue)
+        self.frequency = Simulation(identifier: "\(self.identifier)Freq", image: image, name: "\(self.name) freq", summary: "", category: .groups, value: frequencyValue)
 	}
 
 	func calculate() {

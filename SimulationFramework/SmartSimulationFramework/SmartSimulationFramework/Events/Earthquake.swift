@@ -12,6 +12,7 @@ public class Earthquake: Event {
 
     init() {
         super.init(
+            identifier: "Earthquake",
             image: nil,
             name: "Earthquake",
             summary: "An Earthquake happend",

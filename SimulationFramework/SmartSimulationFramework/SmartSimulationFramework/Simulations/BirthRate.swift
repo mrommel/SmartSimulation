@@ -26,8 +26,9 @@ class BirthRate: Simulation {
 
     init() {
         super.init(
+            identifier: "BirthRate",
             image: nil,
-            name: "BirthRate",
+            name: "Birth Rate",
             summary: "BirthRate desc",
             category: .core,
             value: 0.6) // 0..<10

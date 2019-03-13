@@ -13,6 +13,7 @@ class CrimeRate: Simulation {
     init() {
 
         super.init(
+            identifier: "CrimeRate",
             image: nil,
             name: "Crime",
             summary: "An indicator of the level of general non violent crime in your nation. This includes crimes such as car crime, burglary etc., but also covers fraud and other similar crimes.",

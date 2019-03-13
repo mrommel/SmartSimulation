@@ -12,6 +12,7 @@ public class HostageSituation: Dilemma {
     
     init() {
         super.init(
+            identifier: "HostageSituation",
             image: nil,
             name: "Hostage Situation",
             summary: "A group of religious extremists have taken some hostages at gunpoint and are threatening to kill them unless demands regarding foreign policy are not met. The demands they make are not that extreme, but it might be dangerous to be seen to negotiate.",

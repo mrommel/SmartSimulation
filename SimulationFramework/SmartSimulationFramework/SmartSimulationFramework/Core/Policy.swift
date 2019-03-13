@@ -36,7 +36,7 @@ public class Policy: Simulation {
 	public let selections: [PolicySelection]
 	public var selectedIndex: Int
 
-	init(name: String, summary: String, category: Category, selections: [PolicySelection], initialSelection: PolicySelection) {
+    init(identifier: String, name: String, summary: String, category: Category, selections: [PolicySelection], initialSelection: PolicySelection) {
 
 		self.selections = selections
 
@@ -48,6 +48,7 @@ public class Policy: Simulation {
 		self.selectedIndex = selectedIndex
 
 		super.init(
+            identifier: identifier,
             image: nil,
             name: name,
             summary: summary,

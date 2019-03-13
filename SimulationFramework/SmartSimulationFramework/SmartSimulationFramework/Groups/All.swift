@@ -13,6 +13,7 @@ public class All: Group {
 	init() {
 
 		super.init(
+            identifier: "All",
             image: nil,
             name: "All",
             summary: "A general group representing the interests of society as a whole, with opinions not related to a particular age group, gender or occupation.",

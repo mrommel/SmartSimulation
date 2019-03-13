@@ -12,6 +12,7 @@ class Health: Simulation {
 
     init() {
         super.init(
+            identifier: "Health",
             image: nil, 
             name: "Health",
             summary: "A general indicator for the health of your citizens that measures not just raw lifespan, but also fitness and the general wellbeing of people.",

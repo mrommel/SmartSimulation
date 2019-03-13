@@ -12,11 +12,13 @@ public class Young: Group {
     
     init() {
         
-        super.init(image: UIImage(named: "young"),
-                   name: "Young",
-                   summary: "This group represents citizens who are old enough to vote, but still considered young. They will either still be in further education, or have recent memories of school/university so will be more strongly affected by those policies affecting education.    ",
-                   moodValue: 0.6,
-                   frequencyValue: 0.2)
+        super.init(
+            identifier: "Young",
+            image: UIImage(named: "young"),
+            name: "Young",
+            summary: "This group represents citizens who are old enough to vote, but still considered young. They will either still be in further education, or have recent memories of school/university so will be more strongly affected by those policies affecting education.    ",
+            moodValue: 0.6,
+            frequencyValue: 0.2)
     }
     
     override func setup(with global: GlobalSimulation) {

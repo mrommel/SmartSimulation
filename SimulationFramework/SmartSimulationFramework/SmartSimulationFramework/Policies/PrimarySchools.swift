@@ -17,7 +17,9 @@ public class PrimarySchools: Policy {
         let compulsorySchooling4YearsSelection = PolicySelection(name: "4 Years compulsory school attendance", description: "abc2", value: 0.75, enabled: true)
         let compulsorySchooling6YearsSelection = PolicySelection(name: "6 Years compulsory school attendance", description: "abc2", value: 1.0, enabled: true)
 
-        super.init(name: "Primary schooling",
+        super.init(
+            identifier: "PrimarySchooling",
+            name: "Primary schooling",
             summary: "Primary schooling description",
             category: .core,
             selections: [noSchoolSelection, privatePrimarySchoolSelection, compulsorySchooling2YearsSelection, compulsorySchooling4YearsSelection, compulsorySchooling6YearsSelection],

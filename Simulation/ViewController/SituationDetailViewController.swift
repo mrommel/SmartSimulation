@@ -18,9 +18,15 @@ class SituationDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        guard self.situationDetailViewModel != nil else {
+            fatalError("Model must be initialized before display")
+        }
+        
         // Do any additional setup after loading the view.
         self.title = self.situationDetailViewModel?.name
         self.view.backgroundColor = App.Color.viewBackgroundColor
+        
+        self.situationDetailViewModel?.delegate = self
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -36,6 +42,18 @@ class SituationDetailViewController: UIViewController {
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+}
+
+extension SituationDetailViewController: ViewModelDelegate {
+    
+    func willLoadData() {
+        
+    }
+    
+    func didLoadData() {
+        
+        self.tableView.reloadData()
     }
 }
 
@@ -63,9 +81,9 @@ extension SituationDetailViewController: UITableViewDelegate, UITableViewDataSou
         case 0:
             return 4
         case 1:
-            return self.situationDetailViewModel?.inputs.count ?? 0
+            return self.situationDetailViewModel?.inputIdentifiers.count ?? 0
         case 2:
-            return self.situationDetailViewModel?.outputs.count ?? 0
+            return self.situationDetailViewModel?.outputIdentifiers.count ?? 0
         default:
             return 0
         }
@@ -136,5 +154,6 @@ extension SituationDetailViewController: UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView.deselectRow(at: indexPath, animated: true)
+        self.situationDetailViewModel?.selectDetail(at: indexPath, from: self)
     }
 }

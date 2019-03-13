@@ -30,7 +30,7 @@ public class Dilemma: Simulation {
     public var firstOption: DilemmaOption
     public var secondOption: DilemmaOption
     
-    init(image: UIImage?, name: String, summary: String, category: Category, firstOption: DilemmaOption, secondOption: DilemmaOption) {
+    init(identifier: String, image: UIImage?, name: String, summary: String, category: Category, firstOption: DilemmaOption, secondOption: DilemmaOption) {
         
         guard firstOption.optionType == .option1 else {
             fatalError("wrong option type of firstOption: \(firstOption)")
@@ -44,6 +44,7 @@ public class Dilemma: Simulation {
         self.secondOption = secondOption
         
         super.init(
+            identifier: identifier,
             image: image,
             name: name,
             summary: summary,

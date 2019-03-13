@@ -13,6 +13,7 @@ public class Terrorism: Simulation {
     init() {
         
         super.init(
+            identifier: "Terrorism",
             image: nil,
             name: "Terrorism",
             summary: "Violent extremism refers to the beliefs and actions of people who support or use ideologically motivated violence to achieve radical ideological, religious or political views.",

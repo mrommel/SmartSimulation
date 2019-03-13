@@ -196,6 +196,11 @@ public class GlobalSimulation {
         newEffects.forEach { $0.calculate() }
         self.effects.add(effects: newEffects)
     }
+    
+    public func simulation(by identifier: String) -> Simulation? {
+        
+        return simulations.first { $0.identifier == identifier }
+    }
 }
 
 extension GlobalSimulation: SituationDelegate {

@@ -7,7 +7,46 @@
 //
 
 import Foundation
+import Rswift
 import SmartSimulationFramework
+
+class SimulationListRouter {
+    
+    func showSimulation(with viewModel: DetailViewModel, from context: UIViewController) {
+        
+        if let simulationDetailViewController = R.storyboard.main.simulationDetailViewController() {
+            simulationDetailViewController.simulationDetailViewModel = viewModel
+            context.navigationController?.pushViewController(simulationDetailViewController, animated: true)
+        }
+    }
+    
+    func showSituation(with viewModel: DetailViewModel, from context: UIViewController) {
+        
+        if let situationDetailViewController = R.storyboard.main.situationDetailViewController() {
+            situationDetailViewController.situationDetailViewModel = viewModel
+            context.navigationController?.pushViewController(situationDetailViewController, animated: true)
+        }
+    }
+    
+    func showPolicy(with viewModel: DetailViewModel, from context: UIViewController) {
+        
+        if let policyDetailViewController = R.storyboard.main.policyDetailViewController() {
+            policyDetailViewController.policyDetailViewModel = viewModel
+            context.navigationController?.pushViewController(policyDetailViewController, animated: true)
+        }
+    }
+    
+    func showPolicySelection(title: String, data: [PolicySelection]?, selectedIndex: Int?, onSelect: @escaping (PolicySelection) -> (), from context: UIViewController) {
+
+        let viewController = PolicySelectionController(
+            title: title,
+            data: data,
+            selectedIndex: selectedIndex,
+            onSelect: onSelect)
+        
+        context.navigationController?.pushViewController(viewController, animated: true)
+    }
+}
 
 class SimulationListViewModel: ViewModelType {
     
@@ -17,6 +56,7 @@ class SimulationListViewModel: ViewModelType {
 
     internal var delegate: ViewModelDelegate?
     var detailViewModels: [DetailViewModel] = []
+    var router: SimulationListRouter?
     
     internal var selectedSimulationDetailViewModel: DetailViewModel?
     internal var selectedSituationDetailViewModel: DetailViewModel?
@@ -28,6 +68,8 @@ class SimulationListViewModel: ViewModelType {
     
     func loadData() {
         delegate?.willLoadData()
+        
+        self.router = SimulationListRouter()
         
         Delay.delayed(by: 0.1) {
             
@@ -81,25 +123,25 @@ class SimulationListViewModel: ViewModelType {
         return sectionDetails[indexPath.row]
     }
     
-    func selectDetail(at indexPath: IndexPath) {
+    func selectDetail(at indexPath: IndexPath, from context: UIViewController) {
 
-        let detail = self.detail(at: indexPath)
-        let type: DetailViewModelType = detail?.type ?? .simulation
+        guard let detail = self.detail(at: indexPath) else {
+            fatalError("Can't get content")
+        }
+        
+        let type: DetailViewModelType = detail.type
         
         switch type {
         
         case .simulation:
             AppAnalytics.logNavigation(navigation: .navigateSimulationsToSimulation)
-            self.selectedSimulationDetailViewModel = detail
-            self.delegate?.performSegue(named: SimulationListViewModel.simulationDetailSegue.identifier)
+            self.router?.showSimulation(with: detail, from: context)
         case .situation:
             AppAnalytics.logNavigation(navigation: .navigateSimulationsToSituation)
-            self.selectedSituationDetailViewModel = detail
-            self.delegate?.performSegue(named: SimulationListViewModel.situationDetailSegue.identifier)
+            self.router?.showSituation(with: detail, from: context)
         case .policy:
             AppAnalytics.logNavigation(navigation: .navigateSimulationsToPolicy)
-            self.selectedPolicyDetailViewModel = detail
-            self.delegate?.performSegue(named: SimulationListViewModel.policyDetailSegue.identifier)
+            self.router?.showPolicy(with: detail, from: context)
         }
         
     }

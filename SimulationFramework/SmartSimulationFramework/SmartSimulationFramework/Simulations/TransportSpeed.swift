@@ -20,6 +20,7 @@ class TransportSpeed: Simulation {
     init() {
 
         super.init(
+            identifier: "TransportSpeed",
             image: nil, 
             name: "Transport Speed",
             summary: "Speed that it takes to get from point A to B. Includes good and people travelles",

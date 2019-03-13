@@ -24,7 +24,7 @@ public class Situation: Simulation {
 
 	weak var delegate: SituationDelegate?
 
-	init(name: String, summary: String, startMessage: String, startTrigger: Double, endMessage: String, endTrigger: Double, category: Category) {
+    init(identifier: String, name: String, summary: String, startMessage: String, startTrigger: Double, endMessage: String, endTrigger: Double, category: Category) {
 
 		self.startMessage = startMessage
 		self.startTrigger = startTrigger
@@ -33,6 +33,7 @@ public class Situation: Simulation {
 		self.endTrigger = endTrigger
 
 		super.init(
+            identifier: identifier,
             image: nil,
             name: name,
             summary: summary,

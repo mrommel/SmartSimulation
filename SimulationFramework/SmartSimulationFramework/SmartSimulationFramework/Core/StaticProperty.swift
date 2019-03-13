@@ -12,6 +12,7 @@ class StaticProperty: Simulation {
 
 	init(value: Double) {
 		super.init(
+            identifier: "Static",
             image: nil,
             name: "static",
             summary: "",

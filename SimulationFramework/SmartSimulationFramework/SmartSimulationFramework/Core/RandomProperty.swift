@@ -20,7 +20,7 @@ class RandomProperty: Simulation {
 
 		let randomValue = Double.random(in: self.minimum ..< self.maximum)
 
-		super.init(image: nil, name: "random", summary: "random description", category: .static, value: randomValue)
+        super.init(identifier: "Random", image: nil, name: "random", summary: "random description", category: .static, value: randomValue)
 	}
 
 	override func calculate() {

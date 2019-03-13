@@ -12,11 +12,13 @@ public class Nobles: Group {
     
     init() {
         
-        super.init(image: UIImage(named: "nobles"),
-                   name: "Nobles",
-                   summary: "",
-                   moodValue: 0.8,
-                   frequencyValue: 0.05)
+        super.init(
+            identifier: "Nobles",
+            image: UIImage(named: "nobles"),
+            name: "Nobles",
+            summary: "",
+            moodValue: 0.8,
+            frequencyValue: 0.05)
     }
     
     override func setup(with global: GlobalSimulation) {

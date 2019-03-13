@@ -12,11 +12,13 @@ public class Parents: Group {
     
     init() {
         
-        super.init(image: UIImage(named: "parents"),
-                   name: "Parents",
-                   summary: "Parents are citizens who have children. The safety and welfare of their children is a parent's primary concern, so the group advocate for laws and subsidies which help look after the well-being of kids.",
-                   moodValue: 0.6,
-                   frequencyValue: 0.25)
+        super.init(
+            identifier: "Parents",
+            image: UIImage(named: "parents"),
+            name: "Parents",
+            summary: "Parents are citizens who have children. The safety and welfare of their children is a parent's primary concern, so the group advocate for laws and subsidies which help look after the well-being of kids.",
+            moodValue: 0.6,
+            frequencyValue: 0.25)
     }
     
     override func setup(with global: GlobalSimulation) {

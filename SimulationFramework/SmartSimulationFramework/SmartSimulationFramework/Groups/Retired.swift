@@ -12,11 +12,13 @@ public class Retired: Group {
     
     init() {
         
-        super.init(image: UIImage(named: "retired"),
-                   name: "Retired",
-                   summary: "Retirees are people who have reached retirement age (typically 65) and have retired from their jobs. Now that they're no longer working, their main concerns are living well, long, and safely as possible. To this end, their main concerns are having low Violent Crime rates, decent pensions, and a good standard of public health.",
-                   moodValue: 0.6,
-                   frequencyValue: 0.1)
+        super.init(
+            identifier: "Retired",
+            image: UIImage(named: "retired"),
+            name: "Retired",
+            summary: "Retirees are people who have reached retirement age (typically 65) and have retired from their jobs. Now that they're no longer working, their main concerns are living well, long, and safely as possible. To this end, their main concerns are having low Violent Crime rates, decent pensions, and a good standard of public health.",
+            moodValue: 0.6,
+            frequencyValue: 0.1)
     }
     
     override func setup(with global: GlobalSimulation) {

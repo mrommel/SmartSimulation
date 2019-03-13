@@ -13,6 +13,7 @@ public class RacialTension: Simulation {
     init() {
         
         super.init(
+            identifier: "RacialTension",
             image: nil,
             name: "Racial Tension",
             summary: "The degree to which there is unease between different nationalities and cultures. Sudden, uncontrolled immigration can sometimes lead to racial tensions, which can in the worst case, result in violent clashes.    ",

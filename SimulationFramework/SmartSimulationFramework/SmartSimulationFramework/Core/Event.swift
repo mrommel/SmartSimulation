@@ -10,9 +10,10 @@ import Foundation
 
 public class Event: Simulation {
 
-    init(image: UIImage?, name: String, summary: String, category: Category) {
+    init(identifier: String, image: UIImage?, name: String, summary: String, category: Category) {
 
 		super.init(
+            identifier: identifier,
             image: image,
             name: name,
             summary: summary,
