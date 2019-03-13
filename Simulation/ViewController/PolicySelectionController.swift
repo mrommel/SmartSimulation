@@ -41,7 +41,7 @@ class PolicySelectionController: UITableViewController {
         if let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) {
             return cell
         } else {
-            return UITableViewCell(style: .default, reuseIdentifier: reuseIdentifier)
+            return UITableViewCell(style: .subtitle, reuseIdentifier: reuseIdentifier)
         }
     }
     

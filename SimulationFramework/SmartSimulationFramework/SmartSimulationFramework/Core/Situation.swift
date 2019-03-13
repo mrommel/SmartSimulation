@@ -15,9 +15,9 @@ public protocol SituationDelegate: class {
 
 public class Situation: Simulation {
 
-	var startMessage: String
+	public var startMessage: String
 	var startTrigger: Double
-	var endMessage: String
+	public var endMessage: String
 	var endTrigger: Double
 
 	var enabled: Bool = false

@@ -38,12 +38,12 @@ class GlobalSimulationEventLog {
         
         if type == .started {
             self.addEvent(with: R.image.bell(),
-                          title: R.string.localizable.dashboardViewControllerEventsSituationStarted(),
-                          and: situation.name)
+                          title: "\(situation.name) \(R.string.localizable.dashboardViewControllerEventsSituationStarted())",
+                          and: situation.startMessage)
         } else {
             self.addEvent(with: R.image.bell(),
-                          title: R.string.localizable.dashboardViewControllerEventsSituationEnded(),
-                          and: situation.name)
+                          title: "\(situation.name) \(R.string.localizable.dashboardViewControllerEventsSituationEnded())",
+                          and: situation.endMessage)
         }
     }
     

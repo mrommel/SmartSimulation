@@ -9,8 +9,8 @@
 "DashboardViewController.Title" = "Dashboard";
 "DashboardViewController.Button.Okay" = "Okay";
 
-"DashboardViewController.Events.Situation.Started" = "New Situation started";
-"DashboardViewController.Events.Situation.Ended" = "Situation ended";
+"DashboardViewController.Events.Situation.Started" = "started";
+"DashboardViewController.Events.Situation.Ended" = "ended";
 "DashboardViewController.Events.Event.New" = "New Event";
 "DashboardViewController.Events.Technic.New" = "New Technic";
 "DashboardViewController.Events.Technic.Invented" = "invented";
