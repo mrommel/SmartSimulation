@@ -25,6 +25,7 @@ public class HighIncome: Simulation {
         
         // in
         self.add(simulation: global.simulations.wages, formula: "0.8+(0.2*x)") // Wages,0.8+(0.2*x)
+        self.add(simulation: global.simulations.equality, formula: "0.25-(x^2)", delay: 8) // Equality,0.25-(x^2),8
         
         // out
         // Equality,0.25-(x^2),8

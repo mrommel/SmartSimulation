@@ -16,15 +16,14 @@ public class Equality: Simulation {
             identifier: "Equality",
             image: nil,
             name: "Equality",
-            summary: "",
-            category: .welfare,
-            value: 0.5)
+            summary: "There are many ways to measure equality. Conservatives talk of equality of opportunity, socialists talk of equality of outcome. This is just a simple measurement of the distribution of wealth (financial equality of outcome).",
+            category: .economy,
+            value: 0.4)
     }
     
     override func setup(with global: GlobalSimulation) {
         
         // in
-        //self.add(simulation: StaticProperty(value: 0.5))
         self.add(simulation: global.simulations.povertyRate, formula: "0-(x*0.1)")
         self.add(simulation: global.simulations.racialTension, formula: "0-(0.5*x)")
         self.add(simulation: global.simulations.lowIncome, formula: "0.5-(1-x)^4", delay: 8)

@@ -25,6 +25,7 @@ public class LowIncome: Simulation {
         
         // in
         self.add(simulation: global.simulations.wages, formula: "0+(1*x)") // Wages,0+(1*x)
+        self.add(simulation: global.simulations.equality, formula: "0.5-(1-x)^4", delay: 8) // Equality,0.5-(1-x)^4,8
         
         // out
         // CarUsage,0.1*(x^3)

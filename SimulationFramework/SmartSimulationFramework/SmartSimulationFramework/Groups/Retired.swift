@@ -30,6 +30,7 @@ public class Retired: Group {
         //self.groupFrequenceInfluences.append(GroupFrequenceInfluence(group: global.groups.stateEmployee, influence: -1.0))
         
         self.mood.add(simulation: self.mood, formula: "x") // keep self value
+        self.mood.add(simulation: global.simulations.health, formula: "-0.2+(0.4*x)", delay: 8)// Health,-0.2+(0.4*x),8
         self.frequency.add(simulation: self.frequency, formula: "x") // keep self value
         
         global.groups.add(group: self)

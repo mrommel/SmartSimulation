@@ -235,7 +235,6 @@
 				C9CE2CDA2215D24300D94B8C /* Simulations */,
 				C9CE2CC52215D14B00D94B8C /* Events */,
 				C982ECB52225E5B2007AB8B2 /* Dilemmas */,
-				C9CE2CC42215D13B00D94B8C /* Effects */,
 				C9CE2CC02215D0B900D94B8C /* GlobalSimulation.swift */,
 				C9CE2CA32215D05F00D94B8C /* Core */,
 				C9CE2C9B2215D00F00D94B8C /* SmartSimulationFramework.h */,
@@ -248,6 +247,7 @@
 		C9CE2CA32215D05F00D94B8C /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				C9CE2CA62215D07000D94B8C /* Effects.swift */,
 				C9CE2CA52215D07000D94B8C /* Category.swift */,
 				C9CE2CA72215D07000D94B8C /* Effect.swift */,
 				C9CE2CAE2215D07000D94B8C /* Era.swift */,
@@ -265,14 +265,6 @@
 				C982ECC22227EF12007AB8B2 /* Voter.swift */,
 			);
 			path = Core;
-			sourceTree = "<group>";
-		};
-		C9CE2CC42215D13B00D94B8C /* Effects */ = {
-			isa = PBXGroup;
-			children = (
-				C9CE2CA62215D07000D94B8C /* Effects.swift */,
-			);
-			path = Effects;
 			sourceTree = "<group>";
 		};
 		C9CE2CC52215D14B00D94B8C /* Events */ = {

@@ -25,6 +25,11 @@ class Health: Simulation {
         self.add(simulation: StaticProperty(value: 0.7)) // keep self value
         self.add(simulation: global.simulations.lifeSpan, formula: "0.2*ln(x)") // lifespan decreases health
 
+        // out
+        // _Lifespan,0+(0.65*x),20
+        // WorkerProductivity,-0.15+(0.15*x)
+        // Immigration,0.1*(x^6)
+        
         global.simulations.add(simulation: self)
     }
 }
