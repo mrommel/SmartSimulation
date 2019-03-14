@@ -26,6 +26,7 @@ public class Simulations {
 	var transportSpeed: TransportSpeed
     var racialTension: RacialTension
     var wages: Wages
+    var equality: Equality
     
     // income
     var lowIncome: LowIncome
@@ -61,6 +62,7 @@ public class Simulations {
         self.terrorism = Terrorism()
         self.racialTension = RacialTension()
         self.wages = Wages()
+        self.equality = Equality()
 	}
 
 	func setup(with simulation: GlobalSimulation) {
@@ -82,6 +84,7 @@ public class Simulations {
         self.terrorism.setup(with: simulation)
         self.racialTension.setup(with: simulation)
         self.wages.setup(with: simulation)
+        self.equality.setup(with: simulation)
         
         self.lowIncome.setup(with: simulation)
         self.middleIncome.setup(with: simulation)

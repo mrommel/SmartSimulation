@@ -28,6 +28,8 @@ public class Farmers: Group {
         self.groupFrequenceInfluences.append(GroupFrequenceInfluence(group: global.groups.ethnicMinorities, influence: -0.25))
         
         self.mood.add(simulation: self.mood, formula: "x") // keep self value
+        self.mood.add(simulation: global.simulations.povertyRate, formula: "0-(x*0.25)")
+        
         self.frequency.add(simulation: self.frequency, formula: "x") // keep self value
         
         global.groups.add(group: self)

@@ -29,6 +29,7 @@ public class Religious: Group {
         
         self.mood.add(simulation: self.mood, formula: "x") // keep self value
         self.frequency.add(simulation: self.frequency, formula: "x") // keep self value
+        self.frequency.add(simulation: global.simulations.povertyRate, formula: "0+(0.5*x)")
         
 		global.groups.add(group: self)
 	}

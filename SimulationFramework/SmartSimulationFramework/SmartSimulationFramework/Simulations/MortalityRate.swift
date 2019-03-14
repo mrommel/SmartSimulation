@@ -15,8 +15,8 @@ class MortalityRate: Simulation {
         super.init(
             identifier: "MortalityRate",
             image: nil,
-            name: "MortalityRate",
-            summary: "MortalityRate desc",
+            name: "Mortality Rate",
+            summary: "Mortality rate, or death rate, is a measure of the number of deaths (in general, or due to a specific cause) in a particular population, scaled to the size of that population, per unit of time.",
             category: .core,
             value: 0.5) // 0..<10
     }

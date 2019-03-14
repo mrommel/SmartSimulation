@@ -26,9 +26,11 @@ public class RacialTension: Simulation {
         // in
         // self.add(simulation: <#T##Simulation#>) // PoliceForce,0+(0.1*x)
         // self.add(simulation: <#T##Simulation#>) // ArmedPolice,0+(0.25*x)
+        self.add(simulation: global.simulations.povertyRate, formula: "0+(0.22*x)", delay: 2)
+        self.add(simulation: global.simulations.education, formula: "0-(0.08*x)")
+        self.add(simulation: global.simulations.unemployment, formula: "0.7*(x^3)") // Unemployment,0.7*(x^3)
         
         // out
-        // Equality,0-(0.5*x)
         // EthnicMinorities,0-(1*x)
         // ViolentCrimeRate,0+(0.1*x)
         // StreetGangs,0+(0.4*x)

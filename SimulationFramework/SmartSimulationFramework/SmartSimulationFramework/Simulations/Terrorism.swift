@@ -26,7 +26,6 @@ public class Terrorism: Simulation {
         self.add(simulation: global.simulations.racialTension, formula: "1*(x^2)", delay: 4) // RacialTension,1*(x^2),4
         self.add(simulation: global.groups.religious.frequency, formula: "0+(0.2*x)") // Religious_freq,0+(0.2*x)
         
-        
         /*ForeignRelations,1*(1-x)^4,4
         Environment,0.5*(1-x)^2,4
         BorderControls,0-(0.1*x),4

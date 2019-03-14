@@ -26,7 +26,10 @@ public class Poor: Group {
         // Poor people aren't predisposed to any other voter groups.
         // can't be rich ???
         
-        self.mood.add(simulation: self.mood, formula: "x") // keep self value
+        //self.mood.add(simulation: self.mood, formula: "x") // keep self value
+        self.mood.add(simulation: global.simulations.povertyRate, formula: "0-(x*0.5)")
+        self.mood.add(simulation: global.simulations.lowIncome, formula: "0.5-(1-x)^4")
+        
         self.frequency.add(simulation: self.frequency, formula: "x") // keep self value
         
 		global.groups.add(group: self)

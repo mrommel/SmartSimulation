@@ -199,7 +199,29 @@ public class GlobalSimulation {
     
     public func simulation(by identifier: String) -> Simulation? {
         
-        return simulations.first { $0.identifier == identifier }
+        return self.simulations.first { $0.identifier == identifier }
+    }
+    
+    public func event(by identifier: String) -> Event? {
+        
+        return self.events.first { $0.identifier == identifier }
+    }
+    
+    public func group(by identifier: String) -> Simulation? {
+        
+        let identifierWithoutMood = identifier.replacingOccurrences(of: "_mood", with: "")
+        
+        if let group = self.groups.first( where: { $0.identifier == identifierWithoutMood } ) {
+            return group.mood
+        }
+        
+        let identifierWithoutFreq = identifier.replacingOccurrences(of: "_freq", with: "")
+        
+        if let group = self.groups.first( where: { $0.identifier == identifierWithoutFreq } ) {
+            return group.frequency
+        }
+        
+        return nil
     }
 }
 

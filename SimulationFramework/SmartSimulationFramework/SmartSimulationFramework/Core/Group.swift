@@ -33,8 +33,8 @@ public class Group {
 		self.name = name
 		self.summary = summary
 
-        self.mood = Simulation(identifier: "\(self.identifier)Mood", image: image, name: "\(self.name) mood", summary: "", category: .groups, value: moodValue)
-        self.frequency = Simulation(identifier: "\(self.identifier)Freq", image: image, name: "\(self.name) freq", summary: "", category: .groups, value: frequencyValue)
+        self.mood = Simulation(identifier: "\(self.identifier)_mood", image: image, name: "\(self.name) mood", summary: "", category: .groups, value: moodValue)
+        self.frequency = Simulation(identifier: "\(self.identifier)_freq", image: image, name: "\(self.name) freq", summary: "", category: .groups, value: frequencyValue)
 	}
 
 	func calculate() {

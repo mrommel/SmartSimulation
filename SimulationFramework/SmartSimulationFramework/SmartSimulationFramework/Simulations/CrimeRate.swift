@@ -23,9 +23,10 @@ class CrimeRate: Simulation {
 
     override func setup(with global: GlobalSimulation) {
 
-        self.add(simulation: global.simulations.unemployment, formula: "0.17*(x^5)")
+        self.add(simulation: global.simulations.unemployment, formula: "0.17*(x^5)") // Unemployment,0.17*(x^5)
         self.add(simulation: global.simulations.povertyRate, formula: "0.41*(x^2)", delay: 4)
-        self.add(simulation: global.simulations.education, formula: "-0.12*(x^6)")
+        self.add(simulation: global.simulations.education, formula: "-0.12*(x^6)") // Education,-0.12*(x^6)
+        self.add(simulation: global.simulations.povertyRate, formula: "0.41*(x^2)", delay: 4)
 
         global.simulations.add(simulation: self)
     }

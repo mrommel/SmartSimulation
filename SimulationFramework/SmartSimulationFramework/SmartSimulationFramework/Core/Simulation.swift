@@ -12,99 +12,97 @@ public class Simulation {
 
     public let identifier: String
     public let image: UIImage?
-	public let name: String
-	public let summary: String
+    public let name: String
+    public let summary: String
     public let category: Category
-	var values: [Double] = []
-	public var inputs: [SimulationRelation] = []
+    var values: [Double] = []
+    public var inputs: [SimulationRelation] = []
     public var outputs: [SimulationRelation] = []
-	var techs: [TechnicRelation] = []
+    var techs: [TechnicRelation] = []
 
-	var stashedValue: Double = 0.0
+    var stashedValue: Double = 0.0
 
-	init(identifier: String, image: UIImage?, name: String, summary: String, category: Category, value: Double) {
-		self.identifier = identifier
+    init(identifier: String, image: UIImage?, name: String, summary: String, category: Category, value: Double) {
+        self.identifier = identifier
         self.image = image
         self.name = name
-		self.summary = summary
-		self.category = category
-		self.values.append(value)
-	}
+        self.summary = summary
+        self.category = category
+        self.values.append(value)
+    }
 
-	func setup(with global: GlobalSimulation) {
-		assertionFailure("Subclasses need to implement this method")
-	}
+    func setup(with global: GlobalSimulation) {
+        assertionFailure("Subclasses need to implement this method")
+    }
 
-	func add(simulation: Simulation, formula: String = "x", delay: Int = 0) {
-		self.add(simulationRelation: SimulationRelation(simulation: simulation, formula: formula, delay: delay))
-	}
+    func add(simulation: Simulation, formula: String = "x", delay: Int = 0) {
+        self.add(simulationRelation: SimulationRelation(simulation: simulation, formula: formula, delay: delay))
+    }
 
-	func add(simulationRelation: SimulationRelation) {
-		self.inputs.append(simulationRelation)
+    func add(simulationRelation: SimulationRelation) {
+        self.inputs.append(simulationRelation)
         simulationRelation.simulation.outputs.append(SimulationRelation(simulation: self, formula: simulationRelation.formula, delay: simulationRelation.delay))
-	}
+    }
 
-	func add(technic: Technic, formula: String = "x", delay: Int = 0) {
-		self.add(technicRelation: TechnicRelation(technic: technic, formula: formula, delay: delay))
-	}
+    func add(technic: Technic, formula: String = "x", delay: Int = 0) {
+        self.add(technicRelation: TechnicRelation(technic: technic, formula: formula, delay: delay))
+    }
 
-	func add(technicRelation: TechnicRelation) {
-		self.techs.append(technicRelation)
-	}
+    func add(technicRelation: TechnicRelation) {
+        self.techs.append(technicRelation)
+    }
 
-	func calculate() {
+    func calculate() {
 
-		self.stashedValue = 0.0
+        self.stashedValue = 0.0
 
-		for relation in self.inputs {
+        for relation in self.inputs {
 
-			let expression = NSExpression(format: relation.formula)
-			let dict = NSMutableDictionary()
-			dict.setValue(self.value(with: 0), forKey: "v")
-			dict.setValue(relation.simulation.value(with: relation.delay), forKey: "x")
-			if let tempVal = expression.expressionValue(with: dict, context: nil) as? Double {
-				self.stashedValue += tempVal
-			}
-		}
-        
-        if self.stashedValue < 0.0 {
-            self.stashedValue = 0.0
+            let expression = NSExpression(format: relation.formula)
+            let dict = NSMutableDictionary()
+            dict.setValue(self.value(with: 0), forKey: "v")
+            dict.setValue(relation.simulation.value(with: relation.delay), forKey: "x")
+            if let tempVal = expression.expressionValue(with: dict, context: nil) as? Double {
+                self.stashedValue += tempVal
+            }
         }
-	}
 
-	func push() {
-		self.push(value: self.stashedValue)
-	}
+        self.stashedValue = 1.0 / (1.0 + exp((-self.stashedValue + 0.5) * 8.0))
+    }
 
-	func value(with delay: Int = 0) -> Double {
-		if self.values.count > delay {
-			return self.values[delay]
-		}
+    func push() {
+        self.push(value: self.stashedValue)
+    }
 
-		return self.values[0]
-	}
+    func value(with delay: Int = 0) -> Double {
+        if self.values.count > delay {
+            return self.values[delay]
+        }
 
-	func push(value: Double) {
-		self.values.insert(value, at: 0)
-	}
+        return self.values[0]
+    }
 
-	public func valueText() -> String {
-		return "\(self.value().format(with: ".2"))"
-	}
+    func push(value: Double) {
+        self.values.insert(value, at: 0)
+    }
 
-	func nameOfValue(from steps: [String]) -> String {
+    public func valueText() -> String {
+        return "\(self.value().format(with: ".2"))"
+    }
 
-		let stepIncrement = 1.0 / Double(steps.count)
-		var stepValue = 0.0
+    func nameOfValue(from steps: [String]) -> String {
 
-		for step in steps {
-			if self.value().between(from: stepValue, to: stepValue + stepIncrement) {
-				return step
-			}
+        let stepIncrement = 1.0 / Double(steps.count)
+        var stepValue = 0.0
 
-			stepValue += stepIncrement
-		}
+        for step in steps {
+            if self.value().between(from: stepValue, to: stepValue + stepIncrement) {
+                return step
+            }
 
-		return "---"
-	}
+            stepValue += stepIncrement
+        }
+
+        return "---"
+    }
 }

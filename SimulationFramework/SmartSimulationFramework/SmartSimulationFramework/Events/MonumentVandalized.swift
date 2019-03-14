@@ -22,7 +22,7 @@ public class MonumentVandalized: Event {
     override func effects(for global: GlobalSimulation?) -> [Effect] {
 
         let effectOnConservatives = Effect(name: "MonumentVandalized effect on Conservatives", value: -0.44, decay: 0.800)
-        global?.groups.conservatives.mood.add(simulation: effectOnConservatives, formula: "-0.1*x", delay: 1)
+        global?.groups.conservatives.mood.add(simulation: effectOnConservatives, formula: "x", delay: 1)
 
         let decayEffect = Effect(name: "MonumentVandalized decay", value: -0.9, decay: 0.98) //
         global?.events.monumentVandalizedEvent.add(simulation: decayEffect)

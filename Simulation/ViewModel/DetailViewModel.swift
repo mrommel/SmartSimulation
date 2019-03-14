@@ -14,6 +14,7 @@ enum DetailViewModelType {
     case simulation
     case situation
     case policy
+    case event
 }
 
 struct RelationIdentifier {
@@ -52,17 +53,39 @@ class DetailViewModel {
     func getInputRelation(at index: Int) -> DetailViewModel? {
         
         let relationIdentifier = self.inputIdentifiers[index]
-        let simulation = GlobalSimulationManager.shared.simulation(by: relationIdentifier.identifier)
         
-        return SimulationDetailViewModel(simulation: simulation)
+        if relationIdentifier.identifier == "Static" {
+            return SimulationDetailViewModel(simulation: nil)
+        }
+        
+        if let simulation = GlobalSimulationManager.shared.simulation(by: relationIdentifier.identifier) {
+            return SimulationDetailViewModel(simulation: simulation)
+        }
+        
+        if let groupSimulation = GlobalSimulationManager.shared.group(by: relationIdentifier.identifier) {
+            return SimulationDetailViewModel(simulation: groupSimulation)
+        }
+        
+        fatalError("Can't find identifier: '\(relationIdentifier.identifier)'")
     }
     
     func getOutputRelation(at index: Int) -> DetailViewModel? {
         
         let relationIdentifier = self.outputIdentifiers[index]
-        let simulation = GlobalSimulationManager.shared.simulation(by: relationIdentifier.identifier)
         
-        return SimulationDetailViewModel(simulation: simulation)
+        if let simulation = GlobalSimulationManager.shared.simulation(by: relationIdentifier.identifier) {
+            return SimulationDetailViewModel(simulation: simulation)
+        }
+        
+        if let event = GlobalSimulationManager.shared.event(by: relationIdentifier.identifier) {
+            return EventDetailViewModel(event: event)
+        }
+        
+        if let groupSimulation = GlobalSimulationManager.shared.group(by: relationIdentifier.identifier) {
+            return SimulationDetailViewModel(simulation: groupSimulation)
+        }
+        
+        fatalError("Can't find identifier: '\(relationIdentifier.identifier)'")
     }
     
     func detail(at indexPath: IndexPath) -> DetailViewModel? {
@@ -99,6 +122,9 @@ class DetailViewModel {
         case .policy:
             AppAnalytics.logNavigation(navigation: .navigateSimulationsToPolicy)
             self.router?.showPolicy(with: detail, from: context)
+        case .event:
+            // NOOP
+            AppAnalytics.logNavigation(navigation: .navigateSimulationsToPolicy)
         }
     }
 }

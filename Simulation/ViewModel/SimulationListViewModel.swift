@@ -142,6 +142,8 @@ class SimulationListViewModel: ViewModelType {
         case .policy:
             AppAnalytics.logNavigation(navigation: .navigateSimulationsToPolicy)
             self.router?.showPolicy(with: detail, from: context)
+        case .event:
+            AppAnalytics.logNavigation(navigation: .navigateSimulationsToPolicy)
         }
         
     }

@@ -13,6 +13,7 @@ public class Events {
 	public var earthQuakeEvent: Earthquake
 	public var monumentVandalizedEvent: MonumentVandalized
 	public var ministerialScandal: MinisterialScandal
+    public var povertyReport: PovertyReport
 
 	fileprivate var events: [Event] = []
 
@@ -20,6 +21,7 @@ public class Events {
 		self.earthQuakeEvent = Earthquake()
 		self.monumentVandalizedEvent = MonumentVandalized()
 		self.ministerialScandal = MinisterialScandal()
+        self.povertyReport = PovertyReport()
 	}
 
 	func setup(with global: GlobalSimulation) {
@@ -27,6 +29,7 @@ public class Events {
 		self.earthQuakeEvent.setup(with: global)
 		self.monumentVandalizedEvent.setup(with: global)
 		self.ministerialScandal.setup(with: global)
+        self.povertyReport.setup(with: global)
 	}
 
 	func add(event: Event) {
@@ -64,4 +67,27 @@ public class Events {
 
 		return nil
 	}
+}
+
+extension Events: Sequence {
+    
+    public struct EventsIterator: IteratorProtocol {
+        
+        private var index = 0
+        private let events: [Event]
+        
+        init(events: [Event]) {
+            self.events = events
+        }
+        
+        mutating public func next() -> Event? {
+            let event = self.events[safe: index]
+            index += 1
+            return event
+        }
+    }
+    
+    public func makeIterator() -> EventsIterator {
+        return EventsIterator(events: self.events)
+    }
 }

@@ -1,24 +1,24 @@
 //
-//  Wealthy.swift
+//  MiddleIncomer.swift
 //  SmartSimulationFramework
 //
-//  Created by Michael Rommel on 28.02.19.
+//  Created by Michael Rommel on 14.03.19.
 //  Copyright © 2019 Michael Rommel. All rights reserved.
 //
 
 import Foundation
 
-public class Wealthy: Group {
+public class MiddleIncomer: Group {
     
     init() {
         
         super.init(
-            identifier: "Wealthy",
-            image: UIImage(named: "wealthy"),
-            name: "Wealthy",
+            identifier: "MiddleIncomer",
+            image: nil,
+            name: "MiddleIncomer",
             summary: "",
             moodValue: 0.8,
-            frequencyValue: 0.05)
+            frequencyValue: 0.75)
     }
     
     override func setup(with global: GlobalSimulation) {
@@ -27,7 +27,7 @@ public class Wealthy: Group {
         self.groupFrequenceInfluences.append(GroupFrequenceInfluence(group: global.groups.nobles, influence: 0.4))
         
         //self.mood.add(simulation: self.mood, formula: "x") // keep self value
-        self.mood.add(simulation: global.simulations.highIncome, formula: "-0.25*(x-1)^2") // HighIncome,-0.25*(x-1)^2
+        self.mood.add(simulation: global.simulations.middleIncome, formula: "0.5-(1-x)^2") // MiddleIncome,0.5-(1-x)^2
         self.frequency.add(simulation: self.frequency, formula: "x") // keep self value
         
         global.groups.add(group: self)

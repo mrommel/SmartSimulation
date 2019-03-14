@@ -25,6 +25,9 @@ class Unemployment: Simulation {
 
         self.add(simulation: global.simulations.grossDomesticProduct, formula: "0-(0.95*x)")
 
+        // out
+        // WorkingWeek,0+(0.2*x)
+        
         global.simulations.add(simulation: self)
     }
 }

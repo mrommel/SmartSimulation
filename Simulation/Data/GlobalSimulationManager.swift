@@ -49,6 +49,14 @@ class GlobalSimulationManager {
         return self.globalSimulation?.simulation(by: identifier)
     }
     
+    func event(by identifier: String) -> Event? {
+        return self.globalSimulation?.event(by: identifier)
+    }
+    
+    func group(by identifier: String) -> Simulation? {
+        return self.globalSimulation?.group(by: identifier)
+    }
+    
     func groups() -> Groups? {
         return self.globalSimulation?.groups
     }
