@@ -122,8 +122,8 @@ extension AppDelegate: ApplicationLaunchDelegate {
     }
     
     func applicationDidUpgrade(from: String, to: String) {
-        print("upgrade detected")
-        // should be upgrade tour
+        print("upgrade detected: \(from) to \(to)")
+        // TODO: should be upgrade tour
         self.startDashboard()
     }
     
